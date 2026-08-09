@@ -90,7 +90,7 @@ body {
 
     transform: translateY(-50%);
 
-    width: min(420px, 45vw);
+    width: min(650px, 65vw);
 
     z-index: 2;
 }
