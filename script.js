@@ -4,22 +4,15 @@ let targetRotation = 0;
 let currentRotation = 0;
 
 window.addEventListener("scroll", () => {
-
-    targetRotation = window.scrollY * 0.06;
-
+    targetRotation = window.scrollY * 0.08;
 });
 
-
 function animateLogo() {
+    currentRotation += (targetRotation - currentRotation) * 0.05;
 
-    currentRotation +=
-        (targetRotation - currentRotation) * 0.06;
-
-    logo.style.transform =
-        `rotate(${currentRotation}deg)`;
+    logo.style.transform = `rotate(${currentRotation}deg)`;
 
     requestAnimationFrame(animateLogo);
-
 }
 
 animateLogo();
