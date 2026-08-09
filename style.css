@@ -84,9 +84,9 @@ body {
 }
 
 .hero-logo {
-    position: sticky;
+     position: sticky;
 
-    top: 50%;
+    top: 45%;
 
     transform: translateY(-50%);
 
