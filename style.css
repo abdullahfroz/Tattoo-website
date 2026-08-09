@@ -84,14 +84,10 @@ body {
 }
 
 .hero-logo {
-     position: sticky;
-
-    top: 45%;
-
+      position: sticky;
+    top: 28%;
     transform: translateY(-50%);
-
-    width: min(650px, 65vw);
-
+    width: min(900px, 78vw);
     z-index: 2;
 }
 
