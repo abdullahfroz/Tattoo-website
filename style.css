@@ -82,7 +82,7 @@ body {
 }
 
 .hero-logo {
-      position: absolute;
+      position: sticky;
 
     top: 50%;
     left: 50%;
