@@ -1,17 +1,219 @@
-body {
-    background-color: #111111;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 100px;
+/* ------------------------------
+   BASIC RESET
+------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+
+body {
+    background: #050505;
+    color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 50px;
+
+    z-index: 10;
+}
+
+
+.logo {
+    color: white;
+    text-decoration: none;
+
+    font-size: 22px;
+    letter-spacing: 8px;
+}
+
+
+.navigation {
+    display: flex;
+    gap: 35px;
+}
+
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+.navigation a:hover {
+    opacity: 0.5;
+}
+
+
+/* ------------------------------
+   HERO
+------------------------------ */
+
+.hero {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* ------------------------------
+   LEFT SIDE
+------------------------------ */
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 100px;
+}
+
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+
+    opacity: 0.7;
+}
+
 
 h1 {
-    font-size: 50px;
-    letter-spacing: 3px;
+    font-size: clamp(90px, 12vw, 180px);
+
+    font-weight: 300;
+
+    letter-spacing: 15px;
+
+    line-height: 0.9;
 }
 
-p {
-    font-size: 20px;
-    color: #cccccc;
+
+.line {
+    width: 35px;
+    height: 1px;
+
+    background: #777;
+
+    margin: 35px 0;
+}
+
+
+.intro {
+    max-width: 350px;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    letter-spacing: 1px;
+
+    color: #bdbdbd;
+}
+
+
+.book-link {
+    display: inline-block;
+
+    margin-top: 45px;
+
+    width: fit-content;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    border-bottom: 1px solid #777;
+
+    padding-bottom: 8px;
+}
+
+
+.book-link span {
+    margin-left: 20px;
+
+    font-size: 16px;
+}
+
+
+/* ------------------------------
+   HERO IMAGE
+------------------------------ */
+
+.hero-image {
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter: grayscale(100%);
+
+    opacity: 0.85;
+}
+
+
+/* ------------------------------
+   SCROLL
+------------------------------ */
+
+.scroll {
+    position: absolute;
+
+    bottom: 35px;
+    right: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #999;
 }
