@@ -192,36 +192,6 @@ h1 {
     font-size: 16px;
 }
 
-
-/* ------------------------------
-   HERO IMAGE
------------------------------- */
-
-.hero-image {
-   width: 78%;
-    height: 62vh;
-    overflow: hidden;
-    justify-self: center;
-}
-
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    filter: grayscale(100%);
-
-    display: block;
-
-    opacity: 0.9;
-}
-
-
-
 /* ------------------------------
    SCROLL
 ------------------------------ */
@@ -230,9 +200,12 @@ h1 {
     position: absolute;
 
     bottom: 35px;
-    right: 50%;
+    left: 50%;
+
+    transform: translateX(-50%);
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -244,6 +217,8 @@ h1 {
     letter-spacing: 3px;
 
     color: #999;
+
+    z-index: 5;
 }
 
 /* =================================
@@ -297,9 +272,9 @@ h1 {
 
 
 .childhood-image {
-    width: 70%;
+    width: 55%;
 
-    height: 55vh;
+    height: 45vh;
 
     overflow: hidden;
 
@@ -309,7 +284,6 @@ h1 {
 
 .childhood-image img {
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
@@ -317,8 +291,6 @@ h1 {
     filter: grayscale(100%);
 
     display: block;
-
-    transition: transform 1.2s ease;
 }
 
 
