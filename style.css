@@ -71,29 +71,52 @@ body {
 ------------------------------ */
 
 .hero {
-    min-height: 100vh;
-
-    display: grid;
-
-    grid-template-columns: 45% 55%;
+    min-height: 160vh;
 
     position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
 
     overflow: hidden;
 }
 
+.hero-logo {
+    position: sticky;
 
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: min(420px, 45vw);
+
+    z-index: 2;
+}
+
+
+.hero-logo img {
+    width: 100%;
+
+    display: block;
+
+    will-change: transform;
+}
 /* ------------------------------
    LEFT SIDE
 ------------------------------ */
 
 .hero-content {
-    display: flex;
-    flex-direction: column;
+    position: absolute;
 
-    justify-content: center;
+    left: 8vw;
 
-    padding: 100px;
+    bottom: 20vh;
+
+    z-index: 3;
+
+    max-width: 350px;
 }
 
 
