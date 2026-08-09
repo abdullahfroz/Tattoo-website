@@ -303,23 +303,23 @@ h1 {
 ================================= */
 
 .artist-section {
-    min-height: 100vh;
+     min-height: 90vh;
 
     display: flex;
 
     justify-content: center;
     align-items: center;
 
-    padding: 120px 10vw;
+    padding: 100px 10vw;
 
     background: #050505;
 }
 
 
 .artist-image {
-    width: min(650px, 70vw);
+   width: min(500px, 55vw);
 
-    height: 62vh;
+    height: 52vh;
 
     overflow: hidden;
 }
