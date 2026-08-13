@@ -12,11 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentY += (targetY - currentY) * 0.08;
 
-        logo.style.transform = `
-             translate(-50%, calc(-50% + ${currentY}px))
-        `;
+    logo.style.marginTop = `${currentY}px`;
 
-        requestAnimationFrame(animate);
+    requestAnimationFrame(animate);
     }
 
 

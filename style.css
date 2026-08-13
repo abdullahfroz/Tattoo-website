@@ -85,16 +85,18 @@ body {
 .hero-logo {
       position: absolute;
 
-    top: 50%;
+    top: 40%;
     left: 50%;
 
-    width: min(800px, 72vw);
+    width: min(650px, 65vw);
 
     transform: translate(-50%, -50%);
 
     z-index: 2;
 
     pointer-events: none;
+
+    perspective: 800px;
 }
 
 
