@@ -2,72 +2,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const logo = document.getElementById("rotating-logo");
 
-    if (!logo) {
-        console.log("Logo not found");
-        return;
+    if (!logo) return;
+
+    let currentScroll = 0;
+    let targetScroll = 0;
+
+    function animate() {
+
+        currentScroll +=
+            (targetScroll - currentScroll) * 0.08;
+
+        /*
+         * 3D movement
+         */
+
+        const rotateX = currentScroll * 0.12;
+        const rotateY = currentScroll * 0.18;
+        const rotateZ = currentScroll * 0.035;
+
+        /*
+         * Subtle floating movement
+         */
+
+        const moveX = Math.sin(currentScroll * 0.015) * 25;
+        const moveY = Math.cos(currentScroll * 0.012) * 18;
+
+        /*
+         * Scale creates the feeling of moving
+         * toward and away from the viewer.
+         */
+
+        const scale =
+            1 + Math.sin(currentScroll * 0.01) * 0.08;
+
+        logo.style.transform = `
+            translate(${moveX}px, ${moveY}px)
+            perspective(800px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            rotateZ(${rotateZ}deg)
+            scale(${scale})
+        `;
+
+        requestAnimationFrame(animate);
     }
-
-    let targetRotation = 0;
-    let currentRotation = 0;
-
-    let targetX = 0;
-    let currentX = 0;
-
-    let targetY = 0;
-    let currentY = 0;
-
-    let targetMove = 0;
-    let currentMove = 0;
-
 
     window.addEventListener("scroll", () => {
 
-        const scroll = window.scrollY;
-
-        /* Main rotation */
-        targetRotation = scroll * 0.08;
-
-        /* 3D tilt */
-        targetX = Math.sin(scroll * 0.006) * 8;
-
-        targetY = Math.cos(scroll * 0.004) * 10;
-
-        /* Subtle floating movement */
-        targetMove = Math.sin(scroll * 0.008) * 18;
+        targetScroll = window.scrollY;
 
     });
 
-
-    function animateLogo() {
-
-        /* Smooth interpolation */
-
-        currentRotation +=
-            (targetRotation - currentRotation) * 0.05;
-
-        currentX +=
-            (targetX - currentX) * 0.05;
-
-        currentY +=
-            (targetY - currentY) * 0.05;
-
-        currentMove +=
-            (targetMove - currentMove) * 0.05;
-
-
-        logo.style.transform = `
-            translateX(${currentMove}px)
-            rotateX(${currentX}deg)
-            rotateY(${currentY}deg)
-            rotateZ(${currentRotation}deg)
-        `;
-
-
-        requestAnimationFrame(animateLogo);
-
-    }
-
-
-    animateLogo();
+    animate();
 
 });

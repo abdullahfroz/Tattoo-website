@@ -99,11 +99,13 @@ body {
 
 
 .hero-logo img {
-      width: 100%;
+     width: 100%;
 
     display: block;
 
     transform-origin: center center;
+
+    transform-style: preserve-3d;
 
     will-change: transform;
 }
@@ -370,7 +372,7 @@ h1 {
     }
 
     .hero-logo {
-        position: absolute;
+       position: absolute;
 
     top: 40%;
     left: 50%;
@@ -383,7 +385,7 @@ h1 {
 
     pointer-events: none;
 
-    perspective: 1000px;
+    perspective: 800px;
     }
 
     .hero-content {
