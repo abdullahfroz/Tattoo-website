@@ -344,3 +344,103 @@ h1 {
 
     display: block;
 }
+
+/* =================================
+   MOBILE OPTIMIZATION
+================================= */
+
+@media (max-width: 768px) {
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+        height: 100svh;
+    }
+
+    .hero-logo {
+        width: 78vw;
+        top: 38%;
+    }
+
+    .hero-content {
+        left: 25px;
+        bottom: 12vh;
+        max-width: calc(100% - 50px);
+    }
+
+    .hero-content h1 {
+        font-size: clamp(55px, 16vw, 85px);
+        letter-spacing: 0.25em;
+    }
+
+
+    /* ARTIST / CALIHERO IMAGE */
+
+    .artist-section {
+        min-height: auto;
+        padding: 100px 25px;
+    }
+
+    .artist-image {
+        width: 82vw;
+        height: 65vh;
+    }
+
+
+    /* PORTFOLIO */
+
+    .portfolio {
+        min-height: 50vh;
+        padding: 100px 25px;
+    }
+
+
+    /* CHILDHOOD SECTION */
+
+    .childhood-section {
+        min-height: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 100px 25px;
+
+        gap: 60px;
+    }
+
+    .childhood-content {
+        max-width: 100%;
+    }
+
+    .childhood-content h2 {
+        font-size: clamp(45px, 13vw, 70px);
+    }
+
+
+    /* CHILDHOOD IMAGE */
+
+    .childhood-image {
+        width: 65vw;
+
+        height: 42vh;
+
+        max-height: 450px;
+
+        justify-self: auto;
+
+        align-self: center;
+
+        overflow: hidden;
+    }
+
+    .childhood-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+    }
+
+}
