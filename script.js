@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
          */
 
         targetY = Math.min(
-            scroll * 0.45,
-            portfolio.offsetTop - window.innerHeight * 0.45
+             scroll * 0.55,
+    portfolio.offsetTop - window.innerHeight * 0.15
         );
 
     }
