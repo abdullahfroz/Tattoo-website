@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const logo = document.getElementById("rotating-logo");
-    const portfolio = document.getElementById("work");
+    const artistSection = document.getElementById("artist");
 
-    if (!logo || !portfolio) return;
+    if (!logo || !artistSection) return;
 
     let currentY = 0;
     let targetY = 0;
@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentY += (targetY - currentY) * 0.08;
 
-    logo.style.marginTop = `${currentY}px`;
+        logo.style.marginTop = `${currentY}px`;
 
-    requestAnimationFrame(animate);
+        requestAnimationFrame(animate);
     }
 
 
@@ -22,13 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const scroll = window.scrollY;
 
-        /*
-         * How far the logo moves down.
-         */
+        const artistPosition =
+            artistSection.offsetTop - window.innerHeight * 0.35;
 
         targetY = Math.min(
-             scroll * 0.55,
-    portfolio.offsetTop - window.innerHeight * 0.15
+            scroll * 0.55,
+            artistPosition
         );
 
     }
