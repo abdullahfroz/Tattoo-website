@@ -1,57 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const logo = document.getElementById("rotating-logo");
+    const portfolio = document.getElementById("work");
 
-    if (!logo) return;
+    if (!logo || !portfolio) return;
 
-    let currentScroll = 0;
-    let targetScroll = 0;
+    let currentY = 0;
+    let targetY = 0;
 
     function animate() {
 
-        currentScroll +=
-            (targetScroll - currentScroll) * 0.08;
-
-        /*
-         * 3D movement
-         */
-
-        const rotateX = currentScroll * 0.12;
-        const rotateY = currentScroll * 0.18;
-        const rotateZ = currentScroll * 0.035;
-
-        /*
-         * Subtle floating movement
-         */
-
-        const moveX = Math.sin(currentScroll * 0.015) * 25;
-        const moveY = Math.cos(currentScroll * 0.012) * 18;
-
-        /*
-         * Scale creates the feeling of moving
-         * toward and away from the viewer.
-         */
-
-        const scale =
-            1 + Math.sin(currentScroll * 0.01) * 0.08;
+        currentY += (targetY - currentY) * 0.08;
 
         logo.style.transform = `
-            translate(${moveX}px, ${moveY}px)
-            perspective(800px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            rotateZ(${rotateZ}deg)
-            scale(${scale})
+             translate(-50%, calc(-50% + ${currentY}px))
         `;
 
         requestAnimationFrame(animate);
     }
 
-    window.addEventListener("scroll", () => {
 
-        targetScroll = window.scrollY;
+    function updateLogoPosition() {
 
-    });
+        const scroll = window.scrollY;
+
+        /*
+         * How far the logo moves down.
+         */
+
+        targetY = Math.min(
+            scroll * 0.45,
+            portfolio.offsetTop - window.innerHeight * 0.45
+        );
+
+    }
+
+
+    window.addEventListener("scroll", updateLogoPosition);
+
+    updateLogoPosition();
 
     animate();
 
