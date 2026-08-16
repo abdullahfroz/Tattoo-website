@@ -137,19 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
                  * Floating movement
                  */
 
-                logo.position.x =
-                    Math.sin(smoothScroll * 0.006) * 0.18;
-
-                logo.position.y =
-                    -smoothScroll * 0.003;
-
-
                 /*
                  * Subtle depth movement
                  */
-
-                logo.position.z =
-                    Math.sin(smoothScroll * 0.004) * 0.35;
 
 
                 renderer.render(
