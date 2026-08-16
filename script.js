@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+
     /* ==============================
-       THREE.JS SETUP
+       THREE.JS
     ============================== */
 
     const scene = new THREE.Scene();
@@ -26,8 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     camera.position.z = 6;
 
+
     const renderer = new THREE.WebGLRenderer({
-        canvas,
+        canvas: canvas,
         antialias: true,
         alpha: true
     });
@@ -41,10 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
         container.clientHeight
     );
 
+
+    /* ==============================
+       LOAD LOGO
+    ============================== */
+
     const loader = new THREE.TextureLoader();
 
     loader.load(
         "images/cali3Dlogo.png",
+
         (texture) => {
 
             texture.colorSpace = THREE.SRGBColorSpace;
@@ -65,22 +73,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
             scene.add(logo);
 
+
             /* ==============================
-               SCROLL
+               SCROLL VARIABLES
             ============================== */
 
+            let currentScroll = window.scrollY;
             let targetScroll = window.scrollY;
-            let smoothScroll = window.scrollY;
 
-            function updateScroll() {
-                targetScroll = window.scrollY;
-            }
+            let currentTravel = 0;
+            let targetTravel = 0;
+
 
             window.addEventListener(
                 "scroll",
-                updateScroll,
+                () => {
+
+                    targetScroll = window.scrollY;
+
+                },
                 { passive: true }
             );
+
 
             /* ==============================
                ANIMATION
@@ -90,96 +104,136 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 requestAnimationFrame(animate);
 
-                smoothScroll +=
-                    (targetScroll - smoothScroll) * 0.06;
+
+                /* Smooth scrolling */
+
+                currentScroll +=
+                    (targetScroll - currentScroll) * 0.06;
+
 
                 /*
-                 * How far the logo travels.
-                 *
-                 * The logo starts moving immediately
-                 * and stops when portfolio begins.
+                 * Distance from the top of the page
+                 * to the portfolio.
+                 */
+
+                const portfolioPosition =
+                    portfolio.offsetTop;
+
+
+                /*
+                 * How far the logo can travel.
                  */
 
                 const maxTravel =
                     Math.max(
                         0,
-                        portfolio.offsetTop - window.innerHeight * 0.45
+                        portfolioPosition -
+                        window.innerHeight * 0.40
                     );
 
-                const travel =
+
+                /*
+                 * Slow the movement down.
+                 */
+
+                targetTravel =
                     Math.min(
-                        smoothScroll * 0.55,
+                        currentScroll * 0.30,
                         maxTravel
                     );
 
-                /*
-                 * Move logo down through the page
-                 */
 
-                logo.position.y =
-                    -travel * 0.01;
+                currentTravel +=
+                    (targetTravel - currentTravel) * 0.06;
 
-                /*
-                 * Gentle 3D-style motion
-                 */
+
+                /* ==============================
+                   MOVE THE ENTIRE CANVAS
+                ============================== */
+
+                container.style.marginTop =
+                    `${currentTravel}px`;
+
+
+                /* ==============================
+                   3D MOTION
+                ============================== */
 
                 logo.rotation.x =
-                    travel * 0.002;
+                    currentTravel * 0.0012;
 
                 logo.rotation.y =
-                    travel * 0.003;
+                    currentTravel * 0.0020;
 
                 logo.rotation.z =
-                    travel * 0.0008;
+                    currentTravel * 0.0004;
+
 
                 /*
-                 * Subtle floating movement
+                 * Very subtle floating movement
                  */
 
                 logo.position.x =
-                    Math.sin(travel * 0.01) * 0.12;
+                    Math.sin(currentTravel * 0.006) * 0.08;
+
+                logo.position.y =
+                    Math.cos(currentTravel * 0.004) * 0.05;
+
 
                 renderer.render(
                     scene,
                     camera
                 );
+
             }
+
 
             animate();
 
         },
 
+
         undefined,
 
+
         (error) => {
+
             console.error(
-                "Could not load Cali 3D logo:",
+                "Could not load Cali logo:",
                 error
             );
+
         }
     );
 
+
     /* ==============================
-       RESPONSIVE
+       RESIZE
     ============================== */
 
-    window.addEventListener("resize", () => {
+    window.addEventListener(
+        "resize",
+        () => {
 
-        camera.aspect =
-            container.clientWidth /
-            container.clientHeight;
+            camera.aspect =
+                container.clientWidth /
+                container.clientHeight;
 
-        camera.updateProjectionMatrix();
+            camera.updateProjectionMatrix();
 
-        renderer.setSize(
-            container.clientWidth,
-            container.clientHeight
-        );
+            renderer.setSize(
+                container.clientWidth,
+                container.clientHeight
+            );
 
-        renderer.setPixelRatio(
-            Math.min(window.devicePixelRatio, 2)
-        );
+            renderer.setPixelRatio(
+                Math.min(
+                    window.devicePixelRatio,
+                    2
+                )
+            );
 
-    });
+        }
+    );
 
 });
