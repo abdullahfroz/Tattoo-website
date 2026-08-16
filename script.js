@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loader = new THREE.TextureLoader();
 
     loader.load(
-        "images/cali-3d-logo.png",
+        "images/cali3Dlogo.png",
         (texture) => {
 
             texture.colorSpace = THREE.SRGBColorSpace;
