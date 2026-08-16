@@ -5,20 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("three-logo");
     const container = document.getElementById("three-logo-container");
 
-    if (!canvas || !container) return;
+    if (!canvas || !container) {
+        console.log("Three.js container not found");
+        return;
+    }
 
-
-    /* ================================
-       SCENE
-    ================================= */
-
+    // SCENE
     const scene = new THREE.Scene();
 
 
-    /* ================================
-       CAMERA
-    ================================= */
-
+    // CAMERA
     const camera = new THREE.PerspectiveCamera(
         35,
         container.clientWidth / container.clientHeight,
@@ -29,10 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     camera.position.z = 6;
 
 
-    /* ================================
-       RENDERER
-    ================================= */
-
+    // RENDERER
     const renderer = new THREE.WebGLRenderer({
         canvas: canvas,
         antialias: true,
@@ -49,14 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* ================================
-       LOGO TEXTURE
-    ================================= */
-
+    // LOAD CALI LOGO
     const loader = new THREE.TextureLoader();
 
     loader.load(
+
         "images/cali3Dlogo.png",
+
         (texture) => {
 
             texture.colorSpace = THREE.SRGBColorSpace;
@@ -68,79 +60,21 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
 
-            /*
-             * The logo is square,
-             * so we use a square plane.
-             */
+            // Create the logo plane
+            const geometry = new THREE.PlaneGeometry(4, 4);
 
-            const geometry =
-                new THREE.PlaneGeometry(4, 4);
-
-
-            const logo =
-                new THREE.Mesh(
-                    geometry,
-                    material
-                );
-
+            const logo = new THREE.Mesh(
+                geometry,
+                material
+            );
 
             scene.add(logo);
 
 
-            /* ================================
-               SCROLL VARIABLES
-            ================================= */
-
-            let targetScroll = 0;
-            let smoothScroll = 0;
-
-
-            window.addEventListener("scroll", () => {
-
-                targetScroll = window.scrollY;
-
-            });
-
-
-            /* ================================
-               ANIMATION
-            ================================= */
-
+            // ANIMATION LOOP
             function animate() {
 
                 requestAnimationFrame(animate);
-
-
-                /*
-                 * Smooth scrolling value
-                 */
-
-                smoothScroll +=
-                    (targetScroll - smoothScroll) * 0.06;
-
-
-                /*
-                 * 3D rotation
-                 */
-
-                logo.rotation.x =
-                    smoothScroll * 0.0015;
-
-                logo.rotation.y =
-                    smoothScroll * 0.0025;
-
-                logo.rotation.z =
-                    smoothScroll * 0.0005;
-
-
-                /*
-                 * Floating movement
-                 */
-
-                /*
-                 * Subtle depth movement
-                 */
-
 
                 renderer.render(
                     scene,
@@ -149,40 +83,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-
             animate();
 
-        }
-    );
+        },
 
+        undefined,
 
-    /* ================================
-       RESIZE
-    ================================= */
+        (error) => {
 
-    window.addEventListener(
-        "resize",
-        () => {
-
-            camera.aspect =
-                container.clientWidth /
-                container.clientHeight;
-
-            camera.updateProjectionMatrix();
-
-            renderer.setSize(
-                container.clientWidth,
-                container.clientHeight
-            );
-
-            renderer.setPixelRatio(
-                Math.min(
-                    window.devicePixelRatio,
-                    2
-                )
+            console.error(
+                "Could not load Cali logo:",
+                error
             );
 
         }
+
     );
+
+
+    // RESPONSIVE RESIZING
+    window.addEventListener("resize", () => {
+
+        camera.aspect =
+            container.clientWidth /
+            container.clientHeight;
+
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(
+            container.clientWidth,
+            container.clientHeight
+        );
+
+        renderer.setPixelRatio(
+            Math.min(window.devicePixelRatio, 2)
+        );
+
+    });
 
 });
