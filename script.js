@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         100
     );
 
-    camera.position.set(0, 0, 7);
+    camera.position.set(0, 0, 6);
 
 
     /* =========================================
@@ -55,8 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderer.outputColorSpace = THREE.SRGBColorSpace;
 
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-
-    renderer.toneMappingExposure = 1.1;
+    renderer.toneMappingExposure = 1.15;
 
 
     /* =========================================
@@ -73,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const keyLight = new THREE.DirectionalLight(
         0xffffff,
-        3
+        3.5
     );
 
     keyLight.position.set(4, 5, 6);
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const fillLight = new THREE.DirectionalLight(
-        0xc9d4df,
+        0xcbd6e2,
         1.5
     );
 
@@ -93,10 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const rimLight = new THREE.DirectionalLight(
         0xffffff,
-        2
+        2.5
     );
 
-    rimLight.position.set(0, -3, -5);
+    rimLight.position.set(0, -4, -5);
 
     scene.add(rimLight);
 
@@ -111,55 +110,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       LOAD REAL 3D MODEL
+       LOAD CALI 3D MODEL
     ========================================= */
 
     const loader = new GLTFLoader();
 
     loader.load(
 
-        "models/cali-logo-3d.glb",
+        "models/cali-logo-3d-faithful.glb",
 
         (gltf) => {
 
             const model = gltf.scene;
 
-            console.log("Cali 3D model loaded successfully.");
+            console.log("Cali 3D logo loaded successfully.");
 
 
             /* -------------------------------------
-               Center the model
+               CENTER MODEL
             ------------------------------------- */
 
-            const box = new THREE.Box3().setFromObject(model);
+            const box =
+                new THREE.Box3().setFromObject(model);
 
-            const center = box.getCenter(
-                new THREE.Vector3()
-            );
+            const center =
+                box.getCenter(new THREE.Vector3());
 
             model.position.sub(center);
 
 
             /* -------------------------------------
-               Find model size
+               NORMALIZE MODEL SIZE
             ------------------------------------- */
 
-            const size = box.getSize(
-                new THREE.Vector3()
-            );
+            const size =
+                box.getSize(new THREE.Vector3());
 
-            const maxDimension = Math.max(
-                size.x,
-                size.y,
-                size.z
-            );
+            const maxDimension =
+                Math.max(
+                    size.x,
+                    size.y,
+                    size.z
+                );
 
-
-            /* -------------------------------------
-               Normalize size
-            ------------------------------------- */
-
-            const desiredSize = 4;
+            const desiredSize = 3.8;
 
             const scale =
                 desiredSize / maxDimension;
@@ -168,22 +162,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /* -------------------------------------
-               Improve model rendering
+               MATERIAL SETTINGS
             ------------------------------------- */
 
             model.traverse((child) => {
 
-                if (child.isMesh) {
+                if (!child.isMesh) return;
 
-                    child.castShadow = true;
-                    child.receiveShadow = true;
+                child.castShadow = true;
+                child.receiveShadow = true;
 
-                    if (child.material) {
+                if (child.material) {
 
-                        child.material.needsUpdate = true;
+                    child.material.metalness = 0.9;
+                    child.material.roughness = 0.18;
 
-                    }
-
+                    child.material.needsUpdate = true;
                 }
 
             });
@@ -193,32 +187,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /* =====================================
-               INITIAL ORIENTATION
+               INITIAL ANGLE
             ===================================== */
 
             logoGroup.rotation.x =
-                THREE.MathUtils.degToRad(-5);
+                THREE.MathUtils.degToRad(-4);
 
             logoGroup.rotation.y =
-                THREE.MathUtils.degToRad(12);
+                THREE.MathUtils.degToRad(10);
 
             logoGroup.rotation.z = 0;
 
 
             /* =====================================
-               ROTATION
+               MOUSE / 3D INTERACTION
             ===================================== */
 
-            let targetX = logoGroup.rotation.x;
-            let targetY = logoGroup.rotation.y;
+            let targetX =
+                THREE.MathUtils.degToRad(-4);
 
-            let currentX = logoGroup.rotation.x;
-            let currentY = logoGroup.rotation.y;
+            let targetY =
+                THREE.MathUtils.degToRad(10);
 
+            let currentX =
+                targetX;
 
-            /* -------------------------------------
-               Mouse interaction
-            ------------------------------------- */
+            let currentY =
+                targetY;
+
 
             window.addEventListener(
                 "pointermove",
@@ -234,20 +230,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                     targetY =
-                        THREE.MathUtils.degToRad(12)
-                        + mouseX * 0.20;
-
+                        THREE.MathUtils.degToRad(10)
+                        + mouseX * 0.18;
 
                     targetX =
-                        THREE.MathUtils.degToRad(-5)
-                        - mouseY * 0.15;
+                        THREE.MathUtils.degToRad(-4)
+                        - mouseY * 0.12;
 
                 }
             );
 
 
             /* =====================================
-               ANIMATION LOOP
+               ANIMATION
             ===================================== */
 
             function animate() {
@@ -255,13 +250,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 requestAnimationFrame(animate);
 
 
-                /* Smooth tilt */
+                /* Smooth 3D movement */
 
                 currentX +=
-                    (targetX - currentX) * 0.04;
+                    (targetX - currentX) * 0.045;
 
                 currentY +=
-                    (targetY - currentY) * 0.04;
+                    (targetY - currentY) * 0.045;
 
 
                 logoGroup.rotation.x =
@@ -271,9 +266,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     currentY;
 
 
-                /* Very slow continuous rotation */
+                /*
+                 * Very subtle continuous rotation.
+                 * Keep this slow for the premium look.
+                 */
 
-                logoGroup.rotation.z += 0.0005;
+                logoGroup.rotation.z += 0.00035;
 
 
                 renderer.render(
@@ -288,14 +286,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         },
 
-
         undefined,
-
 
         (error) => {
 
             console.error(
-                "Could not load Cali 3D model:",
+                "Failed to load Cali 3D logo:",
                 error
             );
 
@@ -305,7 +301,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       RESPONSIVE
+       RESPONSIVE RESIZE
     ========================================= */
 
     function resize() {
@@ -329,7 +325,10 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         renderer.setPixelRatio(
-            Math.min(window.devicePixelRatio, 2)
+            Math.min(
+                window.devicePixelRatio,
+                2
+            )
         );
 
     }
