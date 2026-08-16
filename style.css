@@ -369,21 +369,6 @@ h1 {
         height: 100svh;
     }
 
-    .hero-logo {
-       position: absolute;
-
-    top: 40%;
-    left: 50%;
-
-    width: min(650px, 65vw);
-
-    z-index: 2;
-
-    pointer-events: none;
-
-    perspective: 800px;
-    }
-
     .hero-content {
         left: 25px;
         bottom: 12vh;
