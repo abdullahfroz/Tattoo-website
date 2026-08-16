@@ -85,7 +85,7 @@ body {
 .hero-logo {
         position: fixed;
 
-    top: 38%;
+    top: 46%;
     left: 50%;
 
     width: min(480px, 48vw);
@@ -172,63 +172,6 @@ h1 {
     letter-spacing: 1px;
 
     color: #bdbdbd;
-}
-
-
-.book-link {
-    display: inline-block;
-
-    margin-top: 45px;
-
-    width: fit-content;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    border-bottom: 1px solid #777;
-
-    padding-bottom: 8px;
-}
-
-
-.book-link span {
-    margin-left: 20px;
-
-    font-size: 16px;
-}
-
-/* ------------------------------
-   SCROLL
------------------------------- */
-
-.scroll {
-    position: absolute;
-
-    bottom: 35px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 10px;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-
-    color: #999;
-
-    z-index: 5;
 }
 
 /* =================================
@@ -357,11 +300,11 @@ h1 {
     /* HERO */
 
     .studio-name {
-    top: 16%;
+     top: 10%;
 
-    font-size: 50px;
+    font-size: 15px;
 
-    letter-spacing: 0.4em;
+    letter-spacing: 0.35em;
 }
 
     .hero {
@@ -381,10 +324,10 @@ h1 {
     }
 
     .hero-logo {
+   top: 43%;
+
     width: 70vw;
     height: 70vw;
-
-    top: 38%;
 }
 
 
@@ -465,10 +408,9 @@ h1 {
 ================================= */
 
 .studio-name {
-    position: absolute;
+     position: absolute;
 
-    top: 18%;
-
+    top: 12%;
     left: 50%;
 
     transform: translateX(-50%);
@@ -477,11 +419,11 @@ h1 {
 
     font-family: 'Manrope', sans-serif;
 
-    font-size: 13px;
+    font-size: clamp(18px, 2vw, 28px);
 
     font-weight: 300;
 
-    letter-spacing: 0.55em;
+    letter-spacing: 0.45em;
 
     text-transform: uppercase;
 
