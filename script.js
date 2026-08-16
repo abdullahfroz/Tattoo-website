@@ -4,17 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const canvas = document.getElementById("three-logo");
     const container = document.getElementById("three-logo-container");
+    const portfolio = document.getElementById("work");
 
-    if (!canvas || !container) {
-        console.log("Three.js container not found");
+    if (!canvas || !container || !portfolio) {
+        console.log("Required element not found");
         return;
     }
 
-    // SCENE
+    /* ==============================
+       THREE.JS SETUP
+    ============================== */
+
     const scene = new THREE.Scene();
 
-
-    // CAMERA
     const camera = new THREE.PerspectiveCamera(
         35,
         container.clientWidth / container.clientHeight,
@@ -24,10 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     camera.position.z = 6;
 
-
-    // RENDERER
     const renderer = new THREE.WebGLRenderer({
-        canvas: canvas,
+        canvas,
         antialias: true,
         alpha: true
     });
@@ -41,14 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
         container.clientHeight
     );
 
-
-    // LOAD CALI LOGO
     const loader = new THREE.TextureLoader();
 
     loader.load(
-
         "images/cali3Dlogo.png",
-
         (texture) => {
 
             texture.colorSpace = THREE.SRGBColorSpace;
@@ -59,9 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 depthWrite: false
             });
 
-
-            // Create the logo plane
-            const geometry = new THREE.PlaneGeometry(4, 4);
+            const geometry =
+                new THREE.PlaneGeometry(4, 4);
 
             const logo = new THREE.Mesh(
                 geometry,
@@ -70,17 +65,84 @@ document.addEventListener("DOMContentLoaded", () => {
 
             scene.add(logo);
 
+            /* ==============================
+               SCROLL
+            ============================== */
 
-            // ANIMATION LOOP
+            let targetScroll = window.scrollY;
+            let smoothScroll = window.scrollY;
+
+            function updateScroll() {
+                targetScroll = window.scrollY;
+            }
+
+            window.addEventListener(
+                "scroll",
+                updateScroll,
+                { passive: true }
+            );
+
+            /* ==============================
+               ANIMATION
+            ============================== */
+
             function animate() {
 
                 requestAnimationFrame(animate);
+
+                smoothScroll +=
+                    (targetScroll - smoothScroll) * 0.06;
+
+                /*
+                 * How far the logo travels.
+                 *
+                 * The logo starts moving immediately
+                 * and stops when portfolio begins.
+                 */
+
+                const maxTravel =
+                    Math.max(
+                        0,
+                        portfolio.offsetTop - window.innerHeight * 0.45
+                    );
+
+                const travel =
+                    Math.min(
+                        smoothScroll * 0.55,
+                        maxTravel
+                    );
+
+                /*
+                 * Move logo down through the page
+                 */
+
+                logo.position.y =
+                    -travel * 0.01;
+
+                /*
+                 * Gentle 3D-style motion
+                 */
+
+                logo.rotation.x =
+                    travel * 0.002;
+
+                logo.rotation.y =
+                    travel * 0.003;
+
+                logo.rotation.z =
+                    travel * 0.0008;
+
+                /*
+                 * Subtle floating movement
+                 */
+
+                logo.position.x =
+                    Math.sin(travel * 0.01) * 0.12;
 
                 renderer.render(
                     scene,
                     camera
                 );
-
             }
 
             animate();
@@ -90,18 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
         undefined,
 
         (error) => {
-
             console.error(
-                "Could not load Cali logo:",
+                "Could not load Cali 3D logo:",
                 error
             );
-
         }
-
     );
 
+    /* ==============================
+       RESPONSIVE
+    ============================== */
 
-    // RESPONSIVE RESIZING
     window.addEventListener("resize", () => {
 
         camera.aspect =
