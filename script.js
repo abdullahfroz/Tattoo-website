@@ -4,19 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const canvas = document.getElementById("three-logo");
     const container = document.getElementById("three-logo-container");
-    const portfolio = document.getElementById("work");
 
-    if (!canvas || !container || !portfolio) {
-        console.log("Required element not found");
+    if (!canvas || !container) {
+        console.error("Three.js canvas or container not found.");
         return;
     }
 
-
-    /* ==============================
-       THREE.JS
-    ============================== */
+    /* ==========================================
+       SCENE
+    ========================================== */
 
     const scene = new THREE.Scene();
+
+
+    /* ==========================================
+       CAMERA
+    ========================================== */
 
     const camera = new THREE.PerspectiveCamera(
         35,
@@ -25,11 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
         100
     );
 
-    camera.position.z = 6;
+    camera.position.set(0, 0, 7);
 
+
+    /* ==========================================
+       RENDERER
+    ========================================== */
 
     const renderer = new THREE.WebGLRenderer({
-        canvas: canvas,
+        canvas,
         antialias: true,
         alpha: true
     });
@@ -43,197 +50,448 @@ document.addEventListener("DOMContentLoaded", () => {
         container.clientHeight
     );
 
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-    /* ==============================
-       LOAD LOGO
-    ============================== */
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
 
-    const loader = new THREE.TextureLoader();
+    renderer.toneMappingExposure = 1.1;
 
-    loader.load(
-        "images/cali3Dlogo.png",
 
-        (texture) => {
+    /* ==========================================
+       LIGHTING
+    ========================================== */
 
-            texture.colorSpace = THREE.SRGBColorSpace;
+    const ambientLight = new THREE.AmbientLight(
+        0xffffff,
+        1.2
+    );
 
-            const material = new THREE.MeshBasicMaterial({
-                map: texture,
-                transparent: true,
-                depthWrite: false
+    scene.add(ambientLight);
+
+
+    const keyLight = new THREE.DirectionalLight(
+        0xffffff,
+        4
+    );
+
+    keyLight.position.set(4, 5, 6);
+
+    scene.add(keyLight);
+
+
+    const fillLight = new THREE.DirectionalLight(
+        0x9aa7b5,
+        2
+    );
+
+    fillLight.position.set(-5, 1, 3);
+
+    scene.add(fillLight);
+
+
+    const rimLight = new THREE.DirectionalLight(
+        0xffffff,
+        3
+    );
+
+    rimLight.position.set(0, -4, -5);
+
+    scene.add(rimLight);
+
+
+    /* ==========================================
+       LOGO GROUP
+    ========================================== */
+
+    const logoGroup = new THREE.Group();
+
+    scene.add(logoGroup);
+
+
+    /* ==========================================
+       CREATE 3D CAGE
+    ========================================== */
+
+    const outerGeometry =
+        new THREE.IcosahedronGeometry(2.15, 1);
+
+    const positionAttribute =
+        outerGeometry.getAttribute("position");
+
+
+    const vertices = [];
+
+    for (
+        let i = 0;
+        i < positionAttribute.count;
+        i++
+    ) {
+
+        const vertex = new THREE.Vector3();
+
+        vertex.fromBufferAttribute(
+            positionAttribute,
+            i
+        );
+
+        vertices.push(vertex);
+
+    }
+
+
+    /* Remove duplicate vertices */
+
+    const uniqueVertices = [];
+
+    vertices.forEach((vertex) => {
+
+        const exists = uniqueVertices.some(
+            (existing) =>
+                existing.distanceTo(vertex) < 0.001
+        );
+
+        if (!exists) {
+            uniqueVertices.push(vertex);
+        }
+
+    });
+
+
+    /* ==========================================
+       CYLINDER BETWEEN TWO POINTS
+    ========================================== */
+
+    function createBeam(
+        start,
+        end,
+        radius = 0.055
+    ) {
+
+        const direction =
+            new THREE.Vector3()
+                .subVectors(end, start);
+
+        const length = direction.length();
+
+        const midpoint =
+            new THREE.Vector3()
+                .addVectors(start, end)
+                .multiplyScalar(0.5);
+
+        const geometry =
+            new THREE.CylinderGeometry(
+                radius,
+                radius,
+                length,
+                8,
+                1,
+                false
+            );
+
+        const material =
+            new THREE.MeshStandardMaterial({
+
+                color: 0xd8dde2,
+
+                metalness: 0.95,
+
+                roughness: 0.2
+
             });
 
-            const geometry =
-                new THREE.PlaneGeometry(4, 4);
 
-            const logo = new THREE.Mesh(
+        const beam =
+            new THREE.Mesh(
                 geometry,
                 material
             );
 
-            scene.add(logo);
+
+        beam.position.copy(midpoint);
 
 
-            /* ==============================
-               SCROLL VARIABLES
-            ============================== */
+        /*
+         * Cylinder normally points vertically.
+         * Rotate it so it points from start → end.
+         */
 
-            let currentScroll = window.scrollY;
-            let targetScroll = window.scrollY;
-
-            let currentTravel = 0;
-            let targetTravel = 0;
-
-
-            window.addEventListener(
-                "scroll",
-                () => {
-
-                    targetScroll = window.scrollY;
-
-                },
-                { passive: true }
-            );
+        beam.quaternion.setFromUnitVectors(
+            new THREE.Vector3(0, 1, 0),
+            direction.normalize()
+        );
 
 
-            /* ==============================
-               ANIMATION
-            ============================== */
+        logoGroup.add(beam);
 
-            function animate() {
-
-                requestAnimationFrame(animate);
+    }
 
 
-                /* Smooth scrolling */
+    /* ==========================================
+       CREATE UNIQUE EDGES
+    ========================================== */
 
-                currentScroll +=
-                    (targetScroll - currentScroll) * 0.06;
+    const edges = [];
 
+    for (
+        let i = 0;
+        i < uniqueVertices.length;
+        i++
+    ) {
 
-                /*
-                 * Distance from the top of the page
-                 * to the portfolio.
-                 */
+        for (
+            let j = i + 1;
+            j < uniqueVertices.length;
+            j++
+        ) {
 
-                const portfolioPosition =
-                    portfolio.offsetTop;
-
-
-                /*
-                 * How far the logo can travel.
-                 */
-
-                const maxTravel =
-                    Math.max(
-                        0,
-                        portfolioPosition -
-                        window.innerHeight * 0.40
-                    );
+            const distance =
+                uniqueVertices[i]
+                    .distanceTo(uniqueVertices[j]);
 
 
-                /*
-                 * Slow the movement down.
-                 */
+            /*
+             * Icosahedron edge length is
+             * approximately this range.
+             */
 
-                targetTravel =
-                    Math.min(
-                        currentScroll * 0.30,
-                        maxTravel
-                    );
+            if (
+                distance > 1.9 &&
+                distance < 2.7
+            ) {
 
-
-                currentTravel +=
-                    (targetTravel - currentTravel) * 0.06;
-
-
-                /* ==============================
-                   MOVE THE ENTIRE CANVAS
-                ============================== */
-
-                container.style.marginTop =
-                    `${currentTravel}px`;
-
-
-                /* ==============================
-                   3D MOTION
-                ============================== */
-
-                logo.rotation.x =
-                    currentTravel * 0.0012;
-
-                logo.rotation.y =
-                    currentTravel * 0.0020;
-
-                logo.rotation.z =
-                    currentTravel * 0.0004;
-
-
-                /*
-                 * Very subtle floating movement
-                 */
-
-                logo.position.x =
-                    Math.sin(currentTravel * 0.006) * 0.08;
-
-                logo.position.y =
-                    Math.cos(currentTravel * 0.004) * 0.05;
-
-
-                renderer.render(
-                    scene,
-                    camera
-                );
+                edges.push([
+                    uniqueVertices[i],
+                    uniqueVertices[j]
+                ]);
 
             }
 
+        }
 
-            animate();
-
-        },
-
-
-        undefined,
+    }
 
 
-        (error) => {
+    edges.forEach(([start, end]) => {
 
-            console.error(
-                "Could not load Cali logo:",
-                error
-            );
+        createBeam(
+            start,
+            end,
+            0.065
+        );
+
+    });
+
+
+    /* ==========================================
+       INNER STRUCTURE
+    ========================================== */
+
+    const innerGeometry =
+        new THREE.IcosahedronGeometry(1.25, 0);
+
+    const innerEdges =
+        new THREE.EdgesGeometry(
+            innerGeometry
+        );
+
+    const innerMaterial =
+        new THREE.LineBasicMaterial({
+            color: 0xaeb5bc,
+            transparent: true,
+            opacity: 0.9
+        });
+
+    const innerWire =
+        new THREE.LineSegments(
+            innerEdges,
+            innerMaterial
+        );
+
+    innerWire.rotation.y =
+        Math.PI / 5;
+
+    innerWire.rotation.x =
+        Math.PI / 6;
+
+    logoGroup.add(innerWire);
+
+
+    /* ==========================================
+       CENTRAL CORE
+    ========================================== */
+
+    const coreGeometry =
+        new THREE.IcosahedronGeometry(
+            0.35,
+            1
+        );
+
+    const coreMaterial =
+        new THREE.MeshStandardMaterial({
+
+            color: 0xf0f2f4,
+
+            metalness: 1,
+
+            roughness: 0.12
+
+        });
+
+    const core =
+        new THREE.Mesh(
+            coreGeometry,
+            coreMaterial
+        );
+
+    logoGroup.add(core);
+
+
+    /* ==========================================
+       INITIAL ORIENTATION
+    ========================================== */
+
+    logoGroup.rotation.x =
+        THREE.MathUtils.degToRad(-8);
+
+    logoGroup.rotation.y =
+        THREE.MathUtils.degToRad(18);
+
+    logoGroup.rotation.z =
+        THREE.MathUtils.degToRad(4);
+
+
+    /* ==========================================
+       SMOOTH ROTATION
+    ========================================== */
+
+    let targetRotationX =
+        logoGroup.rotation.x;
+
+    let targetRotationY =
+        logoGroup.rotation.y;
+
+    let currentRotationX =
+        logoGroup.rotation.x;
+
+    let currentRotationY =
+        logoGroup.rotation.y;
+
+
+    /*
+     * Mouse movement gives the object
+     * a subtle 3D response.
+     */
+
+    window.addEventListener(
+        "pointermove",
+        (event) => {
+
+            const x =
+                (event.clientX /
+                    window.innerWidth) * 2 - 1;
+
+            const y =
+                (event.clientY /
+                    window.innerHeight) * 2 - 1;
+
+
+            targetRotationY =
+                x * 0.25 + 0.25;
+
+            targetRotationX =
+                -y * 0.18 - 0.14;
 
         }
     );
 
 
-    /* ==============================
-       RESIZE
-    ============================== */
+    /* ==========================================
+       ANIMATION
+    ========================================== */
+
+    function animate() {
+
+        requestAnimationFrame(animate);
+
+
+        currentRotationX +=
+            (
+                targetRotationX -
+                currentRotationX
+            ) * 0.035;
+
+
+        currentRotationY +=
+            (
+                targetRotationY -
+                currentRotationY
+            ) * 0.035;
+
+
+        logoGroup.rotation.x =
+            currentRotationX;
+
+        logoGroup.rotation.y =
+            currentRotationY;
+
+
+        /*
+         * Very slow autonomous movement.
+         * This can later be tied to scrolling.
+         */
+
+        logoGroup.rotation.z +=
+            0.0008;
+
+
+        renderer.render(
+            scene,
+            camera
+        );
+
+    }
+
+
+    animate();
+
+
+    /* ==========================================
+       RESPONSIVE
+    ========================================== */
+
+    function resize() {
+
+        const width =
+            container.clientWidth;
+
+        const height =
+            container.clientHeight;
+
+
+        camera.aspect =
+            width / height;
+
+        camera.updateProjectionMatrix();
+
+
+        renderer.setSize(
+            width,
+            height
+        );
+
+        renderer.setPixelRatio(
+            Math.min(
+                window.devicePixelRatio,
+                2
+            )
+        );
+
+    }
+
 
     window.addEventListener(
         "resize",
-        () => {
-
-            camera.aspect =
-                container.clientWidth /
-                container.clientHeight;
-
-            camera.updateProjectionMatrix();
-
-            renderer.setSize(
-                container.clientWidth,
-                container.clientHeight
-            );
-
-            renderer.setPixelRatio(
-                Math.min(
-                    window.devicePixelRatio,
-                    2
-                )
-            );
-
-        }
+        resize
     );
 
 });
