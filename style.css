@@ -83,12 +83,13 @@ body {
 }
 
 .hero-logo {
-      position: absolute;
+        position: absolute;
 
     top: 40%;
     left: 50%;
 
     width: min(650px, 65vw);
+    height: min(650px, 65vw);
 
     transform: translate(-50%, -50%);
 
@@ -96,21 +97,16 @@ body {
 
     pointer-events: none;
 
-    perspective: 800px;
+    perspective: 1000px;
 }
 
-
-.hero-logo img {
-     width: 100%;
+#three-logo {
+    width: 100%;
+    height: 100%;
 
     display: block;
-
-    transform-origin: center center;
-
-    transform-style: preserve-3d;
-
-    will-change: transform;
 }
+
 /* ------------------------------
    LEFT SIDE
 ------------------------------ */

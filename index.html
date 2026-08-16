@@ -37,13 +37,11 @@
     
     <div class="hero-logo">
 
-        <img
-            src="images/calilogonew.png"
-            alt="Cali logo"
-            id="rotating-logo"
-        >
+       <div class="hero-logo" id="three-logo-container">
 
-    </div>
+    <canvas id="three-logo"></canvas>
+
+</div>
 
 
     <div class="hero-content">
@@ -138,6 +136,14 @@
 </section>
 
 <script src="script.js"></script>
+
+<script type="importmap">
+{
+    "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.179.0/build/three.module.js"
+    }
+}
+</script>
 
 </body>
 
