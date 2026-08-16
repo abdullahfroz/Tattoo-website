@@ -1,13 +1,27 @@
 import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const canvas = document.getElementById("three-logo");
     const container = document.getElementById("three-logo-container");
 
-    if (!canvas || !container) return;
+    if (!canvas || !container) {
+        console.error("Three.js container not found.");
+        return;
+    }
+
+
+    /* =========================================
+       SCENE
+    ========================================= */
 
     const scene = new THREE.Scene();
+
+
+    /* =========================================
+       CAMERA
+    ========================================= */
 
     const camera = new THREE.PerspectiveCamera(
         35,
@@ -16,10 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
         100
     );
 
-    camera.position.z = 6;
+    camera.position.set(0, 0, 7);
+
+
+    /* =========================================
+       RENDERER
+    ========================================= */
 
     const renderer = new THREE.WebGLRenderer({
-        canvas,
+        canvas: canvas,
         antialias: true,
         alpha: true
     });
@@ -35,79 +54,290 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-    const loader = new THREE.TextureLoader();
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+    renderer.toneMappingExposure = 1.1;
+
+
+    /* =========================================
+       LIGHTING
+    ========================================= */
+
+    const ambientLight = new THREE.AmbientLight(
+        0xffffff,
+        1.5
+    );
+
+    scene.add(ambientLight);
+
+
+    const keyLight = new THREE.DirectionalLight(
+        0xffffff,
+        3
+    );
+
+    keyLight.position.set(4, 5, 6);
+
+    scene.add(keyLight);
+
+
+    const fillLight = new THREE.DirectionalLight(
+        0xc9d4df,
+        1.5
+    );
+
+    fillLight.position.set(-4, 2, 4);
+
+    scene.add(fillLight);
+
+
+    const rimLight = new THREE.DirectionalLight(
+        0xffffff,
+        2
+    );
+
+    rimLight.position.set(0, -3, -5);
+
+    scene.add(rimLight);
+
+
+    /* =========================================
+       MODEL GROUP
+    ========================================= */
+
+    const logoGroup = new THREE.Group();
+
+    scene.add(logoGroup);
+
+
+    /* =========================================
+       LOAD REAL 3D MODEL
+    ========================================= */
+
+    const loader = new GLTFLoader();
 
     loader.load(
-        "images/cali3Dlogo.png",
-        (texture) => {
 
-            texture.colorSpace = THREE.SRGBColorSpace;
+        "models/cali-logo-3d.glb",
 
-            const material = new THREE.MeshBasicMaterial({
-                map: texture,
-                transparent: true,
-                depthWrite: false
-            });
+        (gltf) => {
 
-            const geometry =
-                new THREE.PlaneGeometry(4, 4);
+            const model = gltf.scene;
 
-            const logo = new THREE.Mesh(
-                geometry,
-                material
+            console.log("Cali 3D model loaded successfully.");
+
+
+            /* -------------------------------------
+               Center the model
+            ------------------------------------- */
+
+            const box = new THREE.Box3().setFromObject(model);
+
+            const center = box.getCenter(
+                new THREE.Vector3()
             );
 
-            scene.add(logo);
+            model.position.sub(center);
 
-            let targetX = 0;
-            let targetY = 0;
 
-            let currentX = 0;
-            let currentY = 0;
+            /* -------------------------------------
+               Find model size
+            ------------------------------------- */
 
-            window.addEventListener("pointermove", (event) => {
+            const size = box.getSize(
+                new THREE.Vector3()
+            );
 
-                targetY =
-                    ((event.clientX / window.innerWidth) - 0.5) * 0.35;
+            const maxDimension = Math.max(
+                size.x,
+                size.y,
+                size.z
+            );
 
-                targetX =
-                    ((event.clientY / window.innerHeight) - 0.5) * -0.25;
+
+            /* -------------------------------------
+               Normalize size
+            ------------------------------------- */
+
+            const desiredSize = 4;
+
+            const scale =
+                desiredSize / maxDimension;
+
+            model.scale.setScalar(scale);
+
+
+            /* -------------------------------------
+               Improve model rendering
+            ------------------------------------- */
+
+            model.traverse((child) => {
+
+                if (child.isMesh) {
+
+                    child.castShadow = true;
+                    child.receiveShadow = true;
+
+                    if (child.material) {
+
+                        child.material.needsUpdate = true;
+
+                    }
+
+                }
 
             });
+
+
+            logoGroup.add(model);
+
+
+            /* =====================================
+               INITIAL ORIENTATION
+            ===================================== */
+
+            logoGroup.rotation.x =
+                THREE.MathUtils.degToRad(-5);
+
+            logoGroup.rotation.y =
+                THREE.MathUtils.degToRad(12);
+
+            logoGroup.rotation.z = 0;
+
+
+            /* =====================================
+               ROTATION
+            ===================================== */
+
+            let targetX = logoGroup.rotation.x;
+            let targetY = logoGroup.rotation.y;
+
+            let currentX = logoGroup.rotation.x;
+            let currentY = logoGroup.rotation.y;
+
+
+            /* -------------------------------------
+               Mouse interaction
+            ------------------------------------- */
+
+            window.addEventListener(
+                "pointermove",
+                (event) => {
+
+                    const mouseX =
+                        (event.clientX /
+                            window.innerWidth) * 2 - 1;
+
+                    const mouseY =
+                        (event.clientY /
+                            window.innerHeight) * 2 - 1;
+
+
+                    targetY =
+                        THREE.MathUtils.degToRad(12)
+                        + mouseX * 0.20;
+
+
+                    targetX =
+                        THREE.MathUtils.degToRad(-5)
+                        - mouseY * 0.15;
+
+                }
+            );
+
+
+            /* =====================================
+               ANIMATION LOOP
+            ===================================== */
 
             function animate() {
 
                 requestAnimationFrame(animate);
 
+
+                /* Smooth tilt */
+
                 currentX +=
-                    (targetX - currentX) * 0.05;
+                    (targetX - currentX) * 0.04;
 
                 currentY +=
-                    (targetY - currentY) * 0.05;
+                    (targetY - currentY) * 0.04;
 
-                logo.rotation.x = currentX;
-                logo.rotation.y = currentY;
 
-                renderer.render(scene, camera);
+                logoGroup.rotation.x =
+                    currentX;
+
+                logoGroup.rotation.y =
+                    currentY;
+
+
+                /* Very slow continuous rotation */
+
+                logoGroup.rotation.z += 0.0005;
+
+
+                renderer.render(
+                    scene,
+                    camera
+                );
+
             }
 
+
             animate();
+
+        },
+
+
+        undefined,
+
+
+        (error) => {
+
+            console.error(
+                "Could not load Cali 3D model:",
+                error
+            );
+
         }
+
     );
 
-    window.addEventListener("resize", () => {
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    function resize() {
+
+        const width =
+            container.clientWidth;
+
+        const height =
+            container.clientHeight;
+
 
         camera.aspect =
-            container.clientWidth /
-            container.clientHeight;
+            width / height;
 
         camera.updateProjectionMatrix();
 
+
         renderer.setSize(
-            container.clientWidth,
-            container.clientHeight
+            width,
+            height
         );
 
-    });
+        renderer.setPixelRatio(
+            Math.min(window.devicePixelRatio, 2)
+        );
+
+    }
+
+
+    window.addEventListener(
+        "resize",
+        resize
+    );
 
 });
