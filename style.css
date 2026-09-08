@@ -1013,3 +1013,31 @@ section {
         width: 78vw;
     }
 }
+
+/* FEATURED PORTFOLIO POSITION */
+
+.work-placeholder {
+    display: block;
+    position: relative;
+    min-height: 620px;
+}
+
+.work-card:first-child {
+    width: 220px;
+    margin-left: 58%;
+}
+
+.work-card:first-child .work-image {
+    width: 220px;
+    aspect-ratio: 9 / 16;
+}
+
+.work-card:first-child .work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-card-offset {
+    display: none;
+}
