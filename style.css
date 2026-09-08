@@ -945,16 +945,32 @@ section {
 
 .logo-video-section {
     width: 100%;
-    margin-top: 140px;
+    margin-top: 100px;
     padding-bottom: 100px;
 }
 
-.logo-video-label {
+.logo-video {
+    width: 280px;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #050505;
+}
+
+.logo-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.logo-video-meta {
+    width: 280px;
+    margin: 12px auto 0;
+
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid var(--line);
-    padding-top: 12px;
-    margin-bottom: 30px;
 
     font-size: 10px;
     letter-spacing: 0.14em;
