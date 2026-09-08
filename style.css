@@ -578,20 +578,6 @@ section {
     color: var(--muted);
 }
 
-.hero-title {
-    position: relative;
-    z-index: 2;
-    margin-top: 40px;
-}
-
-.hero-title h1 {
-    margin: 0;
-    font-size: clamp(80px, 14vw, 220px);
-    line-height: 0.82;
-    font-weight: 400;
-    letter-spacing: -0.06em;
-}
-
 .hero-image {
     width: min(58vw, 760px);
     margin: -4vw auto 0;
