@@ -579,7 +579,7 @@ section {
 }
 
 .hero-image {
-    width: min(58vw, 760px);
+    width: min(48vw, 620px);
     margin: -4vw auto 0;
     position: relative;
     z-index: 1;
