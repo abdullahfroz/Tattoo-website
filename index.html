@@ -13,116 +13,204 @@
 
 </head>
 
+    <body>
 
-<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="#" class="brand">CALI</a>
 
-    <!-- Navigation -->
-
-    <header class="navbar">
-
-
+        <nav class="main-nav">
+            <a href="#work">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#studio">STUDIO</a>
+            <a href="#booking">BOOK</a>
+        </nav>
     </header>
+
 
     <main>
 
-        <!-- HERO -->
+    <!-- HERO -->
+    <section class="hero">
 
-    <!-- Rotating logo -->
+        <div class="hero-top">
+            <p>CALI STUDIOS</p>
+            <p>BERLIN, GERMANY</p>
+        </div>
 
-  <section class="hero">
+        <div class="hero-title">
+            <h1>TATTOO<br>ARTIST</h1>
+        </div>
 
-    <div class="studio-name">
-        CALI TATTOOS
-    </div>
+        <div class="hero-image">
+            <img src="images/Calihero.jpeg" alt="Cali tattoo artist">
+        </div>
 
-    <div class="hero-logo" id="three-logo-container">
-        <canvas id="three-logo"></canvas>
-    </div>
+        <div class="hero-bottom">
+            <p>BLACKWORK · FINE LINE · CUSTOM</p>
 
-</section>
+            <a href="#work" class="scroll-link">
+                EXPLORE WORK
+                <span>↓</span>
+            </a>
+        </div>
 
-
-<!-- SECOND SECTION -->
-
-<section id="artist" class="artist-section">
-    
-    <div class="artist-image">
-
-        <img
-            src="images/Calihero.jpeg"
-            alt="Cali tattoo artist"
-        >
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- PORTFOLIO -->
+    <!-- SELECTED WORK -->
+    <section id="work" class="work-section">
 
-<section id="work" class="portfolio">
+        <div class="section-header">
+            <span>01</span>
+            <span>SELECTED WORK</span>
+        </div>
 
-    <div class="portfolio-heading">
+        <div class="work-heading">
+            <h2>
+                TATTOOS
+                <br>
+                WITH INTENTION.
+            </h2>
 
-    
+            <p>
+                A selection of work created at Cali Studios.
+            </p>
+        </div>
+
+        <div class="work-placeholder">
+
+            <div class="work-card">
+                <div class="work-number">01</div>
+                <div class="work-image">
+                    <img src="images/calilogo new.png" alt="Cali artwork">
+                </div>
+                <p>CALI STUDIOS</p>
+            </div>
+
+            <div class="work-card work-card-offset">
+                <div class="work-number">02</div>
+                <div class="work-image">
+                    <img src="images/cali3Dlogo.png" alt="Cali 3D logo">
+                </div>
+                <p>IDENTITY</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+
+        <div class="section-header">
+            <span>02</span>
+            <span>ABOUT</span>
+        </div>
+
+        <div class="about-layout">
+
+            <h2>
+                MORE THAN
+                <br>
+                INK.
+            </h2>
+
+            <div class="about-copy">
+                <p>
+                    Tattooing is a form of art, identity and
+                    personal expression.
+                </p>
+
+                <p>
+                    Every piece is created with intention,
+                    balancing technical precision with
+                    an individual visual language.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="about-image">
+            <img src="images/childhood.jpeg" alt="Cali childhood">
+        </div>
+
+    </section>
+
+
+    <!-- STUDIO -->
+    <section id="studio" class="studio-section">
+
+        <div class="section-header">
+            <span>03</span>
+            <span>STUDIO</span>
+        </div>
+
+        <div class="studio-heading">
+            <h2>
+                A SPACE
+                <br>
+                TO CREATE.
+            </h2>
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING -->
+    <section id="booking" class="booking-section">
+
+        <p class="eyebrow">BOOKING</p>
 
         <h2>
-            portfolio
+            LET'S MAKE
+            <br>
+            SOMETHING
+            <br>
+            PERMANENT.
         </h2>
 
-    </div>
+        <a href="#" class="booking-button">
+            BOOK A SESSION <span>↗</span>
+        </a>
 
-</section>
-
-
-<!-- CHILDHOOD -->
-
-<section id="about" class="childhood-section">
-
-    <div class="childhood-content">
-
-        <p class="section-label">
-            MORE THAN INK
-        </p>
-
-        <h2>
-            IT STARTED
-            LONG BEFORE
-            THE INK.
-        </h2>
-
-        <p>
-            Art has always been part of the journey.
-            Before the machines, the studio and the tattoos,
-            there was simply a kid who loved to create.
-        </p>
-
-    </div>
+    </section>
 
 
-    <div class="childhood-image">
+    <!-- FOOTER -->
+    <footer class="site-footer">
 
-        <img
-            src="images/childhood.jpeg"
-            alt="Cali as a child"
-        >
+        <div class="footer-logo">CALI</div>
 
-    </div>
+        <div class="footer-links">
+            <a href="#work">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#studio">STUDIO</a>
+            <a href="#booking">BOOK</a>
+        </div>
 
-</section>
+        <div class="footer-bottom">
+            <span>BERLIN</span>
+            <span>© 2026 CALI STUDIOS</span>
+            <span>INSTAGRAM ↗</span>
+        </div>
 
-<!-- Three.js -->
+    </footer>
 
-<script type="importmap">
-{
-    "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.179.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.179.0/examples/jsm/"
+</main>
+
+    <!-- Three.js -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.179.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.179.0/examples/jsm/"
+        }
     }
-}
-</script>
+    </script>
 
-<script type="module" src="script.js"></script>
+    <script type="module" src="script.js"></script>
 
 </body>
 

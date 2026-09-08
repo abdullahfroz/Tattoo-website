@@ -475,3 +475,428 @@ h1 {
 
     max-width: 350px;
 }
+
+/* =========================================
+   CALI EDITORIAL LAYOUT
+   ========================================= */
+
+:root {
+    --bg: #0b0b0b;
+    --text: #f1f1ed;
+    --muted: #8a8a84;
+    --line: rgba(241, 241, 237, 0.22);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* HEADER
+----------------------------------------- */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    mix-blend-mode: difference;
+}
+
+.brand {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.main-nav {
+    display: flex;
+    gap: 28px;
+}
+
+.main-nav a {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+}
+
+
+/* GENERAL
+----------------------------------------- */
+
+main {
+    width: 100%;
+}
+
+section {
+    padding: 120px 32px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+}
+
+
+/* HERO
+----------------------------------------- */
+
+.hero {
+    min-height: 100vh;
+    padding: 110px 32px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-top,
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 0.13em;
+    color: var(--muted);
+}
+
+.hero-title {
+    position: relative;
+    z-index: 2;
+    margin-top: 40px;
+}
+
+.hero-title h1 {
+    margin: 0;
+    font-size: clamp(80px, 14vw, 220px);
+    line-height: 0.82;
+    font-weight: 400;
+    letter-spacing: -0.06em;
+}
+
+.hero-image {
+    width: min(58vw, 760px);
+    margin: -4vw auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    display: block;
+    filter: grayscale(100%);
+}
+
+.hero-bottom {
+    align-items: flex-end;
+}
+
+.scroll-link {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.scroll-link span {
+    font-size: 18px;
+}
+
+
+/* WORK
+----------------------------------------- */
+
+.work-section {
+    padding-top: 180px;
+}
+
+.work-heading {
+    max-width: 900px;
+    margin: 120px 0;
+}
+
+.work-heading h2 {
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: 0.87;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    margin: 0 0 35px;
+}
+
+.work-heading p {
+    max-width: 300px;
+    color: var(--muted);
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+.work-placeholder {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 8vw;
+    align-items: start;
+}
+
+.work-card {
+    position: relative;
+}
+
+.work-card-offset {
+    margin-top: 160px;
+}
+
+.work-number {
+    font-size: 10px;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.work-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #151515;
+    overflow: hidden;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.work-card p {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+
+/* ABOUT
+----------------------------------------- */
+
+.about-section {
+    padding-top: 220px;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 8vw;
+    margin-top: 120px;
+    align-items: end;
+}
+
+.about-layout h2 {
+    margin: 0;
+    font-size: clamp(70px, 10vw, 150px);
+    line-height: 0.83;
+    font-weight: 400;
+    letter-spacing: -0.06em;
+}
+
+.about-copy {
+    max-width: 360px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+.about-copy p + p {
+    margin-top: 25px;
+}
+
+.about-image {
+    width: 55%;
+    margin: 140px auto 0 12%;
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+    filter: grayscale(100%);
+}
+
+
+/* STUDIO
+----------------------------------------- */
+
+.studio-section {
+    min-height: 80vh;
+}
+
+.studio-heading {
+    margin-top: 140px;
+}
+
+.studio-heading h2 {
+    font-size: clamp(70px, 11vw, 160px);
+    line-height: 0.84;
+    font-weight: 400;
+    letter-spacing: -0.06em;
+    margin: 0;
+}
+
+
+/* BOOKING
+----------------------------------------- */
+
+.booking-section {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.eyebrow {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    margin-bottom: 40px;
+}
+
+.booking-section h2 {
+    font-size: clamp(70px, 10vw, 150px);
+    line-height: 0.83;
+    font-weight: 400;
+    letter-spacing: -0.06em;
+    margin: 0 0 70px;
+}
+
+.booking-button {
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 8px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+}
+
+.booking-button span {
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+
+/* FOOTER
+----------------------------------------- */
+
+.site-footer {
+    border-top: 1px solid var(--line);
+    padding: 30px 32px 24px;
+}
+
+.footer-logo {
+    font-size: clamp(100px, 19vw, 280px);
+    line-height: 0.8;
+    letter-spacing: -0.08em;
+    font-weight: 400;
+    margin-bottom: 80px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    margin-bottom: 60px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+}
+
+
+/* MOBILE
+----------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 20px;
+    }
+
+    .main-nav {
+        gap: 12px;
+    }
+
+    .main-nav a:nth-child(1),
+    .main-nav a:nth-child(2) {
+        display: none;
+    }
+
+    section {
+        padding: 90px 20px;
+    }
+
+    .hero {
+        padding: 90px 20px 25px;
+    }
+
+    .hero-title h1 {
+        font-size: 23vw;
+    }
+
+    .hero-image {
+        width: 85vw;
+    }
+
+    .hero-top,
+    .hero-bottom {
+        font-size: 8px;
+    }
+
+    .work-placeholder {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .work-card-offset {
+        margin-top: 0;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-top: 80px;
+    }
+
+    .about-image {
+        width: 85%;
+        margin: 90px 0 0 auto;
+    }
+
+    .studio-heading {
+        margin-top: 90px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
