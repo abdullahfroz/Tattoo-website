@@ -340,3 +340,22 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+/* =========================================
+   HEADER SHRINK ON SCROLL
+   ========================================= */
+
+const siteHeader = document.querySelector(".site-header");
+const brand = document.querySelector(".brand");
+
+function updateHeader() {
+    if (window.scrollY > 80) {
+        siteHeader.classList.add("scrolled");
+    } else {
+        siteHeader.classList.remove("scrolled");
+    }
+}
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+
+updateHeader();
