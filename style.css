@@ -961,8 +961,9 @@ section {
 }
 
 .logo-video {
-    width: 100%;
-    height: min(70vh, 750px);
+   width: min(32vw, 430px);
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
     overflow: hidden;
     background: #050505;
 }
@@ -972,4 +973,16 @@ section {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.logo-video-section {
+    width: 100%;
+    margin-top: 140px;
+    padding-bottom: 100px;
+}
+
+@media (max-width: 700px) {
+    .logo-video {
+        width: min(72vw, 360px);
+    }
 }
