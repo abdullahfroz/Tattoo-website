@@ -945,7 +945,7 @@ section {
 
 .featured-video {
     width: 100%;
-    padding: 120px 32px;
+    padding: 70px 32px 100px;
 }
 
 .featured-video-header {
@@ -967,11 +967,9 @@ section {
 
 /* The actual 9:16 frame */
 .featured-video-frame {
-    width: 300px;
-    height: 533px;
-
+      width: 220px;
+    height: 391px;
     margin: 0 auto;
-
     overflow: hidden;
     background: #050505;
 }
@@ -987,15 +985,13 @@ section {
 
 /* Small caption underneath */
 .featured-video-info {
-    width: 300px;
-
+   width: 220px;
     margin: 12px auto 0;
 
     display: flex;
     justify-content: space-between;
 
     font-size: 10px;
-    line-height: 1;
     letter-spacing: 0.14em;
     color: var(--muted);
 }
