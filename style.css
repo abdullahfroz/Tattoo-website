@@ -665,14 +665,6 @@ section {
     padding: 30px 32px 24px;
 }
 
-.footer-logo {
-    font-size: clamp(100px, 19vw, 280px);
-    line-height: 0.8;
-    letter-spacing: -0.08em;
-    font-weight: 400;
-    margin-bottom: 80px;
-}
-
 .footer-links {
     display: flex;
     gap: 25px;
@@ -1106,4 +1098,27 @@ section {
         margin-left: auto;
         margin-right: 10%;
     }
+}
+
+/* =========================================
+   CLEAN BOOKING
+   ========================================= */
+
+.booking-section {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.booking-section .eyebrow {
+    margin-bottom: 25px;
+}
+
+.booking-button {
+    font-size: 12px;
+    letter-spacing: 0.12em;
 }
