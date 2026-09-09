@@ -318,14 +318,6 @@ h1 {
     }
 
 
-    /* PORTFOLIO */
-
-    .portfolio {
-        min-height: 50vh;
-        padding: 100px 25px;
-    }
-
-
     /* CHILDHOOD SECTION */
 
     .childhood-section {
@@ -603,54 +595,6 @@ section {
 
 .scroll-link span {
     font-size: 18px;
-}
-
-
-/* WORK
------------------------------------------ */
-
-.work-section {
-    padding-top: 180px;
-}
-
-.work-heading {
-    max-width: 900px;
-    margin: 120px 0;
-}
-
-.work-heading h2 {
-    font-size: clamp(60px, 9vw, 130px);
-    line-height: 0.87;
-    font-weight: 400;
-    letter-spacing: -0.05em;
-    margin: 0 0 35px;
-}
-
-.work-heading p {
-    max-width: 300px;
-    color: var(--muted);
-    line-height: 1.5;
-    font-size: 13px;
-}
-
-.work-number {
-    font-size: 10px;
-    color: var(--muted);
-    margin-bottom: 15px;
-}
-
-.work-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: #151515;
-    overflow: hidden;
-}
-
-.work-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
 }
 
 
@@ -978,36 +922,142 @@ section {
     }
 }
 
-.work-placeholder {
-    width: 100%;
-    margin-top: 120px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8vw;
-    align-items: start;
-}
-
-.work-card {
-    width: 100%;
-    max-width: 430px;
-}
-
 .work-card:nth-child(2) {
     margin-top: 220px;
     margin-left: auto;
 }
+/* =========================================
+   CALI WORK SECTION
+   ========================================= */
 
-.work-image {
+.work-section {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    background: #111;
+    padding: 100px 40px 120px;
 }
 
-.work-image img {
+.work-label {
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+}
+
+
+/* IMAGE AREA */
+
+.tattoo-showcase {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    height: 620px;
+    margin: 40px auto 0;
+}
+
+.tattoo-image {
+    position: absolute;
+
+    width: 210px;
+    height: 265px;
+
+    overflow: hidden;
+}
+
+.tattoo-image img {
     width: 100%;
     height: 100%;
+
     display: block;
     object-fit: cover;
+}
+
+
+/* ARTISTIC BALANCE */
+
+.tattoo-image-left {
+    left: 20%;
+    top: 20px;
+}
+
+.tattoo-image-right {
+    right: 18%;
+    top: 170px;
+}
+
+
+/* MOVING TEXT */
+
+.work-marquee {
+    width: 100%;
+    overflow: hidden;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    margin-top: 20px;
+}
+
+.work-marquee-track {
+    display: flex;
+    width: max-content;
+
+    animation: workMarquee 28s linear infinite;
+}
+
+.work-marquee-track span {
+    white-space: nowrap;
+
+    padding: 20px 60px 20px 0;
+
+    font-size: clamp(24px, 3.5vw, 52px);
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+}
+
+@keyframes workMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .work-section {
+        padding: 80px 20px 100px;
+    }
+
+    .tattoo-showcase {
+        height: 520px;
+    }
+
+    .tattoo-image {
+        width: 155px;
+        height: 200px;
+    }
+
+    .tattoo-image-left {
+        left: 8%;
+        top: 20px;
+    }
+
+    .tattoo-image-right {
+        right: 8%;
+        top: 180px;
+    }
+
+    .work-marquee-track span {
+        font-size: 26px;
+    }
 }
