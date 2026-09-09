@@ -620,14 +620,14 @@ section {
 }
 
 .studio-heading {
-    margin-top: 140px;
+    margin-top: 70px;
 }
 
 .studio-heading h2 {
-    font-size: clamp(70px, 11vw, 160px);
-    line-height: 0.84;
+     font-size: clamp(42px, 5vw, 72px);
+    line-height: 0.9;
     font-weight: 400;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.045em;
     margin: 0;
 }
 
