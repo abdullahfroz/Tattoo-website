@@ -598,53 +598,6 @@ section {
     font-size: 18px;
 }
 
-
-/* ABOUT
------------------------------------------ */
-
-.about-section {
-    padding-top: 220px;
-}
-
-.about-layout {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 8vw;
-    margin-top: 120px;
-    align-items: end;
-}
-
-.about-layout h2 {
-    margin: 0;
-    font-size: clamp(70px, 10vw, 150px);
-    line-height: 0.83;
-    font-weight: 400;
-    letter-spacing: -0.06em;
-}
-
-.about-copy {
-    max-width: 360px;
-    font-size: 15px;
-    line-height: 1.55;
-    color: var(--muted);
-}
-
-.about-copy p + p {
-    margin-top: 25px;
-}
-
-.about-image {
-    width: 55%;
-    margin: 140px auto 0 12%;
-}
-
-.about-image img {
-    width: 100%;
-    display: block;
-    filter: grayscale(100%);
-}
-
-
 /* STUDIO
 ----------------------------------------- */
 
@@ -775,18 +728,6 @@ section {
     .hero-bottom {
         font-size: 8px;
     }
-
-    .about-layout {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        margin-top: 80px;
-    }
-
-    .about-image {
-        width: 85%;
-        margin: 90px 0 0 auto;
-    }
-
     .studio-heading {
         margin-top: 90px;
     }
@@ -1060,5 +1001,109 @@ section {
 
     .work-marquee-track span {
         font-size: 26px;
+    }
+}
+
+/* =========================================
+   ABOUT
+   ========================================= */
+
+.about-section {
+    width: 100%;
+    padding: 120px 40px 140px;
+}
+
+.about-label {
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 80px;
+
+    margin-top: 100px;
+    align-items: end;
+}
+
+.about-eyebrow {
+    margin: 0 0 25px;
+
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+}
+
+.about-heading h2 {
+    margin: 0;
+
+    font-size: clamp(55px, 8vw, 120px);
+    line-height: 0.86;
+    font-weight: 400;
+    letter-spacing: -0.055em;
+}
+
+.about-copy {
+    max-width: 300px;
+
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+.about-copy p + p {
+    margin-top: 25px;
+}
+
+
+/* CHILDHOOD IMAGE */
+
+.about-image {
+    width: 220px;
+    margin-top: 100px;
+    margin-left: 18%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    filter: grayscale(100%);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .about-section {
+        padding: 90px 20px 100px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin-top: 75px;
+    }
+
+    .about-copy {
+        max-width: 280px;
+    }
+
+    .about-image {
+        width: 160px;
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: 10%;
     }
 }
