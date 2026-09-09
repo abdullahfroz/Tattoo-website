@@ -571,10 +571,24 @@ section {
 }
 
 .hero-image {
-   width: min(24vw, 320px);
-    margin: 20px auto 0;
+    width: min(24vw, 320px);
+    margin: 20px 0 0 12%;
     position: relative;
     z-index: 1;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero-image {
+    align-self: flex-start;
+}
+
+.hero-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .hero-image img {
@@ -943,14 +957,14 @@ section {
 }
 
 .work-marquee-track span {
-    white-space: nowrap;
+   white-space: nowrap;
 
-    padding: 20px 60px 20px 0;
+    padding: 14px 50px 14px 0;
 
-    font-size: clamp(24px, 3.5vw, 52px);
+    font-size: clamp(14px, 1.5vw, 22px);
     line-height: 1;
 
-    letter-spacing: -0.035em;
+    letter-spacing: 0.01em;
 }
 
 @keyframes workMarquee {
