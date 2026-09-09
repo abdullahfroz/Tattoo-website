@@ -571,7 +571,7 @@ section {
 }
 
 .hero-image {
-   width: min(38vw, 500px);
+   width: min(24vw, 320px);
     margin: 20px auto 0;
     position: relative;
     z-index: 1;
@@ -581,6 +581,7 @@ section {
     width: 100%;
     display: block;
     filter: grayscale(100%);
+        object-fit: cover;
 }
 
 .hero-bottom {
@@ -979,13 +980,13 @@ section {
 /* ARTISTIC BALANCE */
 
 .tattoo-image-left {
-    left: 20%;
+    left: 12%;
     top: 20px;
 }
 
 .tattoo-image-right {
-    right: 18%;
-    top: 170px;
+    right: 12%;
+    top: 210px;
 }
 
 
