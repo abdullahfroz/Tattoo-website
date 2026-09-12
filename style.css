@@ -37,11 +37,11 @@ body {
     mix-blend-mode: difference;
 }
 
-.brand {
-   font-size: clamp(68px, 9.5vw, 175px);
+  .brand {
+    font-size: clamp(68px, 8.5vw, 130px);
     line-height: 0.82;
-    letter-spacing: -0.075em;
-    font-weight: 500;
+    letter-spacing: -0.065em;
+    font-weight: 650;
 
     white-space: nowrap;
 
@@ -112,9 +112,10 @@ body {
 }
 
 .site-header.scrolled .brand {
-    font-size: 18px;
+  font-size: 18px;
     letter-spacing: 0.08em;
     line-height: 1;
+    font-weight: 600;
 }
 
 /* ------------------------------
@@ -833,15 +834,11 @@ section {
 
     mix-blend-mode: difference;
 }
-
-.brand {
-    display: flex;
-    flex-direction: column;
-
-   font-size: clamp(68px, 9.5vw, 175px);
+    .brand {
+    font-size: clamp(68px, 8.5vw, 130px);
     line-height: 0.82;
-    letter-spacing: -0.075em;
-    font-weight: 700;
+    letter-spacing: -0.065em;
+    font-weight: 650;
 
     white-space: nowrap;
 
@@ -862,11 +859,10 @@ section {
 }
 
 .site-header.scrolled .brand {
-    font-size: 15px;
+   font-size: 18px;
+    letter-spacing: 0.08em;
     line-height: 1;
-    letter-spacing: 0.12em;
-    flex-direction: row;
-    gap: 5px;
+    font-weight: 600;
 }
 /* =========================================
    FEATURED VIDEO
