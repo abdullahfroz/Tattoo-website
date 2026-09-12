@@ -38,10 +38,10 @@ body {
 }
 
 .brand {
-   font-size: clamp(88px, 11.25vw, 175px);
+   font-size: clamp(68px, 9.5vw, 175px);
     line-height: 0.82;
     letter-spacing: -0.075em;
-    font-weight: 700;
+    font-weight: 500;
 
     white-space: nowrap;
 
