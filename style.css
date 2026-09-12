@@ -38,9 +38,9 @@ body {
 }
 
   .brand {
-    font-size: clamp(68px, 8.5vw, 130px);
-    line-height: 0.82;
-    letter-spacing: -0.065em;
+   font-size: clamp(62px, 7.5vw, 115px);
+    line-height: 0.72;
+    letter-spacing: -0.055em;
     font-weight: 650;
 
     white-space: nowrap;
@@ -835,9 +835,9 @@ section {
     mix-blend-mode: difference;
 }
     .brand {
-    font-size: clamp(68px, 8.5vw, 130px);
-    line-height: 0.82;
-    letter-spacing: -0.065em;
+    font-size: clamp(62px, 7.5vw, 115px);
+    line-height: 0.72;
+    letter-spacing: -0.055em;
     font-weight: 650;
 
     white-space: nowrap;
