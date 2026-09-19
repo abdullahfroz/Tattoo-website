@@ -56,7 +56,7 @@ body {
 }
 
 .site-header.scrolled .brand {
-    transform: scale(0.24);
+    transform: scale(0.40);
 }
 .brand-name {
     display: inline-block;
@@ -876,7 +876,7 @@ section {
     transition: transform 2s ease-in-out;
 }
 .site-header.scrolled .brand {
-    transform: scale(0.24);
+    transform: scale(0.40);
 }
 
 .brand-name {
