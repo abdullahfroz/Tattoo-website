@@ -38,7 +38,7 @@ body {
     mix-blend-mode: difference;
 }
 
-  .brand {
+   {
     position: relative;
 
     font-family: 'DejaVu Sans Condensed', sans-serif;
@@ -55,25 +55,8 @@ body {
     transition: transform 2s ease-in-out;
 }
 
-.site-header.scrolled .brand {
-    transform: scale(0.40);
-}
 .brand-name {
     display: inline-block;
-}
-
-.brand-tm {
-    position: absolute;
-
-    top: -0.08em;
-    right: -0.18em;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.16em;
-    font-weight: 700;
-    letter-spacing: 0;
-
-    line-height: 1;
 }
 .main-nav {
     display: flex;
@@ -135,14 +118,6 @@ body {
 .site-header.scrolled {
     padding-top: 18px;
 }
-
-.site-header.scrolled .brand {
-   font-size: 18px;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    font-weight: 600;
-}
-
 /* ------------------------------
    NAVIGATION
 ------------------------------ */
@@ -860,7 +835,7 @@ section {
     mix-blend-mode: difference;
 }
    .brand {
-    position: relative;
+     position: relative;
 
     font-family: 'DejaVu Sans Condensed', sans-serif;
     font-size: clamp(55px, 7vw, 105px);
@@ -874,9 +849,6 @@ section {
     will-change: transform;
 
     transition: transform 2s ease-in-out;
-}
-.site-header.scrolled .brand {
-    transform: scale(0.40);
 }
 
 .brand-name {
@@ -907,13 +879,15 @@ section {
     letter-spacing: 0.14em;
 }
 
-.site-header.scrolled .brand {
-   font-size: 18px;
-    letter-spacing: 0.08em;
-    line-height: 1;
-    font-weight: 600;
+.site-header.scrolled .brand {  font-size: clamp(55px, 7vw, 105px);
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+    font-weight: 700;
 
+    transform: scale(0.42);
+    transform-origin: top left;
 }
+ 
 /* =========================================
    FEATURED VIDEO
    ========================================= */
