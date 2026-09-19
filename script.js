@@ -349,7 +349,7 @@ const siteHeader = document.querySelector(".site-header");
 const brand = document.querySelector(".brand");
 
 function updateHeader() {
-    if (window.scrollY > 80) {
+    if (window.scrollY >120) {
         siteHeader.classList.add("scrolled");
     } else {
         siteHeader.classList.remove("scrolled");

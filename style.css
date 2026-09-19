@@ -50,12 +50,14 @@ body {
     white-space: nowrap;
 
     transform-origin: top left;
+    will-change: transform;
 
-    transition:
-        transform 2s cubic-bezier(0.16, 1, 0.3, 1),
-        letter-spacing 2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 2s ease-in-out;
 }
 
+.site-header.scrolled .brand {
+    transform: scale(0.24);
+}
 .brand-name {
     display: inline-block;
 }
@@ -869,10 +871,12 @@ section {
     white-space: nowrap;
 
     transform-origin: top left;
+    will-change: transform;
 
-    transition:
-        transform 2s cubic-bezier(0.16, 1, 0.3, 1),
-        letter-spacing 2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 2s ease-in-out;
+}
+.site-header.scrolled .brand {
+    transform: scale(0.24);
 }
 
 .brand-name {
@@ -880,17 +884,17 @@ section {
 }
 
 .brand-tm {
-    position: absolute;
+     position: absolute;
 
-    top: -0.08em;
-    right: -0.18em;
+    top: -0.14em;
+    right: -0.28em;
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.16em;
     font-weight: 700;
     letter-spacing: 0;
-
     line-height: 1;
+
 }
 .main-nav {
     display: flex;
