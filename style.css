@@ -1183,3 +1183,24 @@ align-items: flex-start;
     top: 180px;
     left: 38%;
 }
+
+/* CHILDHOOD IMAGE — FINAL */
+
+.about-image {
+    position: absolute !important;
+
+    top: 180px !important;
+    left: 38% !important;
+
+    width: 160px !important;
+    max-width: 160px !important;
+    margin: 0 !important;
+}
+
+.about-image img {
+    width: 160px !important;
+    max-width: 160px !important;
+    height: auto !important;
+
+    display: block !important;
+}
