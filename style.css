@@ -250,83 +250,6 @@ h1 {
 }
 
 /* =================================
-   MORE THAN INK / CHILDHOOD
-================================= */
-
-.childhood-section {
-    min-height: 100vh;
-
-    display: grid;
-
-    grid-template-columns: 50% 50%;
-
-    align-items: center;
-
-    padding: 150px 10vw;
-
-    gap: 5vw;
-
-    background: #050505;
-}
-
-
-.childhood-content {
-    max-width: 450px;
-}
-
-
-.childhood-content h2 {
-    font-size: clamp(45px, 6vw, 90px);
-
-    font-weight: 300;
-
-    line-height: 0.95;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 40px;
-}
-
-
-.childhood-content p:not(.section-label) {
-    font-size: 14px;
-
-    line-height: 2;
-
-    color: #999;
-
-    max-width: 350px;
-}
-
-
-.childhood-image {
-    width: 55%;
-
-    height: 45vh;
-
-    overflow: hidden;
-
-    justify-self: center;
-}
-
-
-.childhood-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    filter: grayscale(100%);
-
-    display: block;
-}
-
-
-.childhood-image:hover img {
-    transform: scale(1.03);
-}
-
-/* =================================
    ARTIST IMAGE — SECOND SECTION
 ================================= */
 
@@ -465,8 +388,6 @@ h1 {
 
         object-position: center;
     }
-
-    
 
 }
 
@@ -1256,15 +1177,15 @@ align-items: flex-start;
     top: 180px !important;
     left: 38% !important;
 
-    width: 150px !important;
-    max-width: 150px !important;
+    width: 120px !important;
+    max-width: 152px !important;
 }
 
 #about .about-childhood img {
     display: block !important;
 
-    width: 150px !important;
-    max-width: 150px !important;
+    width: 120px !important;
+    max-width: 152px !important;
     height: auto !important;
 
     object-fit: contain !important;
