@@ -1153,24 +1153,3 @@ align-items: flex-start;
         width: 240px;
         margin-top: 35px;
     }
-
-/* CHILDHOOD PHOTO */
-
-.about-image {
-    position: relative !important;
-
-    width: 160px !important;
-    max-width: 160px !important;
-
-    margin-top: 60px !important;
-    margin-left: 38% !important;
-    margin-right: 0 !important;
-}
-
-.about-image img {
-    width: 160px !important;
-    max-width: 160px !important;
-    height: auto !important;
-
-    display: block !important;
-}
