@@ -1236,12 +1236,12 @@ align-items: flex-start;
     font-style: normal;
 }
 /* =========================================
-   THREE TATTOO IMAGES — ZIG ZAG
+   THREE TATTOO IMAGES
    ========================================= */
 
 .tattoo-row-section {
     width: 100% !important;
-    padding: 40px 40px 120px !important;
+    padding: 40px 40px 100px !important;
 }
 
 .tattoo-row {
@@ -1249,7 +1249,6 @@ align-items: flex-start;
     display: block !important;
 
     width: 100% !important;
-    max-width: none !important;
     height: 900px !important;
 
     margin: 0 !important;
@@ -1258,41 +1257,51 @@ align-items: flex-start;
 .tattoo-row-image {
     position: absolute !important;
 
-    width: 220px !important;
-    height: auto !important;
-
-    flex: none !important;
     margin: 0 !important;
     transform: none !important;
+
+    overflow: hidden;
 }
 
 .tattoo-row-image img {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
 
     display: block !important;
     object-fit: cover !important;
 }
 
 
-/* 1 — TOP LEFT */
+/* 1 — LARGE SQUARE / TOP LEFT */
+
 .tattoo-row-image-1 {
-    left: 12% !important;
+    width: 340px !important;
+    height: 340px !important;
+
+    left: 10% !important;
     top: 0 !important;
 }
 
 
-/* 2 — MIDDLE RIGHT */
+/* 2 — SMALLER / MIDDLE RIGHT */
+
 .tattoo-row-image-2 {
-    right: 12% !important;
+    width: 220px !important;
+    height: 275px !important;
+
+    right: 14% !important;
     left: auto !important;
-    top: 260px !important;
+    top: 300px !important;
 }
 
 
-/* 3 — LOWER LEFT */
+/* 3 — LARGE SQUARE / LOWER LEFT */
+
 .tattoo-row-image-3 {
-    left: 18% !important;
+    width: 340px !important;
+    height: 340px !important;
+
+    left: 22% !important;
     right: auto !important;
     top: 520px !important;
 }
