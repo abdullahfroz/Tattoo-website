@@ -621,8 +621,8 @@ section {
 ----------------------------------------- */
 
 .hero {
-  min-height: 100vh;
-    padding: 150px 40px 30px;
+   min-height: auto;
+    padding: 135px 40px 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -898,7 +898,7 @@ align-items: flex-start;
 
 .featured-video {
     width: 100%;
-    padding: 120px 40px 160px;
+    padding: 25px 40px 100px;
 }
 
 .featured-video-header {
