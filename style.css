@@ -1293,7 +1293,7 @@ align-items: flex-start;
 /* 3 — BIG / CENTER */
 .tattoo-row-image-3 {
     width: 720px !important;
-    height: 720px !important;
+    height: 600px !important;
 
     left: 50% !important;
     right: auto !important;
