@@ -1302,3 +1302,94 @@ align-items: flex-start;
         font-size: clamp(36px, 10vw, 55px);
     }
 }
+
+/* =========================================
+   COMPACT TATTOO EXPERIENCE
+========================================= */
+
+.experience-section {
+    position: relative;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 70px 8% 140px !important;
+    margin-top: 0 !important;
+}
+
+.experience-label {
+    margin-bottom: 55px !important;
+    font-size: 11px !important;
+}
+
+.experience-copy {
+    max-width: 900px !important;
+    margin-left: 5% !important;
+}
+
+.experience-line {
+    margin: 0 !important;
+    font-family: 'DejaVu Sans Condensed', sans-serif !important;
+    font-size: clamp(45px, 6vw, 90px) !important;
+    line-height: 0.88 !important;
+    letter-spacing: -0.055em !important;
+    font-weight: 700 !important;
+}
+
+.experience-line + .experience-line {
+    margin-top: 35px !important;
+}
+
+.experience-details {
+    margin-top: 65px !important;
+    margin-left: 25% !important;
+}
+
+.experience-details p {
+    margin: 0 0 5px !important;
+    font-family: 'DejaVu Sans Condensed', sans-serif !important;
+    font-size: clamp(28px, 3.5vw, 52px) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.035em !important;
+    font-weight: 700 !important;
+}
+
+.experience-ending {
+    margin: 75px 0 0 12% !important;
+    font-family: 'DejaVu Sans Condensed', sans-serif !important;
+    font-size: clamp(38px, 5vw, 70px) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.045em !important;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 700px) {
+
+    .experience-section {
+        padding: 60px 6% 100px !important;
+    }
+
+    .experience-label {
+        margin-bottom: 50px !important;
+    }
+
+    .experience-copy {
+        margin-left: 0 !important;
+    }
+
+    .experience-line {
+        font-size: clamp(40px, 11vw, 65px) !important;
+    }
+
+    .experience-details {
+        margin-top: 60px !important;
+        margin-left: 15% !important;
+    }
+
+    .experience-details p {
+        font-size: clamp(27px, 8vw, 42px) !important;
+    }
+
+    .experience-ending {
+        margin-top: 65px !important;
+        margin-left: 5% !important;
+    }
+}
