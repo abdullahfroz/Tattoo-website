@@ -1153,28 +1153,38 @@ align-items: flex-start;
         width: 240px;
         margin-top: 35px;
     }
-    /* =========================================
-   ABOUT — TEXT LEFT / PHOTO RIGHT
+   /* =========================================
+   ABOUT — TEXT LEFT / IMAGE RIGHT
    ========================================= */
 
 .about-section {
-    position: relative !important;
+    width: 100%;
+    padding: 90px 40px 120px;
 }
 
 .about-layout {
-    width: 58% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
+    gap: 60px !important;
+
+    margin-top: 70px !important;
+}
+
+.about-copy-block {
+    grid-column: 1 !important;
 }
 
 .about-image {
-    position: absolute !important;
-
-    top: 180px !important;
-    right: 16% !important;
+    grid-column: 2 !important;
+    justify-self: end !important;
 
     width: 160px !important;
     max-width: 160px !important;
 
-    margin: 0 !important;
+    margin: 0 12% 0 0 !important;
+
+    position: relative !important;
 }
 
 .about-image img {
