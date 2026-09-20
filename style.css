@@ -1271,8 +1271,8 @@ align-items: flex-start;
 }
 /* 1 — BIG / UPPER LEFT */
 .tattoo-row-image-1 {
-    width: 513px !important;
-    height: 513px !important;
+    width: 420px !important;
+    height: 490px !important;
 
     left: 8% !important;
     top: 0 !important;
@@ -1281,19 +1281,19 @@ align-items: flex-start;
 
 /* 2 — SMALLER / LOWER RIGHT */
 .tattoo-row-image-2 {
-    width: 257px !important;
+    width: 320px !important;
     height: 331px !important;
 
     right: 10% !important;
     left: auto !important;
-    top: 240px !important;
+    top: 180px !important;
 }
 
 
 /* 3 — BIG / CENTER */
 .tattoo-row-image-3 {
-    width: 513px !important;
-    height: 513px !important;
+    width: 720px !important;
+    height: 720px !important;
 
     left: 50% !important;
     right: auto !important;
