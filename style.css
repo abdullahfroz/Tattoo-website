@@ -837,6 +837,9 @@ section {
    .brand {
      position: relative;
 
+     display: inline-flex;
+align-items: flex-start;
+
     font-family: 'DejaVu Sans Condensed', sans-serif;
     font-size: clamp(55px, 7vw, 105px);
     line-height: 0.82;
@@ -855,12 +858,11 @@ section {
     display: inline-block;
 }
 .brand-tm {
-     position: absolute !important;
+     position: static !important;
 
-    left: 100% !important;
-    top: 0.22em !important;
+    display: inline-block;
 
-    margin-left: 0.04em !important;
+    margin-left: 5px !important;
 
     font-family: Arial, Helvetica, sans-serif !important;
     font-size: 0.14em !important;
@@ -868,7 +870,7 @@ section {
     line-height: 1 !important;
     letter-spacing: 0 !important;
 
-    transform: none !important;
+    transform: translateY(0.14em) !important;
 }
 .main-nav {
     display: flex;
