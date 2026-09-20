@@ -1190,3 +1190,21 @@ align-items: flex-start;
 
     object-fit: contain !important;
 }
+
+/* FINAL CHILDHOOD PHOTO OVERRIDE */
+
+#about img[src*="childhood"] {
+    width: 120px !important;
+    height: auto !important;
+    max-width: 120px !important;
+    min-width: 0 !important;
+
+    display: block !important;
+    object-fit: contain !important;
+}
+
+#about .about-childhood {
+    width: 120px !important;
+    max-width: 120px !important;
+    min-width: 0 !important;
+}
