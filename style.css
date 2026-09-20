@@ -1235,100 +1235,64 @@ align-items: flex-start;
     font-weight: 700;
     font-style: normal;
 }
-
 /* =========================================
-   THREE IMAGE ROW
+   THREE TATTOO IMAGES — ZIG ZAG
    ========================================= */
 
 .tattoo-row-section {
-   width: 100%;
-    padding: 40px 40px 100px;
+    width: 100% !important;
+    padding: 40px 40px 120px !important;
 }
 
 .tattoo-row {
-    width: min(1100px, 90vw);
-    margin: 0 auto;
+    position: relative !important;
+    display: block !important;
 
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 45px;
+    width: 100% !important;
+    max-width: none !important;
+    height: 900px !important;
+
+    margin: 0 !important;
 }
 
 .tattoo-row-image {
-    width: 250px;
-    flex-shrink: 0;
+    position: absolute !important;
+
+    width: 220px !important;
+    height: auto !important;
+
+    flex: none !important;
+    margin: 0 !important;
+    transform: none !important;
 }
 
 .tattoo-row-image img {
-    width: 100%;
-    height: 310px;
+    width: 100% !important;
+    height: auto !important;
 
-    display: block;
-    object-fit: cover;
+    display: block !important;
+    object-fit: cover !important;
 }
 
 
-/* ARTISTIC OFFSET */
-
+/* 1 — TOP LEFT */
 .tattoo-row-image-1 {
-    transform: translateY(25px);
+    left: 12% !important;
+    top: 0 !important;
 }
 
+
+/* 2 — MIDDLE RIGHT */
 .tattoo-row-image-2 {
-    transform: translateY(-5px);
+    right: 12% !important;
+    left: auto !important;
+    top: 260px !important;
 }
 
+
+/* 3 — LOWER LEFT */
 .tattoo-row-image-3 {
-    transform: translateY(45px);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    .tattoo-row-section {
-        padding: 20px 20px 90px;
-    }
-
-    .tattoo-row {
-        width: 100%;
-        gap: 15px;
-    }
-
-    .tattoo-row-image {
-        width: calc((100% - 30px) / 3);
-    }
-
-    .tattoo-row-image img {
-        height: auto;
-        aspect-ratio: 4 / 5;
-    }
-
-  .tattoo-row {
-    position: relative;
-    width: 100%;
-    height: 1000px;
-    margin: 0;
-}
-
-.tattoo-row-image {
-    position: absolute;
-    width: 250px;
-}
-
-.tattoo-row-image-1 {
-    left: 14%;
-    top: 20px;
-}
-
-.tattoo-row-image-2 {
-    right: 14%;
-    top: 300px;
-}
-
-.tattoo-row-image-3 {
-    left: 18%;
-    top: 600px;
+    left: 18% !important;
+    right: auto !important;
+    top: 520px !important;
 }
