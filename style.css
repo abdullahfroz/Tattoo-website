@@ -1248,3 +1248,24 @@ align-items: flex-start;
         width: 170px;
     }
 }
+
+/* FORCE CHILDHOOD PHOTO SIZE */
+
+#about .about-childhood {
+    position: absolute !important;
+    top: 180px !important;
+    left: 38% !important;
+
+    width: 150px !important;
+    max-width: 150px !important;
+}
+
+#about .about-childhood img {
+    display: block !important;
+
+    width: 150px !important;
+    max-width: 150px !important;
+    height: auto !important;
+
+    object-fit: contain !important;
+}
