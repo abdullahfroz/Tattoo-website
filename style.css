@@ -1093,8 +1093,8 @@ align-items: flex-start;
 .visual-intro {
     position: absolute;
 
-    top: 40px;
-    left: 38%;
+    top: 230px;
+    left: calc(14% + 350px);
 
     width: 300px;
 
@@ -1104,7 +1104,7 @@ align-items: flex-start;
 .visual-intro h2 {
     margin: 0 0 16px;
 
-    font-size: 32px;
+    font-size: 28px;
     line-height: 0.95;
     font-weight: 700;
     letter-spacing: -0.04em;
