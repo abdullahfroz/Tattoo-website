@@ -1109,8 +1109,23 @@ align-items: flex-start;
 .visual-intro h2 {
     margin: 0;
 
-    font-size: 28px;
-    line-height: 1.05;
+    font-family: 'DejaVu Sans Condensed', sans-serif;
+    font-size: clamp(34px, 3.8vw, 58px);
     font-weight: 700;
-    letter-spacing: -0.04em;
+    line-height: 0.88;
+    letter-spacing: -0.055em;
+
+    color: #f5f5f2;
+}
+
+.visual-intro h2 span {
+    display: inline-block;
+}
+
+.visual-intro h2 span:nth-child(2) {
+    margin-left: 0.18em;
+}
+
+.visual-intro h2 span:nth-child(3) {
+    margin-left: 0.06em;
 }
