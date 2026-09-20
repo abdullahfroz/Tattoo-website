@@ -1282,11 +1282,11 @@ align-items: flex-start;
 /* 2 — SMALLER / LOWER RIGHT */
 .tattoo-row-image-2 {
     width: 320px !important;
-    height: 331px !important;
+    height: 320px !important;
 
     right: 10% !important;
     left: auto !important;
-    top: 282px !important;
+    top: 240px !important;
 }
 
 
