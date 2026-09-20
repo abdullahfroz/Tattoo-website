@@ -1194,3 +1194,111 @@ align-items: flex-start;
 
     display: block !important;
 }
+
+/* =========================================
+   TATTOO EXPERIENCE
+========================================= */
+
+.experience-section {
+    position: relative;
+    padding: 180px 8% 220px;
+    min-height: 100vh;
+}
+
+.experience-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 140px;
+
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.experience-copy {
+    max-width: 900px;
+    margin-left: 12%;
+}
+
+.experience-line {
+    margin: 0;
+
+    font-family: 'DejaVu Sans Condensed', sans-serif;
+    font-size: clamp(48px, 7vw, 105px);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+    font-weight: 700;
+}
+
+.experience-line + .experience-line {
+    margin-top: 55px;
+}
+
+.experience-details {
+    margin-top: 100px;
+    margin-left: 30%;
+}
+
+.experience-details p {
+    margin: 0 0 8px;
+
+    font-family: 'DejaVu Sans Condensed', sans-serif;
+    font-size: clamp(30px, 4vw, 58px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+}
+
+.experience-ending {
+    margin: 120px 0 0 18%;
+
+    font-family: 'DejaVu Sans Condensed', sans-serif;
+    font-size: clamp(40px, 5vw, 75px);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    font-weight: 700;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .experience-section {
+        padding: 120px 6% 150px;
+        min-height: auto;
+    }
+
+    .experience-label {
+        margin-bottom: 90px;
+    }
+
+    .experience-copy {
+        margin-left: 0;
+    }
+
+    .experience-line {
+        font-size: clamp(42px, 12vw, 70px);
+    }
+
+    .experience-line + .experience-line {
+        margin-top: 40px;
+    }
+
+    .experience-details {
+        margin-top: 75px;
+        margin-left: 18%;
+    }
+
+    .experience-details p {
+        font-size: clamp(28px, 8vw, 45px);
+    }
+
+    .experience-ending {
+        margin-top: 90px;
+        margin-left: 8%;
+        font-size: clamp(36px, 10vw, 55px);
+    }
+}
