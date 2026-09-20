@@ -1086,3 +1086,34 @@ align-items: flex-start;
         top: 1480px;
     }
 }
+/* =========================================
+   INTRO TEXT
+   ========================================= */
+
+.visual-intro {
+    position: absolute;
+
+    top: 40px;
+    left: 38%;
+
+    width: 300px;
+
+    z-index: 2;
+}
+
+.visual-intro h2 {
+    margin: 0 0 16px;
+
+    font-size: 32px;
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.visual-intro p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--muted);
+}
