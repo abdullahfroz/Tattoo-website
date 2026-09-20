@@ -870,7 +870,7 @@ align-items: flex-start;
     line-height: 1 !important;
     letter-spacing: 0 !important;
 
-    transform: translateY(0.14em) !important;
+    transform: translateY(0.32em) !important;
 }
 .main-nav {
     display: flex;
