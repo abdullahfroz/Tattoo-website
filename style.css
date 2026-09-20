@@ -1235,3 +1235,86 @@ align-items: flex-start;
     font-weight: 700;
     font-style: normal;
 }
+
+/* =========================================
+   THREE IMAGE ROW
+   ========================================= */
+
+.tattoo-row-section {
+    width: 100%;
+    padding: 20px 40px 120px;
+}
+
+.tattoo-row {
+    width: min(1100px, 90vw);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 45px;
+}
+
+.tattoo-row-image {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.tattoo-row-image img {
+    width: 100%;
+    height: 310px;
+
+    display: block;
+    object-fit: cover;
+}
+
+
+/* ARTISTIC OFFSET */
+
+.tattoo-row-image-1 {
+    transform: translateY(25px);
+}
+
+.tattoo-row-image-2 {
+    transform: translateY(-5px);
+}
+
+.tattoo-row-image-3 {
+    transform: translateY(45px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .tattoo-row-section {
+        padding: 20px 20px 90px;
+    }
+
+    .tattoo-row {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .tattoo-row-image {
+        width: calc((100% - 30px) / 3);
+    }
+
+    .tattoo-row-image img {
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .tattoo-row-image-1 {
+        transform: translateY(15px);
+    }
+
+    .tattoo-row-image-2 {
+        transform: translateY(0);
+    }
+
+    .tattoo-row-image-3 {
+        transform: translateY(25px);
+    }
+}
