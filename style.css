@@ -1118,15 +1118,6 @@ align-items: flex-start;
 
 /* CHILDHOOD PHOTO */
 
-.about-childhood {
-    position: absolute;
-
-    top: 180px;
-    left: 38%;
-
-    width: 13px;
-}
-
 .about-childhood img {
     width: 100%;
     height: auto;
@@ -1163,23 +1154,7 @@ align-items: flex-start;
         margin-top: 35px;
     }
 
-    .about-childhood {
-        top: 35px;
-        left: 12%;
-        width: 17px;
-    }
-}
-
 /* FORCE CHILDHOOD PHOTO SIZE */
-
-#about .about-childhood {
-    position: absolute !important;
-    top: 18px !important;
-    left: 38% !important;
-
-    width: 12px !important;
-    max-width: 152px !important;
-}
 
 #about .about-childhood img {
     display: block !important;
@@ -1203,8 +1178,8 @@ align-items: flex-start;
     object-fit: contain !important;
 }
 
-#about .about-childhood {
-    width: 12px !important;
-    max-width: 12px !important;
-    min-width: 0 !important;
+.about-childhood {
+    position: absolute;
+    top: 180px;
+    left: 38%;
 }
