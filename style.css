@@ -1124,7 +1124,7 @@ align-items: flex-start;
     top: 180px;
     left: 38%;
 
-    width: 230px;
+    width: 13px;
 }
 
 .about-childhood img {
@@ -1164,9 +1164,9 @@ align-items: flex-start;
     }
 
     .about-childhood {
-        top: 350px;
+        top: 35px;
         left: 12%;
-        width: 170px;
+        width: 17px;
     }
 }
 
@@ -1174,10 +1174,10 @@ align-items: flex-start;
 
 #about .about-childhood {
     position: absolute !important;
-    top: 180px !important;
+    top: 18px !important;
     left: 38% !important;
 
-    width: 120px !important;
+    width: 12px !important;
     max-width: 152px !important;
 }
 
@@ -1204,7 +1204,7 @@ align-items: flex-start;
 }
 
 #about .about-childhood {
-    width: 120px !important;
-    max-width: 120px !important;
+    width: 12px !important;
+    max-width: 12px !important;
     min-width: 0 !important;
 }
