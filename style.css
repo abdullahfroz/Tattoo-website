@@ -845,7 +845,7 @@ main {
     margin-left: 0.06em;
 }
 /* =========================================================
-   PORTFOLIO END — VISUAL FULL STOP
+   PORTFOLIO END — FINAL IMAGE ROW
 ========================================================= */
 
 .portfolio-end {
@@ -858,24 +858,20 @@ main {
 }
 
 .portfolio-end-box {
-    width: min(900px, 70vw);
-    aspect-ratio: 1 / 1;
-
-    background: #8a8a8a;
-
-    padding: 8%;
+    width: 100%;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
-    gap: 3%;
+    gap: 24px;
 
-    overflow: hidden;
+    background: transparent;
+
+    padding: 0;
 }
 
 .portfolio-end-image {
-    width: 31%;
+    width: calc((100% - 48px) / 3);
 
     aspect-ratio: 1 / 1;
 
@@ -903,14 +899,10 @@ main {
     }
 
     .portfolio-end-box {
-        width: 88vw;
-
-        padding: 8%;
-
-        gap: 3%;
+        gap: 10px;
     }
 
     .portfolio-end-image {
-        width: 31%;
+        width: calc((100% - 20px) / 3);
     }
 }
