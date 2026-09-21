@@ -310,15 +310,14 @@ main {
 /* VIDEO */
 
 .visual-video {
-   position: absolute;
+    position: absolute;
 
-    top: 0;
-    left: 14%;
+    top: 80px;
+    right: 12%;
+    left: auto;
 
-    width: 29vw;
-    max-width: 555px;
-
-    aspect-ratio: 1.52 / 1;
+    width: 260px;
+    aspect-ratio: 9 / 16;
 
     overflow: hidden;
 }
@@ -369,9 +368,9 @@ main {
 
 
 .visual-photo-2 {
-  position: absolute;
+   position: absolute;
 
-    top: 620px;
+    top: 540px;
     left: 14%;
 
     width: 323px;
