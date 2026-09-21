@@ -197,6 +197,8 @@ main {
     width: 100%;
     height: auto;
 
+    display: block;
+
     object-fit: cover;
 
     filter: grayscale(100%);
@@ -930,10 +932,21 @@ main {
 /* HEADER — RESTORE ORIGINAL POSITION + ANIMATION */
 
 .site-header {
-    padding: 24px 32px !important;
+  position: fixed;
+    top: 0;
+    left: 0;
 
-    justify-content: space-between !important;
-    align-items: flex-start !important;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 24px 32px 24px 14%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background: transparent;
+    mix-blend-mode: difference;
 }
 
 .main-nav {
@@ -1001,14 +1014,14 @@ main {
 /* HERO IMAGE — RESTORE 12% */
 
 .hero-image {
-    width: min(18vw, 240px) !important;
+   width: min(22vw, 320px);
 
-    margin: 20px 0 0 12% !important;
+    margin: 20px 0 0 14%;
 
-    position: relative !important;
-    z-index: 1 !important;
+    position: relative;
+    z-index: 1;
 
-    align-self: flex-start !important;
+    align-self: flex-start;
 }
 
 
