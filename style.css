@@ -54,11 +54,7 @@ main {
 ========================================================= */
 
 .site-header {
-
-      padding-left: 14% !important;
-    padding-right: 14% !important;
-}
-    position: fixed;
+       position: fixed;
     top: 0;
     left: 0;
 
@@ -74,9 +70,10 @@ main {
 
     background: transparent;
     mix-blend-mode: difference;
-    .main-nav {
-    display: none !important;
 }
+
+.main-nav {
+    display: none !important;
 }
 
 
