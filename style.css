@@ -1281,16 +1281,38 @@ align-items: flex-start;
         margin-top: 50px !important;
     }
 }
-/* MORE SPACE IN TATTOO EXPERIENCE */
+/* =========================================
+   TATTOO EXPERIENCE - FINAL SPACING
+========================================= */
+
+.experience-copy {
+    margin-left: 5% !important;
+}
+
+.experience-heading {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 100px !important;
+}
 
 .experience-text {
-    margin-top: 110px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    max-width: 650px !important;
 }
 
 .experience-text p {
-    margin-bottom: 22px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-weight: 400 !important;
 }
 
 .experience-text p:last-child {
-    margin-top: 100px !important;
+    margin-top: 75px !important;
 }
