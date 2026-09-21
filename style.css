@@ -54,6 +54,10 @@ main {
 ========================================================= */
 
 .site-header {
+
+      padding-left: 14% !important;
+    padding-right: 14% !important;
+}
     position: fixed;
     top: 0;
     left: 0;
@@ -70,6 +74,9 @@ main {
 
     background: transparent;
     mix-blend-mode: difference;
+    .main-nav {
+    display: none !important;
+}
 }
 
 
@@ -279,7 +286,7 @@ main {
 .visual-flow {
     position: relative;
     width: 100%;
-    height: 2150px;
+    height: 2450px;
     margin-top: 40px;
 }
 
@@ -307,18 +314,21 @@ main {
    position: absolute;
 
     top: 0;
-    left: calc(12% + 323px + 57px);
+    left: 14%;
 
-    width: 225px;
+    width: 29vw;
+    max-width: 555px;
 
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 1.52 / 1;
 
     overflow: hidden;
 }
 
 .visual-video video {
-    width: 100%;
+     width: 100%;
     height: 100%;
+
+    display: block;
 
     object-fit: cover;
 }
@@ -333,8 +343,10 @@ main {
 }
 
 .visual-photo img {
-    width: 100%;
+   width: 100%;
     height: 100%;
+
+    display: block;
 
     object-fit: cover;
 }
@@ -345,27 +357,45 @@ main {
 ========================================================= */
 
 .visual-photo-1 {
-    width: 323px;
-    height: 323px;
+    position: absolute;
 
-    left: 12%;
-    top: 519px;
+    top: 150px;
+    right: 14%;
+
+    width: 15vw;
+    max-width: 290px;
+
+    height: 360px;
+
+    overflow: hidden;
 }
 
 .visual-photo-2 {
-    width: 225px;
-    height: 293px;
+    position: absolute;
 
-    left: calc(12% + 323px + 57px);
-    top: 519px;
+    top: 650px;
+    left: 20%;
+
+    width: 23vw;
+    max-width: 445px;
+
+    height: 445px;
+
+    overflow: hidden;
 }
 
 .visual-photo-3 {
-    width: 323px;
-    height: 323px;
+   position: absolute;
 
-    left: 12%;
-    top: 899px;
+    top: 780px;
+    right: 21%;
+
+    width: 29vw;
+    max-width: 555px;
+
+    height: 380px;
+
+    overflow: hidden;
 }
 
 .visual-photo-4 {
@@ -673,7 +703,7 @@ main {
     /* VISUAL FLOW */
 
     .visual-flow {
-        height: 1650px;
+        height: 1850px;
     }
 
     .visual-logo {
@@ -683,31 +713,40 @@ main {
     }
 
     .visual-video {
-        width: 170px;
+         top: 0;
+        left: 12%;
 
-        right: 6%;
-        top: 30px;
+        width: 58vw;
+        max-width: none;
+
+        aspect-ratio: 1.15 / 1;
     }
 
     .visual-photo-1 {
-       width: 195px;
-    height: 195px;
-    left: 5%;
-    top: 330px;
+      top: 270px;
+        right: 12%;
+
+        width: 32vw;
+        max-width: none;
+        height: 230px;
     }
 
     .visual-photo-2 {
-        width: 135px;
-    height: 176px;
-    right: 5%;
-    top: 540px;
+            top: 540px;
+        left: 17%;
+
+        width: 52vw;
+        max-width: none;
+        height: 300px;
     }
 
     .visual-photo-3 {
-         width: 195px;
-    height: 195px;
-    left: 10%;
-    top: 800px;
+         top: 820px;
+        right: 14%;
+
+        width: 58vw;
+        max-width: none;
+        height: 250px;
     }
 
     .visual-photo-4 {
@@ -843,6 +882,7 @@ main {
     flex: 1;
 }
 }
+
 
 
 
