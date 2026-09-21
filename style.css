@@ -1281,3 +1281,16 @@ align-items: flex-start;
         margin-top: 50px !important;
     }
 }
+/* MORE SPACE IN TATTOO EXPERIENCE */
+
+.experience-text {
+    margin-top: 110px !important;
+}
+
+.experience-text p {
+    margin-bottom: 22px !important;
+}
+
+.experience-text p:last-child {
+    margin-top: 100px !important;
+}
