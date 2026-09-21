@@ -1201,64 +1201,55 @@ align-items: flex-start;
 
 .experience-section {
     position: relative;
-    padding: 180px 8% 220px;
-    min-height: 100vh;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 70px 8% 160px !important;
+    margin: 0 !important;
 }
 
 .experience-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 140px;
-
-    font-size: 11px;
+    margin: 0 0 35px !important;
+    font-size: 11px !important;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
 .experience-copy {
-    max-width: 900px;
-    margin-left: 12%;
+    margin-left: 5% !important;
+    max-width: 1000px;
 }
 
-.experience-line {
-    margin: 0;
+/* MAIN HEADLINE */
 
-    font-family: 'DejaVu Sans Condensed', sans-serif;
-    font-size: clamp(48px, 7vw, 105px);
-    line-height: 0.9;
-    letter-spacing: -0.055em;
-    font-weight: 700;
+.experience-heading {
+    margin: 0 !important;
+
+    font-family: 'DejaVu Sans Condensed', sans-serif !important;
+    font-size: clamp(60px, 8vw, 120px) !important;
+    line-height: 0.85 !important;
+    letter-spacing: -0.06em !important;
+    font-weight: 700 !important;
 }
 
-.experience-line + .experience-line {
-    margin-top: 55px;
+/* TEXT UNDER HEADLINE */
+
+.experience-text {
+    margin-top: 75px !important;
+    max-width: 650px;
 }
 
-.experience-details {
-    margin-top: 100px;
-    margin-left: 30%;
+.experience-text p {
+    margin: 0 0 8px !important;
+
+    font-family: 'DejaVu Sans Condensed', sans-serif !important;
+    font-size: clamp(24px, 3vw, 42px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.025em !important;
+    font-weight: 400 !important;
 }
 
-.experience-details p {
-    margin: 0 0 8px;
-
-    font-family: 'DejaVu Sans Condensed', sans-serif;
-    font-size: clamp(30px, 4vw, 58px);
-    line-height: 0.95;
-    letter-spacing: -0.035em;
-    font-weight: 700;
-}
-
-.experience-ending {
-    margin: 120px 0 0 18%;
-
-    font-family: 'DejaVu Sans Condensed', sans-serif;
-    font-size: clamp(40px, 5vw, 75px);
-    line-height: 0.9;
-    letter-spacing: -0.045em;
-    font-weight: 700;
+.experience-text p:last-child {
+    margin-top: 65px !important;
 }
 
 
@@ -1267,129 +1258,26 @@ align-items: flex-start;
 @media (max-width: 700px) {
 
     .experience-section {
-        padding: 120px 6% 150px;
-        min-height: auto;
-    }
-
-    .experience-label {
-        margin-bottom: 90px;
-    }
-
-    .experience-copy {
-        margin-left: 0;
-    }
-
-    .experience-line {
-        font-size: clamp(42px, 12vw, 70px);
-    }
-
-    .experience-line + .experience-line {
-        margin-top: 40px;
-    }
-
-    .experience-details {
-        margin-top: 75px;
-        margin-left: 18%;
-    }
-
-    .experience-details p {
-        font-size: clamp(28px, 8vw, 45px);
-    }
-
-    .experience-ending {
-        margin-top: 90px;
-        margin-left: 8%;
-        font-size: clamp(36px, 10vw, 55px);
-    }
-}
-
-/* =========================================
-   COMPACT TATTOO EXPERIENCE
-========================================= */
-
-.experience-section {
-    position: relative;
-    min-height: auto !important;
-    height: auto !important;
-    padding: 70px 8% 140px !important;
-    margin-top: 0 !important;
-}
-
-.experience-label {
-    margin-bottom: 55px !important;
-    font-size: 11px !important;
-}
-
-.experience-copy {
-    max-width: 900px !important;
-    margin-left: 5% !important;
-}
-
-.experience-line {
-    margin: 0 !important;
-    font-family: 'DejaVu Sans Condensed', sans-serif !important;
-    font-size: clamp(45px, 6vw, 90px) !important;
-    line-height: 0.88 !important;
-    letter-spacing: -0.055em !important;
-    font-weight: 700 !important;
-}
-
-.experience-line + .experience-line {
-    margin-top: 35px !important;
-}
-
-.experience-details {
-    margin-top: 65px !important;
-    margin-left: 25% !important;
-}
-
-.experience-details p {
-    margin: 0 0 5px !important;
-    font-family: 'DejaVu Sans Condensed', sans-serif !important;
-    font-size: clamp(28px, 3.5vw, 52px) !important;
-    line-height: 0.92 !important;
-    letter-spacing: -0.035em !important;
-    font-weight: 700 !important;
-}
-
-.experience-ending {
-    margin: 75px 0 0 12% !important;
-    font-family: 'DejaVu Sans Condensed', sans-serif !important;
-    font-size: clamp(38px, 5vw, 70px) !important;
-    line-height: 0.9 !important;
-    letter-spacing: -0.045em !important;
-    font-weight: 700 !important;
-}
-
-@media (max-width: 700px) {
-
-    .experience-section {
-        padding: 60px 6% 100px !important;
-    }
-
-    .experience-label {
-        margin-bottom: 50px !important;
+        padding: 60px 6% 110px !important;
     }
 
     .experience-copy {
         margin-left: 0 !important;
     }
 
-    .experience-line {
-        font-size: clamp(40px, 11vw, 65px) !important;
+    .experience-heading {
+        font-size: clamp(48px, 13vw, 75px) !important;
     }
 
-    .experience-details {
-        margin-top: 60px !important;
-        margin-left: 15% !important;
+    .experience-text {
+        margin-top: 55px !important;
     }
 
-    .experience-details p {
-        font-size: clamp(27px, 8vw, 42px) !important;
+    .experience-text p {
+        font-size: clamp(23px, 6vw, 34px) !important;
     }
 
-    .experience-ending {
-        margin-top: 65px !important;
-        margin-left: 5% !important;
+    .experience-text p:last-child {
+        margin-top: 50px !important;
     }
 }
