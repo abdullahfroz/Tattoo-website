@@ -405,11 +405,17 @@ main {
 }
 
 .visual-photo-5 {
-    width: 323px;
-    height: 323px;
+      position: absolute;
 
-    left: 12%;
-    top: 1249px;
+    top: 1350px;
+    right: 14%;
+
+    width: 24vw;
+    max-width: 460px;
+
+    height: 460px;
+
+    overflow: hidden;
 }
 
 /* PHOTO 6 */
