@@ -186,7 +186,7 @@ main {
 /* HERO IMAGE */
 
 .hero-image {
-    width: min(18vw, 280px);
+    width: min(18vw, 340px);
     margin: 20px 0 0 12%;
     position: relative;
     z-index: 1;
@@ -230,7 +230,7 @@ main {
     position: fixed;
 
     top: 46%;
-    left: 50%;
+    left: 70%;
 
     width: min(480px, 48vw);
     height: min(480px, 48vw);
