@@ -832,12 +832,9 @@ main {
 
 .visual-intro {
     position: absolute;
-
     top: 230px;
-    left: calc(14% + 650px);
-
-    width: 300px;
-
+    left: calc(16% + 650px);
+    width: 320px;
     z-index: 2;
 }
 
@@ -845,28 +842,26 @@ main {
     margin: 0;
 
     font-family: 'DejaVu Sans Condensed', Arial, sans-serif;
-
     font-size: clamp(34px, 3.8vw, 58px);
 
     font-weight: 700;
-
-    line-height: 0.88;
-
+    line-height: 0.85;
     letter-spacing: -0.055em;
 
     color: #f5f5f2;
 }
 
 .visual-intro h2 span {
-    display: inline-block;
+    display: block;
 }
 
-.visual-intro h2 span:nth-child(2) {
-    margin-left: 0.18em;
+.intro-top {
+    margin-left: 0;
 }
 
-.visual-intro h2 span:nth-child(3) {
-    margin-left: 0.06em;
+.intro-bottom {
+    margin-left: 32%;
+}
 }
 /* =========================================================
    PORTFOLIO END — FINAL IMAGE ROW
