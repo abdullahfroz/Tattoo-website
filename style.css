@@ -354,27 +354,26 @@ main {
 ========================================================= */
 
 .visual-photo-1 {
-    top: 520px;        
-    right: 14%;
-
-    width: 15vw;
-    max-width: 290px;
-
-    height: 360px;
-
-    overflow: hidden;
-}
-
-.visual-photo-2 {
     position: absolute;
 
-    top: 650px;
-    left: 20%;
+    top: 560px;
+    right: 14%;
 
-    width: 23vw;
-    max-width: 445px;
+    width: 217px;
+    height: 270px;
 
-    height: 445px;
+    overflow: hidden;
+    }
+
+
+.visual-photo-2 {
+  position: absolute;
+
+    top: 720px;
+    left: 14%;
+
+    width: 323px;
+    height: 323px;
 
     overflow: hidden;
 }
@@ -382,13 +381,11 @@ main {
 .visual-photo-3 {
    position: absolute;
 
-    top: 780px;
-    right: 21%;
+    top: 1100px;
+    right: 14%;
 
-    width: 29vw;
-    max-width: 555px;
-
-    height: 380px;
+    width: 417px;
+    height: 285px;
 
     overflow: hidden;
 }
