@@ -913,3 +913,136 @@ main {
         gap: 12px;
     }
 }
+
+/* =========================================================
+   RESTORE MAIN SITE LAYOUT
+   Only Portfolio End uses its own 14% margin
+========================================================= */
+
+
+/* HEADER — RESTORE ORIGINAL POSITION + ANIMATION */
+
+.site-header {
+    padding: 24px 32px !important;
+
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+}
+
+.main-nav {
+    display: none !important;
+}
+
+.brand {
+    position: relative !important;
+
+    display: inline-flex !important;
+    align-items: flex-start !important;
+
+    font-family: 'DejaVu Sans Condensed', Arial, sans-serif !important;
+
+    font-size: clamp(55px, 7vw, 105px) !important;
+    line-height: 0.82 !important;
+    letter-spacing: -0.06em !important;
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+
+    transform-origin: top left !important;
+
+    will-change: transform !important;
+
+    transition: transform 2s ease-in-out !important;
+}
+
+
+/* SCROLL ANIMATION — RESTORE */
+
+.site-header.scrolled {
+    padding-top: 18px !important;
+}
+
+.site-header.scrolled .brand {
+    font-size: clamp(55px, 7vw, 105px) !important;
+    line-height: 0.82 !important;
+    letter-spacing: -0.06em !important;
+    font-weight: 700 !important;
+
+    transform: scale(0.42) !important;
+
+    transform-origin: top left !important;
+}
+
+
+/* VIDEO — RESTORE RIGHT POSITION */
+
+.visual-video {
+    position: absolute !important;
+
+    top: 0 !important;
+    right: 12% !important;
+    left: auto !important;
+
+    width: 260px !important;
+
+    aspect-ratio: 9 / 16 !important;
+
+    overflow: hidden !important;
+}
+
+
+/* HERO IMAGE — RESTORE 12% */
+
+.hero-image {
+    width: min(18vw, 240px) !important;
+
+    margin: 20px 0 0 12% !important;
+
+    position: relative !important;
+    z-index: 1 !important;
+
+    align-self: flex-start !important;
+}
+
+
+/* =========================================================
+   FINAL 3 IMAGE GRID ONLY
+========================================================= */
+
+.portfolio-end {
+    width: 100% !important;
+
+    padding: 57px 12% 120px !important;
+
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.portfolio-end-box {
+    width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+
+    gap: 20px !important;
+
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.portfolio-end-image {
+    width: 100% !important;
+
+    aspect-ratio: 1 / 1 !important;
+
+    overflow: hidden !important;
+}
+
+.portfolio-end-image img {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+}
