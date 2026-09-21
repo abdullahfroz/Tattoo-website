@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400&display=swap');
-/* ------------------------------
+
+
+/* =========================================================
    BASIC RESET
------------------------------- */
+========================================================= */
 
 * {
     margin: 0;
@@ -10,25 +12,57 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: #050505;
     color: #f2f2f2;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =========================================
-   CALI HEADER
-   ========================================= */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+video {
+    display: block;
+}
+
+main {
+    width: 100%;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --bg: #050505;
+    --text: #f2f2f2;
+    --muted: #8a8a84;
+    --line: rgba(241, 241, 237, 0.22);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .site-header {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 1000;
 
-    padding: 28px 40px;
+    padding: 24px 32px;
 
     display: flex;
     justify-content: space-between;
@@ -38,10 +72,16 @@ body {
     mix-blend-mode: difference;
 }
 
-   {
+
+/* BRAND */
+
+.brand {
     position: relative;
 
-    font-family: 'DejaVu Sans Condensed', sans-serif;
+    display: inline-flex;
+    align-items: flex-start;
+
+    font-family: 'DejaVu Sans Condensed', Arial, sans-serif;
     font-size: clamp(55px, 7vw, 105px);
     line-height: 0.82;
     letter-spacing: -0.06em;
@@ -58,550 +98,163 @@ body {
 .brand-name {
     display: inline-block;
 }
+
+.brand-tm {
+    position: static !important;
+
+    display: inline-block;
+
+    margin-left: 5px !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 0.14em !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    letter-spacing: 0 !important;
+
+    transform: translateY(0.32em) !important;
+}
+
+
+/* NAVIGATION */
+
 .main-nav {
     display: flex;
+    align-items: flex-start;
+
     gap: 28px;
-    padding-top: 8px;
+
+    padding-top: 5px;
 }
 
 .main-nav a {
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    line-height: 1;
 }
 
-.header-info {
-    grid-column: 2;
-    grid-row: 1;
-
-    display: flex;
-    gap: 55px;
-
-    font-size: 10px;
-    line-height: 1.25;
-}
-
-.header-info div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.header-info span {
-    opacity: 0.55;
-    letter-spacing: 0.08em;
-}
-
-.header-info strong {
-    font-weight: 500;
-    letter-spacing: 0.03em;
-}
-
-.main-nav {
-    grid-column: 2 / 4;
-    grid-row: 2;
-
-    display: flex;
-    justify-content: flex-end;
-    gap: 28px;
-
-    margin-top: 24px;
-}
-
-.main-nav a {
-    font-size: 10px;
-    letter-spacing: 0.12em;
+.main-nav a:hover {
+    opacity: 0.6;
 }
 
 
-/* SMALLER ON SCROLL */
+/* HEADER WHEN SCROLLED */
 
 .site-header.scrolled {
     padding-top: 18px;
 }
-/* ------------------------------
-   NAVIGATION
------------------------------- */
 
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
+.site-header.scrolled .brand {
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+    font-weight: 700;
 
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 30px 50px;
-
-    z-index: 10;
+    transform: scale(0.42);
+    transform-origin: top left;
 }
 
 
-.logo {
-    color: white;
-    text-decoration: none;
-
-    font-size: 22px;
-    letter-spacing: 8px;
-}
-
-
-.navigation {
-    display: flex;
-    gap: 35px;
-}
-
-
-.navigation a {
-    color: white;
-    text-decoration: none;
-
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
-
-.navigation a:hover {
-    opacity: 0.5;
-}
-
-
-/* ------------------------------
+/* =========================================================
    HERO
------------------------------- */
+========================================================= */
 
 .hero {
-    height: 100vh;
-    min-height: 700px;
-
     position: relative;
 
-    overflow: hidden;
-
-    background: #050505;
-}
-/* ------------------------------
-   LEFT SIDE
------------------------------- */
-
-.hero-content {
-   position: absolute;
-
-    left: 8vw;
-
-    bottom: 12vh;
-
-    z-index: 3;
-
-    max-width: 350px;
-}
-
-
-.eyebrow {
-    font-size: 11px;
-    letter-spacing: 4px;
-
-    margin-bottom: 25px;
-
-    opacity: 0.7;
-}
-
-
-h1 {
-     font-family: 'Manrope', sans-serif;
-
-    font-size: clamp(60px, 8vw, 120px);
-
-    font-weight: 300;
-
-    letter-spacing: 0.35em;
-
-    line-height: 0.9;
-
-    margin: 0;
-
-    text-transform: uppercase;
-}
-
-
-
-.line {
-    width: 35px;
-    height: 1px;
-
-    background: #777;
-
-    margin: 35px 0;
-}
-
-
-.intro {
-    max-width: 350px;
-
-    font-size: 15px;
-
-    line-height: 1.9;
-
-    letter-spacing: 1px;
-
-    color: #bdbdbd;
-}
-
-/* =================================
-   ARTIST IMAGE — SECOND SECTION
-================================= */
-
-.artist-section {
-     min-height: 90vh;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 100px 10vw;
-
-    background: #050505;
-}
-
-
-.artist-image {
-   width: min(500px, 55vw);
-
-    height: 52vh;
-
-    overflow: hidden;
-}
-
-
-.artist-image img {
     width: 100%;
-    height: 100%;
 
-    object-fit: cover;
+    min-height: auto;
+    height: auto;
 
-    object-position: center;
-
-    filter: grayscale(100%);
-
-    display: block;
-}
-
-/* =================================
-   MOBILE OPTIMIZATION
-================================= */
-
-@media (max-width: 768px) {
-
-    /* HERO */
-
-    .studio-name {
-     top: 10%;
-
-    font-size: 15px;
-
-    letter-spacing: 0.35em;
-}
-
-    .hero {
-        min-height: 100svh;
-        height: 100svh;
-    }
-
-    .hero-content {
-        left: 25px;
-        bottom: 12vh;
-        max-width: calc(100% - 50px);
-    }
-
-    .hero-content h1 {
-        font-size: clamp(55px, 16vw, 85px);
-        letter-spacing: 0.25em;
-    }
-
-    .hero-logo {
-   top: 43%;
-
-    width: 70vw;
-    height: 70vw;
-}
-
-
-    /* ARTIST / CALIHERO IMAGE */
-
-    .artist-section {
-        min-height: auto;
-        padding: 100px 25px;
-    }
-
-    .artist-image {
-        width: 82vw;
-        height: 65vh;
-    }
-
-
-    /* CHILDHOOD SECTION */
-
-    .childhood-section {
-        min-height: auto;
-
-        display: flex;
-        flex-direction: column;
-
-        padding: 100px 25px;
-
-        gap: 60px;
-    }
-
-    .childhood-content {
-        max-width: 100%;
-    }
-
-    .childhood-content h2 {
-        font-size: clamp(45px, 13vw, 70px);
-    }
-
-
-    /* CHILDHOOD IMAGE */
-
-    .childhood-image {
-        width: 65vw;
-
-        height: 42vh;
-
-        max-height: 450px;
-
-        justify-self: auto;
-
-        align-self: center;
-
-        overflow: hidden;
-    }
-
-    .childhood-image img {
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-
-        object-position: center;
-    }
-
-}
-
-/* ==========================================
-   CALI HERO — CLEAN BASE
-========================================== */
-
-
-.hero {
-    height: 100vh;
-    min-height: 700px;
-    position: relative;
-    overflow: visible;
-    background: #050505;
-}
-
-
-/* Three.js logo container */
-.hero-logo {
-    position: fixed;
-
-
-    top: 46%;
-    left: 50%;
-
-
-    width: min(480px, 48vw);
-    height: min(480px, 48vw);
-
-
-    transform: translate(-50%, -50%);
-
-
-    z-index: 1000;
-
-
-    pointer-events: none;
-
-
-    perspective: 1000px;
-}
-
-
-#three-logo {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-
-/* Studio name */
-.studio-name {
-    position: absolute;
-
-
-    top: 10%;
-    left: 50%;
-
-
-    transform: translateX(-50%);
-
-
-    z-index: 1001;
-
-
-    font-family: 'Manrope', sans-serif;
-
-
-    font-size: clamp(22px, 3vw, 38px);
-
-
-    font-weight: 300;
-
-
-    letter-spacing: 0.45em;
-
-
-    text-transform: uppercase;
-
-
-    white-space: nowrap;
-
-
-    color: #ffffff;
-}
-
-
-/* Hero text */
-.hero-content {
-    position: absolute;
-
-
-    left: 8vw;
-    bottom: 12vh;
-
-
-    z-index: 1001;
-
-
-    max-width: 350px;
-}
-
-/* =========================================
-   CALI EDITORIAL LAYOUT
-   ========================================= */
-
-:root {
-    --bg: #0b0b0b;
-    --text: #f1f1ed;
-    --muted: #8a8a84;
-    --line: rgba(241, 241, 237, 0.22);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* GENERAL
------------------------------------------ */
-
-main {
-    width: 100%;
-}
-
-section {
-    padding: 120px 32px;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid var(--line);
-    padding-top: 12px;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    color: var(--muted);
-}
-
-
-/* HERO
------------------------------------------ */
-
-.hero {
-   min-height: auto;
     padding: 135px 40px 20px;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    background: var(--bg);
+
+    overflow: visible;
 }
 
-.hero-top,
-.hero-bottom {
-    display: flex;
-    justify-content: space-between;
-    font-size: 10px;
-    letter-spacing: 0.13em;
-    color: var(--muted);
-}
+
+/* HERO IMAGE */
 
 .hero-image {
     width: min(24vw, 320px);
+
     margin: 20px 0 0 12%;
+
     position: relative;
+
     z-index: 1;
-}
 
-.hero {
-    position: relative;
-}
-
-.hero-image {
     align-self: flex-start;
-}
-
-.hero-top {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
 }
 
 .hero-image img {
     width: 100%;
-    display: block;
+    height: auto;
+
+    object-fit: cover;
+
     filter: grayscale(100%);
-        object-fit: cover;
 }
 
+
+/* HERO TOP / BOTTOM */
+
+.hero-top,
 .hero-bottom {
-    align-items: flex-end;
-}
+    width: 100%;
 
-.scroll-link {
     display: flex;
-    gap: 14px;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    font-size: 10px;
+    line-height: 1;
+
+    letter-spacing: 0.13em;
+
+    color: var(--muted);
 }
 
-.scroll-link span {
-    font-size: 18px;
+
+/* =========================================================
+   THREE.JS LOGO
+========================================================= */
+
+.hero-logo {
+    position: fixed;
+
+    top: 46%;
+    left: 50%;
+
+    width: min(480px, 48vw);
+    height: min(480px, 48vw);
+
+    transform: translate(-50%, -50%);
+
+    z-index: 900;
+
+    pointer-events: none;
+
+    perspective: 1000px;
 }
 
-/* STUDIO
------------------------------------------ */
+#three-logo {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+/* =========================================================
+   STUDIO
+========================================================= */
 
 .studio-section {
     min-height: 80vh;
@@ -612,82 +265,328 @@ section {
 }
 
 .studio-heading h2 {
-     font-size: clamp(42px, 5vw, 72px);
+    margin: 0;
+
+    font-size: clamp(42px, 5vw, 72px);
     line-height: 0.9;
+
     font-weight: 400;
+
     letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   CALI VISUAL FLOW
+========================================================= */
+
+.visual-flow {
+    position: relative;
+    width: 100%;
+    height: 2150px;
+    margin-top: 40px;
+}
+
+
+/* LOGO */
+
+.visual-logo {
+    position: absolute;
+
+    top: 0;
+    left: 10%;
+
+    width: 180px;
+}
+
+.visual-logo img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* VIDEO */
+
+.visual-video {
+    position: absolute;
+
+    top: 40px;
+    right: 12%;
+
+    width: 260px;
+
+    aspect-ratio: 9 / 16;
+
+    overflow: hidden;
+}
+
+.visual-video video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* ALL PHOTOS */
+
+.visual-photo {
+    position: absolute;
+
+    overflow: hidden;
+}
+
+.visual-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* PHOTO 1 */
+
+.visual-photo-1 {
+    width: 430px;
+    height: 430px;
+
+    left: 8%;
+    top: 500px;
+}
+
+
+/* PHOTO 2 */
+
+.visual-photo-2 {
+    width: 300px;
+    height: 390px;
+
+    right: 10%;
+    top: 700px;
+}
+
+
+/* PHOTO 3 */
+
+.visual-photo-3 {
+    width: 430px;
+    height: 430px;
+
+    left: 15%;
+    top: 1030px;
+}
+
+
+/* PHOTO 4 */
+
+.visual-photo-4 {
+    width: 300px;
+    height: 390px;
+
+    right: 14%;
+    top: 1250px;
+}
+
+
+/* PHOTO 5 */
+
+.visual-photo-5 {
+    width: 430px;
+    height: 430px;
+
+    left: 8%;
+    top: 1570px;
+}
+
+
+/* PHOTO 6 */
+
+.visual-photo-6 {
+    width: 300px;
+    height: 390px;
+
+    right: 10%;
+    top: 1810px;
+}
+
+
+/* =========================================================
+   TATTOO EXPERIENCE
+========================================================= */
+
+.experience-section {
+    position: relative;
+
+    width: 100%;
+
+    min-height: auto;
+    height: auto;
+
+    padding: 90px 8% 160px;
+
     margin: 0;
 }
 
+.experience-copy {
+    max-width: 1000px;
 
-/* BOOKING
------------------------------------------ */
-
-.booking-section {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    margin-left: 5%;
 }
 
-.eyebrow {
+
+/* MAIN HEADLINE */
+
+.experience-heading {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'DejaVu Sans Condensed', Arial, sans-serif;
+
+    font-size: clamp(60px, 8vw, 120px);
+
+    line-height: 0.85;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 700;
+}
+
+
+/* TEXT UNDER HEADLINE */
+
+.experience-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+    max-width: 650px;
+
+    margin-top: 100px;
+    padding: 0;
+}
+
+.experience-text p {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'DejaVu Sans Condensed', Arial, sans-serif;
+
+    font-size: clamp(24px, 3vw, 42px);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.025em;
+
+    font-weight: 400;
+}
+
+
+/* EXTRA SPACE BEFORE FINAL SENTENCE */
+
+.experience-text p:last-child {
+    margin-top: 75px;
+}
+
+
+/* =========================================================
+   BOOKING
+========================================================= */
+
+.booking-section {
+    min-height: 45vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.booking-section .eyebrow {
     font-size: 10px;
+
     color: var(--muted);
+
     letter-spacing: 0.15em;
+
     margin-bottom: 40px;
 }
 
 .booking-section h2 {
-    font-size: clamp(70px, 10vw, 150px);
-    line-height: 0.83;
-    font-weight: 400;
-    letter-spacing: -0.06em;
     margin: 0 0 70px;
+
+    font-size: clamp(70px, 10vw, 150px);
+
+    line-height: 0.83;
+
+    font-weight: 400;
+
+    letter-spacing: -0.06em;
 }
 
 .booking-button {
     border-bottom: 1px solid var(--text);
+
     padding-bottom: 8px;
+
     font-size: 12px;
+
     letter-spacing: 0.12em;
 }
 
 .booking-button span {
     margin-left: 30px;
+
     font-size: 18px;
 }
 
 
-/* FOOTER
------------------------------------------ */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .site-footer {
     border-top: 1px solid var(--line);
+
     padding: 30px 32px 24px;
 }
 
 .footer-links {
     display: flex;
+
     gap: 25px;
-    font-size: 10px;
-    letter-spacing: 0.12em;
+
     margin-bottom: 60px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
 }
 
 .footer-bottom {
     display: flex;
+
     justify-content: space-between;
+
     font-size: 9px;
+
     letter-spacing: 0.1em;
+
     color: var(--muted);
 }
 
 
-/* MOBILE
------------------------------------------ */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 700px) {
+
+    /* HEADER */
 
     .site-header {
         padding: 20px;
@@ -702,265 +601,58 @@ section {
         display: none;
     }
 
-    section {
-        padding: 90px 20px;
-    }
+
+    /* HERO */
 
     .hero {
         padding: 90px 20px 25px;
     }
 
-    .hero-title h1 {
-        font-size: 23vw;
-    }
-
     .hero-image {
         width: 85vw;
+
+        margin-top: 20px;
+        margin-left: 0;
     }
 
     .hero-top,
     .hero-bottom {
         font-size: 8px;
     }
+
+
+    /* THREE.JS LOGO */
+
+    .hero-logo {
+        top: 43%;
+
+        width: 70vw;
+        height: 70vw;
+    }
+
+
+    /* STUDIO */
+
     .studio-heading {
         margin-top: 90px;
     }
 
-    .footer-links {
-        flex-wrap: wrap;
-    }
 
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* =========================================
-   CALI HEADER
-   ========================================= */
-
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    padding: 24px 32px;
-
-    mix-blend-mode: difference;
-}
-   .brand {
-     position: relative;
-
-     display: inline-flex;
-align-items: flex-start;
-
-    font-family: 'DejaVu Sans Condensed', sans-serif;
-    font-size: clamp(55px, 7vw, 105px);
-    line-height: 0.82;
-    letter-spacing: -0.06em;
-    font-weight: 700;
-
-    white-space: nowrap;
-
-    transform-origin: top left;
-    will-change: transform;
-
-    transition: transform 2s ease-in-out;
-}
-
-.brand-name {
-    display: inline-block;
-}
-.brand-tm {
-     position: static !important;
-
-    display: inline-block;
-
-    margin-left: 5px !important;
-
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-size: 0.14em !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    letter-spacing: 0 !important;
-
-    transform: translateY(0.32em) !important;
-}
-.main-nav {
-    display: flex;
-    gap: 28px;
-    padding-top: 5px;
-}
-
-.main-nav a {
-    font-size: 11px;
-    letter-spacing: 0.14em;
-}
-
-.site-header.scrolled .brand {  font-size: clamp(55px, 7vw, 105px);
-    line-height: 0.82;
-    letter-spacing: -0.06em;
-    font-weight: 700;
-
-    transform: scale(0.42);
-    transform-origin: top left;
-}
- 
-/* =========================================
-   CALI VISUAL FLOW
-   ========================================= */
-
-.visual-flow {
-    position: relative;
-    width: 100%;
-    height: 2600px;
-    margin-top: 40px;
-}
-
-
-/* CALI LOGO */
-
-.visual-logo {
-    position: absolute;
-    top: 0;
-    left: 10%;
-
-    width: 180px;
-}
-
-.visual-logo img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-
-/* VIDEO */
-
-.visual-video {
-    position: absolute;
-    top: 40px;
-    right: 12%;
-
-    width: 260px;
-    aspect-ratio: 9 / 16;
-
-    overflow: hidden;
-}
-
-.visual-video video {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-    object-fit: cover;
-}
-
-
-/* ALL PHOTOS */
-
-.visual-photo {
-    position: absolute;
-    overflow: hidden;
-}
-
-.visual-photo img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-    object-fit: cover;
-}
-
-
-/* PHOTO 1 — LEFT */
-
-.visual-photo-1 {
-    width: 430px;
-    height: 430px;
-
-    left: 8%;
-    top: 500px;
-}
-
-
-/* PHOTO 2 — RIGHT */
-
-.visual-photo-2 {
-    width: 300px;
-    height: 390px;
-
-    right: 10%;
-    top: 700px;
-}
-
-
-/* PHOTO 3 — LEFT */
-
-.visual-photo-3 {
-    width: 430px;
-    height: 430px;
-
-    left: 15%;
-    top: 1030px;
-}
-
-
-/* PHOTO 4 — RIGHT */
-
-.visual-photo-4 {
-    width: 300px;
-    height: 390px;
-
-    right: 14%;
-    top: 1250px;
-}
-
-
-/* PHOTO 5 — LEFT */
-
-.visual-photo-5 {
-    width: 430px;
-    height: 430px;
-
-    left: 8%;
-    top: 1570px;
-}
-
-
-/* PHOTO 6 — RIGHT */
-
-.visual-photo-6 {
-    width: 300px;
-    height: 390px;
-
-    right: 10%;
-    top: 1810px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
+    /* VISUAL FLOW */
 
     .visual-flow {
-        height: 1900px;
+        height: 1650px;
     }
 
     .visual-logo {
         width: 120px;
+
         left: 6%;
     }
 
     .visual-video {
         width: 170px;
+
         right: 6%;
         top: 30px;
     }
@@ -968,6 +660,7 @@ align-items: flex-start;
     .visual-photo-1 {
         width: 260px;
         height: 260px;
+
         left: 5%;
         top: 330px;
     }
@@ -975,6 +668,7 @@ align-items: flex-start;
     .visual-photo-2 {
         width: 180px;
         height: 235px;
+
         right: 5%;
         top: 540px;
     }
@@ -982,6 +676,7 @@ align-items: flex-start;
     .visual-photo-3 {
         width: 260px;
         height: 260px;
+
         left: 10%;
         top: 800px;
     }
@@ -989,6 +684,7 @@ align-items: flex-start;
     .visual-photo-4 {
         width: 180px;
         height: 235px;
+
         right: 5%;
         top: 1010px;
     }
@@ -996,6 +692,7 @@ align-items: flex-start;
     .visual-photo-5 {
         width: 260px;
         height: 260px;
+
         left: 5%;
         top: 1270px;
     }
@@ -1003,37 +700,87 @@ align-items: flex-start;
     .visual-photo-6 {
         width: 180px;
         height: 235px;
+
         right: 5%;
         top: 1480px;
     }
-}
-/* =========================================
-   INTRO TEXT
-   ========================================= */
 
-.visual-intro p {
-    margin: 0;
 
-    font-size: 13px;
-    line-height: 1.45;
-    color: var(--muted);
+    /* TATTOO EXPERIENCE */
+
+    .experience-section {
+        padding: 70px 6% 110px;
+    }
+
+    .experience-copy {
+        margin-left: 0;
+    }
+
+    .experience-heading {
+        font-size: clamp(48px, 13vw, 75px);
+    }
+
+    .experience-text {
+        margin-top: 70px;
+        gap: 20px;
+    }
+
+    .experience-text p {
+        font-size: clamp(23px, 6vw, 34px);
+    }
+
+    .experience-text p:last-child {
+        margin-top: 55px;
+    }
+
+
+    /* BOOKING */
+
+    .booking-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 10px;
+    }
 }
+
+/* =========================================================
+   HERO INTRO
+========================================================= */
 
 .visual-intro {
     position: absolute;
+
     top: 230px;
     left: calc(14% + 650px);
+
     width: 300px;
+
     z-index: 2;
 }
 
 .visual-intro h2 {
     margin: 0;
 
-    font-family: 'DejaVu Sans Condensed', sans-serif;
+    font-family: 'DejaVu Sans Condensed', Arial, sans-serif;
+
     font-size: clamp(34px, 3.8vw, 58px);
+
     font-weight: 700;
+
     line-height: 0.88;
+
     letter-spacing: -0.055em;
 
     color: #f5f5f2;
@@ -1049,270 +796,4 @@ align-items: flex-start;
 
 .visual-intro h2 span:nth-child(3) {
     margin-left: 0.06em;
-}
-
-/* =========================================
-   CLEAN ABOUT SECTION
-   ========================================= */
-
-.about-section {
-    position: relative;
-    width: 100%;
-    padding: 90px 40px 120px !important;
-    margin: 0 !important;
-}
-
-.about-label {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    border-top: 1px solid var(--line);
-    padding-top: 10px;
-
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    color: var(--muted);
-}
-
-.about-content {
-    position: relative;
-
-    min-height: 650px;
-
-    margin-top: 70px;
-}
-
-
-/* HEADLINE */
-
-.about-copy-block {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 650px;
-}
-
-.about-copy-block h2 {
-    margin: 0;
-
-    font-family: 'DejaVu Sans Condensed', sans-serif;
-    font-size: clamp(48px, 6vw, 88px);
-    line-height: 0.88;
-    font-weight: 700;
-    letter-spacing: -0.055em;
-}
-
-.about-copy-block p {
-    width: 280px;
-
-    margin: 45px 0 0 5px;
-
-    font-size: 13px;
-    line-height: 1.45;
-
-    color: var(--muted);
-}
-
-
-/* CHILDHOOD PHOTO */
-
-.about-childhood img {
-    width: 100%;
-    height: auto;
-
-    display: block;
-
-    filter: grayscale(100%);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .about-section {
-        padding: 70px 20px 90px !important;
-    }
-
-    .about-content {
-        min-height: 700px;
-        margin-top: 55px;
-    }
-
-    .about-copy-block {
-        width: 100%;
-    }
-
-    .about-copy-block h2 {
-        font-size: 48px;
-    }
-
-    .about-copy-block p {
-        width: 240px;
-        margin-top: 35px;
-    }
-   /* =========================================
-   ABOUT — TEXT LEFT / IMAGE RIGHT
-   ========================================= */
-
-.about-section {
-    width: 100%;
-    padding: 90px 40px 120px;
-}
-
-.about-layout {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    align-items: center !important;
-    gap: 60px !important;
-
-    margin-top: 70px !important;
-}
-
-.about-copy-block {
-    grid-column: 1 !important;
-}
-
-.about-image {
-    grid-column: 2 !important;
-    justify-self: end !important;
-
-    width: 160px !important;
-    max-width: 160px !important;
-
-    margin: 0 12% 0 0 !important;
-
-    position: relative !important;
-}
-
-.about-image img {
-    width: 160px !important;
-    max-width: 160px !important;
-    height: auto !important;
-
-    display: block !important;
-}
-
-/* =========================================
-   TATTOO EXPERIENCE
-========================================= */
-
-.experience-section {
-    position: relative;
-    min-height: auto !important;
-    height: auto !important;
-    padding: 70px 8% 160px !important;
-    margin: 0 !important;
-}
-
-.experience-label {
-    margin: 0 0 35px !important;
-    font-size: 11px !important;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.experience-copy {
-    margin-left: 5% !important;
-    max-width: 1000px;
-}
-
-/* MAIN HEADLINE */
-
-.experience-heading {
-    margin: 0 !important;
-
-    font-family: 'DejaVu Sans Condensed', sans-serif !important;
-    font-size: clamp(60px, 8vw, 120px) !important;
-    line-height: 0.85 !important;
-    letter-spacing: -0.06em !important;
-    font-weight: 700 !important;
-}
-
-/* TEXT UNDER HEADLINE */
-
-.experience-text {
-    margin-top: 75px !important;
-    max-width: 650px;
-}
-
-.experience-text p {
-    margin: 0 0 8px !important;
-
-    font-family: 'DejaVu Sans Condensed', sans-serif !important;
-    font-size: clamp(24px, 3vw, 42px) !important;
-    line-height: 1.05 !important;
-    letter-spacing: -0.025em !important;
-    font-weight: 400 !important;
-}
-
-.experience-text p:last-child {
-    margin-top: 65px !important;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .experience-section {
-        padding: 60px 6% 110px !important;
-    }
-
-    .experience-copy {
-        margin-left: 0 !important;
-    }
-
-    .experience-heading {
-        font-size: clamp(48px, 13vw, 75px) !important;
-    }
-
-    .experience-text {
-        margin-top: 55px !important;
-    }
-
-    .experience-text p {
-        font-size: clamp(23px, 6vw, 34px) !important;
-    }
-
-    .experience-text p:last-child {
-        margin-top: 50px !important;
-    }
-}
-/* =========================================
-   TATTOO EXPERIENCE - FINAL SPACING
-========================================= */
-
-.experience-copy {
-    margin-left: 5% !important;
-}
-
-.experience-heading {
-    margin: 0 !important;
-    padding: 0 !important;
-    margin-bottom: 100px !important;
-}
-
-.experience-text {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 24px !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    max-width: 650px !important;
-}
-
-.experience-text p {
-    margin: 0 !important;
-    padding: 0 !important;
-
-    font-weight: 400 !important;
-}
-
-.experience-text p:last-child {
-    margin-top: 75px !important;
 }
