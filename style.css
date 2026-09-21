@@ -1339,3 +1339,28 @@ main {
         font-size: 28px;
     }
 }
+
+/* =========================================================
+   MENU POSITION — ALIGN WITH PAGE MARGIN
+========================================================= */
+
+.menu-toggle {
+    position: fixed !important;
+
+    top: 30px !important;
+    right: 16% !important;
+    left: auto !important;
+
+    width: 34px !important;
+    height: 22px !important;
+
+    z-index: 2000 !important;
+}
+
+.menu-panel {
+    position: fixed !important;
+
+    top: 30px !important;
+    right: 16% !important;
+    left: auto !important;
+}
