@@ -356,9 +356,9 @@ main {
 ========================================================= */
 
 .visual-photo-1 {
-    position: absolute;
+   position: absolute;
 
-    top: 560px;
+    top: 650px;
     right: 14%;
 
     width: 217px;
@@ -371,7 +371,7 @@ main {
 .visual-photo-2 {
   position: absolute;
 
-    top: 720px;
+    top: 620px;
     left: 14%;
 
     width: 323px;
@@ -939,7 +939,7 @@ main {
     width: 100%;
     z-index: 1000;
 
-    padding: 24px 32px 24px 15.5%;
+    padding: 24px 32px 24px 16%;
 
     display: flex;
     justify-content: flex-start;
@@ -997,17 +997,15 @@ main {
 /* VIDEO — RESTORE RIGHT POSITION */
 
 .visual-video {
-    position: absolute !important;
+    position: absolute;
 
-    top: 0 !important;
-    right: 12% !important;
-    left: auto !important;
+    top: 80px;
+    right: 12%;
 
-    width: 260px !important;
+    width: 260px;
+    aspect-ratio: 9 / 16;
 
-    aspect-ratio: 9 / 16 !important;
-
-    overflow: hidden !important;
+    overflow: hidden;
 }
 
 
