@@ -389,3 +389,51 @@ menuLinks.forEach(link => {
         menuToggle.setAttribute("aria-label", "Open menu");
     });
 });
+
+/* =========================================================
+   MENU
+========================================================= */
+
+const menuToggleButton = document.querySelector(".menu-toggle");
+const menuHeader = document.querySelector(".site-header");
+const menuLinks = document.querySelectorAll(".menu-panel a");
+
+if (menuToggleButton && menuHeader) {
+
+    menuToggleButton.addEventListener("click", () => {
+
+        const menuIsOpen = menuHeader.classList.toggle("menu-open");
+
+        menuToggleButton.setAttribute(
+            "aria-expanded",
+            menuIsOpen ? "true" : "false"
+        );
+
+        menuToggleButton.setAttribute(
+            "aria-label",
+            menuIsOpen ? "Close menu" : "Open menu"
+        );
+
+    });
+
+    menuLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            menuHeader.classList.remove("menu-open");
+
+            menuToggleButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggleButton.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+
+        });
+
+    });
+
+}

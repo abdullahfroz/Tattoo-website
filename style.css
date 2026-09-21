@@ -1193,25 +1193,17 @@ main {
 }
 
 /* =========================================================
-   MINIMAL MENU
+   TOP RIGHT MENU
 ========================================================= */
-
-.site-header {
-    position: fixed;
-    z-index: 1000;
-}
-
-
-/* THREE LINES */
 
 .menu-toggle {
     position: fixed;
 
     top: 30px;
-    right: 4%;
+    right: 32px;
 
     width: 34px;
-    height: 24px;
+    height: 22px;
 
     padding: 0;
     margin: 0;
@@ -1225,7 +1217,9 @@ main {
 
     cursor: pointer;
 
-    z-index: 1100;
+    z-index: 2000;
+
+    color: #f2f2f2;
 }
 
 .menu-toggle span {
@@ -1242,45 +1236,45 @@ main {
 }
 
 
-/* MENU PANEL */
+/* MENU */
 
 .menu-panel {
     position: fixed;
 
     top: 30px;
-    right: 4%;
+    right: 32px;
 
-    width: min(320px, 70vw);
+    width: 360px;
 
     display: flex;
     flex-direction: column;
 
-    gap: 22px;
+    gap: 24px;
 
     padding-top: 50px;
 
     opacity: 0;
     visibility: hidden;
 
-    transform: translateY(-15px);
+    transform: translateY(-12px);
 
     transition:
         opacity 0.4s ease,
         transform 0.4s ease,
         visibility 0.4s ease;
 
-    z-index: 1050;
+    z-index: 1900;
 }
 
 .menu-panel a {
+    display: block;
+
     font-family: 'DejaVu Sans Condensed', Arial, sans-serif;
 
-    font-size: clamp(24px, 3vw, 40px);
-
+    font-size: 38px;
     line-height: 0.9;
 
     font-weight: 700;
-
     letter-spacing: -0.04em;
 
     text-align: right;
@@ -1293,7 +1287,7 @@ main {
 }
 
 
-/* OPEN STATE */
+/* OPEN */
 
 .site-header.menu-open .menu-panel {
     opacity: 1;
@@ -1303,10 +1297,10 @@ main {
 }
 
 
-/* TURN LINES INTO X */
+/* X */
 
 .site-header.menu-open .menu-toggle span:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
 }
 
 .site-header.menu-open .menu-toggle span:nth-child(2) {
@@ -1314,24 +1308,25 @@ main {
 }
 
 .site-header.menu-open .menu-toggle span:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
     .menu-toggle {
         top: 22px;
-        right: 6%;
+        right: 20px;
+
+        width: 30px;
+        height: 20px;
     }
 
     .menu-panel {
         top: 22px;
-        right: 6%;
+        right: 20px;
 
         width: 75vw;
 
@@ -1341,6 +1336,6 @@ main {
     }
 
     .menu-panel a {
-        font-size: clamp(22px, 7vw, 34px);
+        font-size: 28px;
     }
 }
