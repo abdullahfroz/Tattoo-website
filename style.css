@@ -182,16 +182,12 @@ main {
 /* HERO IMAGE */
 
 .hero-image {
-    width: min(24vw, 320px);
-
+    width: min(18vw, 240px);
     margin: 20px 0 0 12%;
-
     position: relative;
-
     z-index: 1;
-
     align-self: flex-start;
-}
+    }
 
 .hero-image img {
     width: 100%;
@@ -347,9 +343,8 @@ main {
 /* PHOTO 1 */
 
 .visual-photo-1 {
-    width: 430px;
-    height: 430px;
-
+   width: 323px;
+    height: 323px;
     left: 8%;
     top: 500px;
 }
@@ -358,9 +353,8 @@ main {
 /* PHOTO 2 */
 
 .visual-photo-2 {
-    width: 300px;
-    height: 390px;
-
+    width: 225px;
+    height: 293px;
     right: 10%;
     top: 700px;
 }
@@ -369,9 +363,8 @@ main {
 /* PHOTO 3 */
 
 .visual-photo-3 {
-    width: 430px;
-    height: 430px;
-
+    width: 323px;
+    height: 323px;
     left: 15%;
     top: 1030px;
 }
@@ -380,9 +373,8 @@ main {
 /* PHOTO 4 */
 
 .visual-photo-4 {
-    width: 300px;
-    height: 390px;
-
+     width: 225px;
+    height: 293px;
     right: 14%;
     top: 1250px;
 }
@@ -391,9 +383,8 @@ main {
 /* PHOTO 5 */
 
 .visual-photo-5 {
-    width: 430px;
-    height: 430px;
-
+    width: 323px;
+    height: 323px;
     left: 8%;
     top: 1570px;
 }
@@ -656,7 +647,7 @@ main {
     }
 
     .hero-image {
-        width: 85vw;
+         width: 63.75vw;
 
         margin-top: 20px;
         margin-left: 0;
@@ -705,43 +696,38 @@ main {
     }
 
     .visual-photo-1 {
-        width: 260px;
-        height: 260px;
-
-        left: 5%;
-        top: 330px;
+       width: 195px;
+    height: 195px;
+    left: 5%;
+    top: 330px;
     }
 
     .visual-photo-2 {
-        width: 180px;
-        height: 235px;
-
-        right: 5%;
-        top: 540px;
+        width: 135px;
+    height: 176px;
+    right: 5%;
+    top: 540px;
     }
 
     .visual-photo-3 {
-        width: 260px;
-        height: 260px;
-
-        left: 10%;
-        top: 800px;
+         width: 195px;
+    height: 195px;
+    left: 10%;
+    top: 800px;
     }
 
     .visual-photo-4 {
-        width: 180px;
-        height: 235px;
-
-        right: 5%;
-        top: 1010px;
+        width: 135px;
+    height: 176px;
+    right: 5%;
+    top: 1010px;
     }
 
     .visual-photo-5 {
-        width: 260px;
-        height: 260px;
-
-        left: 5%;
-        top: 1270px;
+        width: 195px;
+    height: 195px;
+    left: 5%;
+    top: 1270px;
     }
 
     .visual-photo-6 {
