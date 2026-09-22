@@ -1045,141 +1045,6 @@ main {
     object-fit: cover;
 }
 
-/* =========================================================
-   GLOBAL 16% ALIGNMENT
-   Everything lines up with CALI TATTOO ART
-========================================================= */
-
-
-/* HEADER */
-
-.site-header {
-    padding-left: 16% !important;
-    padding-right: 16% !important;
-}
-
-
-/* HERO IMAGE */
-
-.hero-image {
-    margin-left: 16% !important;
-}
-
-
-/* LEFT-SIDE WORK IMAGES */
-
-.visual-photo-1 {
-    right: 16% !important;
-}
-
-.visual-photo-2 {
-    left: 16% !important;
-}
-
-.visual-photo-3 {
-    right: 16% !important;
-}
-
-.visual-photo-4 {
-    right: 16% !important;
-}
-
-
-/* RIGHT-SIDE / LEFT-SIDE CONSISTENCY */
-
-.visual-video {
-    right: 16% !important;
-    left: auto !important;
-}
-
-
-/* PORTFOLIO FULL STOP */
-
-.portfolio-end {
-    padding-left: 16% !important;
-    padding-right: 16% !important;
-}
-
-
-/* TATTOO EXPERIENCE */
-
-.experience-section {
-    padding-left: 16% !important;
-    padding-right: 16% !important;
-}
-
-.experience-copy {
-    margin-left: 0 !important;
-}
-
-
-/* BOOKING */
-
-.booking-section {
-    padding-left: 16% !important;
-    padding-right: 16% !important;
-}
-
-
-/* FOOTER */
-
-.site-footer {
-    padding-left: 16% !important;
-    padding-right: 16% !important;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .site-header {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
-    }
-
-    .hero-image {
-        margin-left: 12% !important;
-    }
-
-    .visual-video {
-        right: 12% !important;
-    }
-
-    .visual-photo-1 {
-        right: 12% !important;
-    }
-
-    .visual-photo-2 {
-        left: 12% !important;
-    }
-
-    .visual-photo-3 {
-        right: 12% !important;
-    }
-
-    .portfolio-end {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
-    }
-
-    .experience-section {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
-    }
-
-    .booking-section {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
-    }
-
-    .site-footer {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
-    }
-}
 
 /* =========================================================
    TOP RIGHT MENU
@@ -1421,4 +1286,140 @@ main {
     display: block !important;
 
     object-fit: cover !important;
+}
+
+/* =========================================================
+   GLOBAL 16% ALIGNMENT
+   Everything lines up with CALI TATTOO ART
+========================================================= */
+
+
+/* HEADER */
+
+.site-header {
+    padding-left: 16% !important;
+    padding-right: 16% !important;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    margin-left: 16% !important;
+}
+
+
+/* LEFT-SIDE WORK IMAGES */
+
+.visual-photo-1 {
+    right: 16% !important;
+}
+
+.visual-photo-2 {
+    left: 16% !important;
+}
+
+.visual-photo-3 {
+    right: 16% !important;
+}
+
+.visual-photo-4 {
+    right: 16% !important;
+}
+
+
+/* RIGHT-SIDE / LEFT-SIDE CONSISTENCY */
+
+.visual-video {
+    right: 16% !important;
+    left: auto !important;
+}
+
+
+/* PORTFOLIO FULL STOP */
+
+.portfolio-end {
+    padding-left: 16% !important;
+    padding-right: 16% !important;
+}
+
+
+/* TATTOO EXPERIENCE */
+
+.experience-section {
+    padding-left: 16% !important;
+    padding-right: 16% !important;
+}
+
+.experience-copy {
+    margin-left: 0 !important;
+}
+
+
+/* BOOKING */
+
+.booking-section {
+    padding-left: 16% !important;
+    padding-right: 16% !important;
+}
+
+
+/* FOOTER */
+
+.site-footer {
+    padding-left: 16% !important;
+    padding-right: 16% !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding-left: 12% !important;
+        padding-right: 12% !important;
+    }
+
+    .hero-image {
+        margin-left: 12% !important;
+    }
+
+    .visual-video {
+        right: 12% !important;
+    }
+
+    .visual-photo-1 {
+        right: 12% !important;
+    }
+
+    .visual-photo-2 {
+        left: 12% !important;
+    }
+
+    .visual-photo-3 {
+        right: 12% !important;
+    }
+
+    .portfolio-end {
+        padding-left: 12% !important;
+        padding-right: 12% !important;
+    }
+
+    .experience-section {
+        padding-left: 12% !important;
+        padding-right: 12% !important;
+    }
+
+    .booking-section {
+        padding-left: 12% !important;
+        padding-right: 12% !important;
+    }
+
+    .site-footer {
+        padding-left: 12% !important;
+        padding-right: 12% !important;
+    }
 }
