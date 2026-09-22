@@ -1349,3 +1349,33 @@ main {
     right: 13% !important;
     left: auto !important;
 }
+
+/* =========================================================
+   CALI TATTOO ART — RESTORE SCROLL ANIMATION
+========================================================= */
+
+.brand {
+    position: relative !important;
+
+    display: inline-flex !important;
+    align-items: flex-start !important;
+
+    font-family: 'DejaVu Sans Condensed', Arial, sans-serif !important;
+
+    font-size: clamp(55px, 7vw, 105px) !important;
+    line-height: 0.82 !important;
+    letter-spacing: -0.06em !important;
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+
+    transform-origin: top left !important;
+    will-change: transform !important;
+
+    transition: transform 2s ease-in-out !important;
+}
+
+.site-header.scrolled .brand {
+    transform: scale(0.42) !important;
+    transform-origin: top left !important;
+}
