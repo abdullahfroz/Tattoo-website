@@ -2406,3 +2406,101 @@ main {
         margin-left: 0 !important;
     }
 }
+
+/* =========================================================
+   MOBILE — FINAL HERO ADJUSTMENT
+========================================================= */
+
+@media only screen and (max-width: 700px) {
+
+    /* CALI TATTOO ART — slightly bigger */
+
+    .site-header .brand,
+    .site-header.scrolled .brand {
+        font-size: 32px !important;
+        line-height: 0.82 !important;
+        letter-spacing: -0.055em !important;
+
+        transform: none !important;
+        transition: none !important;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        position: relative !important;
+
+        height: auto !important;
+        min-height: auto !important;
+
+        padding: 90px 12% 0 !important;
+    }
+
+
+    /* HERO IMAGE */
+
+    .hero-image {
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        z-index: 1 !important;
+    }
+
+
+    /* ART IS THE VOICE — BELOW IMAGE */
+
+    .visual-intro {
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+
+        width: 100% !important;
+
+        margin: 55px 0 0 !important;
+
+        transform: none !important;
+
+        text-align: center !important;
+
+        z-index: 2 !important;
+    }
+
+    .visual-intro h2 {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-family: 'DejaVu Sans Condensed', Arial, sans-serif !important;
+
+        font-size: 30px !important;
+
+        line-height: 0.9 !important;
+
+        font-weight: 700 !important;
+
+        letter-spacing: -0.05em !important;
+
+        text-align: center !important;
+
+        white-space: nowrap !important;
+    }
+
+    .visual-intro h2 span {
+        display: block !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .intro-top,
+    .intro-bottom {
+        margin-left: 0 !important;
+    }
+}
