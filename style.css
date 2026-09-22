@@ -3113,10 +3113,9 @@ main {
     ----------------------------------------- */
 
     .visual-photo-5 {
-        grid-column: 2 !important;
-    grid-row: 7 / span 2 !important;
-
-    transform: translateX(80px) !important;
+        grid-column: 3 !important;
+    grid-row: 6 / span 2 !important;
+    transform: none !important;
     }
 
 
