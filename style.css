@@ -1255,7 +1255,6 @@ main {
     left: auto !important;
     right: 16% !important;
 }
-
 /* =========================================================
    MENU — CLEAN VERSION
 ========================================================= */
@@ -2503,4 +2502,16 @@ main {
     .intro-bottom {
         margin-left: 0 !important;
     }
+}
+
+/* =========================================================
+   MOBILE — EQUAL SPACING AROUND ART IS THE VOICE
+========================================================= */
+
+@media only screen and (max-width: 700px) {
+
+    .visual-intro {
+        margin: 55px 0 !important;
+    }
+
 }
