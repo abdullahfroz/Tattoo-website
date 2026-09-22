@@ -1423,3 +1423,9 @@ main {
         padding-right: 12% !important;
     }
 }
+/* ALIGN CALIWORKEX3 WITH 16% PAGE MARGIN */
+
+.visual-photo-5 {
+    left: 16% !important;
+    right: auto !important;
+}
