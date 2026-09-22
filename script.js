@@ -1,31 +1,155 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
+
+/* =========================================================
+   CALI WEBSITE
+   - Three.js logo
+   - Header scroll animation
+   - Menu
+========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    const canvas = document.getElementById("three-logo");
-    const container = document.getElementById("three-logo-container");
+
+    /* =====================================================
+       HEADER SHRINK ON SCROLL
+    ===================================================== */
+
+    const siteHeader = document.querySelector(".site-header");
+    const brand = document.querySelector(".brand");
+
+    if (siteHeader && brand) {
+
+        function updateHeader() {
+
+            if (window.scrollY > 120) {
+                siteHeader.classList.add("scrolled");
+            } else {
+                siteHeader.classList.remove("scrolled");
+            }
+
+        }
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
+        );
+
+        /* Set correct state when page loads */
+        updateHeader();
+    }
+
+
+    /* =====================================================
+       MENU
+    ===================================================== */
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menuPanel = document.querySelector(".menu-panel");
+    const menuLinks = document.querySelectorAll(".menu-panel a");
+
+    if (menuToggle && menuPanel) {
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen =
+                menuToggle.classList.toggle("menu-active");
+
+            menuPanel.classList.toggle(
+                "menu-visible",
+                isOpen
+            );
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close menu" : "Open menu"
+            );
+
+        });
+
+
+        /* Close menu after clicking a link */
+
+        menuLinks.forEach((link) => {
+
+            link.addEventListener("click", () => {
+
+                menuToggle.classList.remove(
+                    "menu-active"
+                );
+
+                menuPanel.classList.remove(
+                    "menu-visible"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open menu"
+                );
+
+            });
+
+        });
+
+    }
+
+
+    /* =====================================================
+       THREE.JS
+    ===================================================== */
+
+    const canvas =
+        document.getElementById("three-logo");
+
+    const container =
+        document.getElementById("three-logo-container");
+
+
+    /*
+     * Your current HTML may not contain the Three.js
+     * logo container anymore.
+     *
+     * In that case, simply skip Three.js instead of
+     * stopping the rest of the website JavaScript.
+     */
 
     if (!canvas || !container) {
-        console.error("Three.js container not found.");
+
+        console.log(
+            "Three.js logo container not found. Skipping 3D logo."
+        );
+
         return;
     }
 
 
-    /* =========================================
+    /* =====================================================
        SCENE
-    ========================================= */
+    ===================================================== */
 
     const scene = new THREE.Scene();
 
 
-    /* =========================================
+    /* =====================================================
        CAMERA
-    ========================================= */
+    ===================================================== */
 
     const camera = new THREE.PerspectiveCamera(
         35,
-        container.clientWidth / container.clientHeight,
+        container.clientWidth /
+        container.clientHeight,
         0.1,
         100
     );
@@ -33,15 +157,17 @@ document.addEventListener("DOMContentLoaded", () => {
     camera.position.set(0, 0, 6);
 
 
-    /* =========================================
+    /* =====================================================
        RENDERER
-    ========================================= */
+    ===================================================== */
 
-    const renderer = new THREE.WebGLRenderer({
-        canvas: canvas,
-        antialias: true,
-        alpha: true
-    });
+    const renderer =
+        new THREE.WebGLRenderer({
+            canvas: canvas,
+            antialias: true,
+            alpha: true
+        });
+
 
     renderer.setPixelRatio(
         Math.min(window.devicePixelRatio, 2)
@@ -52,68 +178,78 @@ document.addEventListener("DOMContentLoaded", () => {
         container.clientHeight
     );
 
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.outputColorSpace =
+        THREE.SRGBColorSpace;
 
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.15;
+    renderer.toneMapping =
+        THREE.ACESFilmicToneMapping;
+
+    renderer.toneMappingExposure =
+        1.15;
 
 
-    /* =========================================
+    /* =====================================================
        LIGHTING
-    ========================================= */
+    ===================================================== */
 
-    const ambientLight = new THREE.AmbientLight(
-        0xffffff,
-        1.5
-    );
+    const ambientLight =
+        new THREE.AmbientLight(
+            0xffffff,
+            1.5
+        );
 
     scene.add(ambientLight);
 
 
-    const keyLight = new THREE.DirectionalLight(
-        0xffffff,
-        3.5
-    );
+    const keyLight =
+        new THREE.DirectionalLight(
+            0xffffff,
+            3.5
+        );
 
     keyLight.position.set(4, 5, 6);
 
     scene.add(keyLight);
 
 
-    const fillLight = new THREE.DirectionalLight(
-        0xcbd6e2,
-        1.5
-    );
+    const fillLight =
+        new THREE.DirectionalLight(
+            0xcbd6e2,
+            1.5
+        );
 
     fillLight.position.set(-4, 2, 4);
 
     scene.add(fillLight);
 
 
-    const rimLight = new THREE.DirectionalLight(
-        0xffffff,
-        2.5
-    );
+    const rimLight =
+        new THREE.DirectionalLight(
+            0xffffff,
+            2.5
+        );
 
     rimLight.position.set(0, -4, -5);
 
     scene.add(rimLight);
 
 
-    /* =========================================
+    /* =====================================================
        MODEL GROUP
-    ========================================= */
+    ===================================================== */
 
-    const logoGroup = new THREE.Group();
+    const logoGroup =
+        new THREE.Group();
 
     scene.add(logoGroup);
 
 
-    /* =========================================
+    /* =====================================================
        LOAD CALI 3D MODEL
-    ========================================= */
+    ===================================================== */
 
-    const loader = new GLTFLoader();
+    const loader =
+        new GLTFLoader();
 
     loader.load(
 
@@ -121,30 +257,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
         (gltf) => {
 
-            const model = gltf.scene;
+            const model =
+                gltf.scene;
 
-            console.log("Cali 3D logo loaded successfully.");
+            console.log(
+                "Cali 3D logo loaded successfully."
+            );
 
 
-            /* -------------------------------------
+            /* ---------------------------------------------
                CENTER MODEL
-            ------------------------------------- */
+            --------------------------------------------- */
 
             const box =
-                new THREE.Box3().setFromObject(model);
+                new THREE.Box3().setFromObject(
+                    model
+                );
 
             const center =
-                box.getCenter(new THREE.Vector3());
+                box.getCenter(
+                    new THREE.Vector3()
+                );
 
             model.position.sub(center);
 
 
-            /* -------------------------------------
+            /* ---------------------------------------------
                NORMALIZE MODEL SIZE
-            ------------------------------------- */
+            --------------------------------------------- */
 
             const size =
-                box.getSize(new THREE.Vector3());
+                box.getSize(
+                    new THREE.Vector3()
+                );
 
             const maxDimension =
                 Math.max(
@@ -156,14 +301,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const desiredSize = 3.8;
 
             const scale =
-                desiredSize / maxDimension;
+                desiredSize /
+                maxDimension;
 
             model.scale.setScalar(scale);
 
 
-            /* -------------------------------------
-               MATERIAL SETTINGS
-            ------------------------------------- */
+            /* ---------------------------------------------
+               MATERIAL
+            --------------------------------------------- */
 
             model.traverse((child) => {
 
@@ -174,10 +320,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (child.material) {
 
-                    child.material.metalness = 0.9;
-                    child.material.roughness = 0.18;
+                    child.material.metalness =
+                        0.9;
 
-                    child.material.needsUpdate = true;
+                    child.material.roughness =
+                        0.18;
+
+                    child.material.needsUpdate =
+                        true;
                 }
 
             });
@@ -186,9 +336,9 @@ document.addEventListener("DOMContentLoaded", () => {
             logoGroup.add(model);
 
 
-            /* =====================================
+            /* =================================================
                INITIAL ANGLE
-            ===================================== */
+            ================================================= */
 
             logoGroup.rotation.x =
                 THREE.MathUtils.degToRad(-4);
@@ -199,9 +349,9 @@ document.addEventListener("DOMContentLoaded", () => {
             logoGroup.rotation.z = 0;
 
 
-            /* =====================================
-               MOUSE / 3D INTERACTION
-            ===================================== */
+            /* =================================================
+               MOUSE INTERACTION
+            ================================================= */
 
             let targetX =
                 THREE.MathUtils.degToRad(-4);
@@ -222,11 +372,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     const mouseX =
                         (event.clientX /
-                            window.innerWidth) * 2 - 1;
+                        window.innerWidth) * 2 - 1;
 
                     const mouseY =
                         (event.clientY /
-                            window.innerHeight) * 2 - 1;
+                        window.innerHeight) * 2 - 1;
 
 
                     targetY =
@@ -241,22 +391,26 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-            /* =====================================
-               ANIMATION
-            ===================================== */
+            /* =================================================
+               ANIMATION LOOP
+            ================================================= */
 
             function animate() {
 
-                requestAnimationFrame(animate);
+                requestAnimationFrame(
+                    animate
+                );
 
 
-                /* Smooth 3D movement */
+                /* Smooth mouse movement */
 
                 currentX +=
-                    (targetX - currentX) * 0.045;
+                    (targetX - currentX) *
+                    0.045;
 
                 currentY +=
-                    (targetY - currentY) * 0.045;
+                    (targetY - currentY) *
+                    0.045;
 
 
                 logoGroup.rotation.x =
@@ -266,12 +420,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     currentY;
 
 
-                /*
-                 * Very subtle continuous rotation.
-                 * Keep this slow for the premium look.
-                 */
+                /* Very subtle rotation */
 
-                logoGroup.rotation.z += 0.00035;
+                logoGroup.rotation.z +=
+                    0.00035;
 
 
                 renderer.render(
@@ -300,9 +452,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-    /* =========================================
+    /* =====================================================
        RESPONSIVE RESIZE
-    ========================================= */
+    ===================================================== */
 
     function resize() {
 
@@ -340,100 +492,3 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
-
-/* =========================================
-   HEADER SHRINK ON SCROLL
-   ========================================= */
-
-const siteHeader = document.querySelector(".site-header");
-const brand = document.querySelector(".brand");
-
-function updateHeader() {
-    if (window.scrollY >120) {
-        siteHeader.classList.add("scrolled");
-    } else {
-        siteHeader.classList.remove("scrolled");
-    }
-}
-
-window.addEventListener("scroll", updateHeader, { passive: true });
-
-updateHeader();
-
-/* =========================================================
-   MENU
-========================================================= */
-
-const siteHeader = document.querySelector(".site-header");
-const menuToggle = document.querySelector(".menu-toggle");
-const menuLinks = document.querySelectorAll(".menu-panel a");
-
-menuToggle.addEventListener("click", () => {
-    const isOpen = siteHeader.classList.toggle("menu-open");
-
-    menuToggle.setAttribute("aria-expanded", isOpen);
-    menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Close menu" : "Open menu"
-    );
-});
-
-
-/* CLOSE MENU AFTER CLICKING A LINK */
-
-menuLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        siteHeader.classList.remove("menu-open");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open menu");
-    });
-});
-
-/* =========================================================
-   MENU
-========================================================= */
-
-const menuToggleButton = document.querySelector(".menu-toggle");
-const menuHeader = document.querySelector(".site-header");
-const menuLinks = document.querySelectorAll(".menu-panel a");
-
-if (menuToggleButton && menuHeader) {
-
-    menuToggleButton.addEventListener("click", () => {
-
-        const menuIsOpen = menuHeader.classList.toggle("menu-open");
-
-        menuToggleButton.setAttribute(
-            "aria-expanded",
-            menuIsOpen ? "true" : "false"
-        );
-
-        menuToggleButton.setAttribute(
-            "aria-label",
-            menuIsOpen ? "Close menu" : "Open menu"
-        );
-
-    });
-
-    menuLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            menuHeader.classList.remove("menu-open");
-
-            menuToggleButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuToggleButton.setAttribute(
-                "aria-label",
-                "Open menu"
-            );
-
-        });
-
-    });
-
-}
