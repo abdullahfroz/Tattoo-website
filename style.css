@@ -2689,3 +2689,52 @@ main {
     }
 
 }
+
+/* =========================================================
+   SEE MORE WORK
+========================================================= */
+
+.see-more-work {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 55px;
+}
+
+.see-more-work a {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 25px;
+
+    border-bottom: 1px solid var(--text);
+
+    padding-bottom: 10px;
+
+    font-size: 12px;
+    letter-spacing: 0.12em;
+
+    transition: opacity 0.25s ease;
+}
+
+.see-more-work a span {
+    font-size: 18px;
+}
+
+.see-more-work a:hover {
+    opacity: 0.55;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .see-more-work {
+        margin-top: 45px;
+    }
+
+    .see-more-work a {
+        font-size: 11px;
+    }
+}
