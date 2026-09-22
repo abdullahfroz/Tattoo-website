@@ -831,9 +831,9 @@ main {
 ========================================================= */
 
 .visual-intro {
-    position: absolute;
+   position: absolute;
     top: 230px;
-    left: calc(16% + 650px);
+    left: 55%;
     width: 320px;
     z-index: 2;
 }
