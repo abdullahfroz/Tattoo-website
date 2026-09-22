@@ -2653,3 +2653,39 @@ main {
     }
 
 }
+
+/* =========================================================
+   CALI WORK EXAMPLE 7 — DESKTOP ONLY
+========================================================= */
+
+.visual-photo-7 {
+    position: absolute;
+
+    top: 1900px;
+    left: 16%;
+
+    width: 320px;
+    height: 400px;
+
+    overflow: hidden;
+}
+
+.visual-photo-7 img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* MOBILE — DON'T ADD THIS IMAGE YET */
+
+@media (max-width: 700px) {
+
+    .visual-photo-7 {
+        display: none;
+    }
+
+}
