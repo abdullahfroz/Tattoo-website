@@ -1045,180 +1045,6 @@ main {
     object-fit: cover;
 }
 
-
-/* =========================================================
-   TOP RIGHT MENU
-========================================================= */
-
-.menu-toggle {
-    position: fixed;
-
-    top: 30px;
-    right: 32px;
-
-    width: 34px;
-    height: 22px;
-
-    padding: 0;
-    margin: 0;
-
-    border: 0;
-    background: transparent;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    cursor: pointer;
-
-    z-index: 2000;
-
-    color: #f2f2f2;
-}
-
-.menu-toggle span {
-    display: block;
-
-    width: 100%;
-    height: 2px;
-
-    background: currentColor;
-
-    transition:
-        transform 0.4s ease,
-        opacity 0.3s ease;
-}
-
-
-/* MENU */
-
-.menu-panel {
-    position: fixed;
-
-    top: 30px;
-    right: 32px;
-
-    width: 360px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 24px;
-
-    padding-top: 50px;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transform: translateY(-12px);
-
-    transition:
-        opacity 0.4s ease,
-        transform 0.4s ease,
-        visibility 0.4s ease;
-
-    z-index: 1900;
-}
-
-.menu-panel a {
-    display: block;
-
-    font-family: 'DejaVu Sans Condensed', Arial, sans-serif;
-
-    font-size: 38px;
-    line-height: 0.9;
-
-    font-weight: 700;
-    letter-spacing: -0.04em;
-
-    text-align: right;
-
-    transition: opacity 0.25s ease;
-}
-
-.menu-panel a:hover {
-    opacity: 0.55;
-}
-
-
-/* OPEN */
-
-.site-header.menu-open .menu-panel {
-    opacity: 1;
-    visibility: visible;
-
-    transform: translateY(0);
-}
-
-
-/* X */
-
-.site-header.menu-open .menu-toggle span:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
-}
-
-.site-header.menu-open .menu-toggle span:nth-child(2) {
-    opacity: 0;
-}
-
-.site-header.menu-open .menu-toggle span:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .menu-toggle {
-        top: 22px;
-        right: 20px;
-
-        width: 30px;
-        height: 20px;
-    }
-
-    .menu-panel {
-        top: 22px;
-        right: 20px;
-
-        width: 75vw;
-
-        padding-top: 45px;
-
-        gap: 18px;
-    }
-
-    .menu-panel a {
-        font-size: 28px;
-    }
-}
-
-/* =========================================================
-   MENU POSITION — ALIGN WITH PAGE MARGIN
-========================================================= */
-
-.menu-toggle {
-    position: fixed !important;
-
-    top: 30px !important;
-    right: 13% !important;
-    left: auto !important;
-
-    width: 34px !important;
-    height: 22px !important;
-
-    z-index: 2000 !important;
-}
-
-.menu-panel {
-    position: fixed !important;
-
-    top: 30px !important;
-    right: 13% !important;
-    left: auto !important;
-}
-
 /* =========================================================
    CALI TATTOO ART — RESTORE SCROLL ANIMATION
 ========================================================= */
@@ -1428,4 +1254,150 @@ main {
 .visual-photo-5 {
     left: auto !important;
     right: 18% !important;
+}
+
+/* =========================================================
+   MENU — CLEAN VERSION
+========================================================= */
+
+.menu-toggle {
+    position: fixed !important;
+
+    top: 30px !important;
+    right: 16% !important;
+
+    width: 34px !important;
+    height: 24px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border: none !important;
+    background: transparent !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+
+    cursor: pointer !important;
+
+    z-index: 9999 !important;
+}
+
+.menu-toggle span {
+    display: block !important;
+
+    width: 100% !important;
+    height: 2px !important;
+
+    background: #f2f2f2 !important;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease !important;
+}
+
+
+/* MENU PANEL */
+
+.menu-panel {
+    position: fixed !important;
+
+    top: 75px !important;
+    right: 16% !important;
+
+    width: 360px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+
+    gap: 20px !important;
+
+    padding: 10px 0 !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+
+    transform: translateY(-10px) !important;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease !important;
+
+    z-index: 9998 !important;
+}
+
+.menu-panel a {
+    display: block !important;
+
+    color: #f2f2f2 !important;
+
+    font-family: 'DejaVu Sans Condensed', Arial, sans-serif !important;
+
+    font-size: 26px !important;
+    line-height: 1 !important;
+
+    font-weight: 700 !important;
+    letter-spacing: -0.035em !important;
+
+    text-align: right !important;
+
+    white-space: nowrap !important;
+}
+
+.menu-panel a:hover {
+    opacity: 0.55 !important;
+}
+
+
+/* OPEN */
+
+.menu-panel.menu-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transform: translateY(0) !important;
+}
+
+
+/* THREE LINES → X */
+
+.menu-toggle.menu-active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg) !important;
+}
+
+.menu-toggle.menu-active span:nth-child(2) {
+    opacity: 0 !important;
+}
+
+.menu-toggle.menu-active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg) !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .menu-toggle {
+        top: 22px !important;
+        right: 12% !important;
+    }
+
+    .menu-panel {
+        top: 65px !important;
+        right: 12% !important;
+
+        width: 75vw !important;
+
+        gap: 18px !important;
+    }
+
+    .menu-panel a {
+        font-size: 22px !important;
+    }
 }

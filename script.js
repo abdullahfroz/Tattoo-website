@@ -43,70 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       MENU
-    ===================================================== */
-
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menuPanel = document.querySelector(".menu-panel");
-    const menuLinks = document.querySelectorAll(".menu-panel a");
-
-    if (menuToggle && menuPanel) {
-
-        menuToggle.addEventListener("click", () => {
-
-            const isOpen =
-                menuToggle.classList.toggle("menu-active");
-
-            menuPanel.classList.toggle(
-                "menu-visible",
-                isOpen
-            );
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
-
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close menu" : "Open menu"
-            );
-
-        });
-
-
-        /* Close menu after clicking a link */
-
-        menuLinks.forEach((link) => {
-
-            link.addEventListener("click", () => {
-
-                menuToggle.classList.remove(
-                    "menu-active"
-                );
-
-                menuPanel.classList.remove(
-                    "menu-visible"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                menuToggle.setAttribute(
-                    "aria-label",
-                    "Open menu"
-                );
-
-            });
-
-        });
-
-    }
-
-
-    /* =====================================================
        THREE.JS
     ===================================================== */
 
@@ -492,3 +428,58 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 });
+
+/* =========================================================
+   MENU
+========================================================= */
+
+const menuButton = document.querySelector(".menu-toggle");
+const menuPanel = document.querySelector(".menu-panel");
+
+if (menuButton && menuPanel) {
+
+    menuButton.addEventListener("click", () => {
+
+        const isOpen =
+            menuButton.classList.toggle("menu-active");
+
+        menuPanel.classList.toggle(
+            "menu-visible",
+            isOpen
+        );
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu"
+        );
+    });
+
+
+    /* CLOSE AFTER CLICKING A MENU ITEM */
+
+    menuPanel.querySelectorAll("a").forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+            menuButton.classList.remove("menu-active");
+            menuPanel.classList.remove("menu-visible");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.setAttribute(
+                "aria-label",
+                "Open menu"
+            );
+        });
+
+    });
+
+}
