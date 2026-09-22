@@ -1426,6 +1426,6 @@ main {
 /* ALIGN CALIWORKEX3 WITH 16% PAGE MARGIN */
 
 .visual-photo-5 {
-    left: 16% !important;
-    right: auto !important;
+    right: 16% !important;
+    left: auto !important;
 }
