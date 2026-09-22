@@ -2974,3 +2974,174 @@ main {
         order: 2 !important;
     }
 }
+
+/* =========================================================
+   DESKTOP WORK — COMPACT BROKEN GRID
+   Mobile is untouched
+========================================================= */
+
+@media (min-width: 701px) {
+
+    .visual-flow {
+        position: relative !important;
+
+        width: 68% !important;
+        margin-left: 16% !important;
+        margin-right: 16% !important;
+
+        height: auto !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            1.05fr
+            0.9fr
+            1.05fr !important;
+
+        grid-template-rows:
+            190px
+            170px
+            190px
+            190px
+            180px
+            190px
+            180px !important;
+
+        gap: 24px !important;
+
+        padding: 0 !important;
+    }
+
+
+    /* -----------------------------------------
+       RESET OLD ABSOLUTE POSITIONING
+    ----------------------------------------- */
+
+    .visual-video,
+    .visual-photo-1,
+    .visual-photo-2,
+    .visual-photo-3,
+    .visual-photo-4,
+    .visual-photo-5,
+    .visual-photo-7 {
+
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+
+        width: auto !important;
+        height: auto !important;
+
+        margin: 0 !important;
+
+        max-width: none !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* -----------------------------------------
+       VIDEO — LEFT ANCHOR
+    ----------------------------------------- */
+
+    .visual-video {
+        grid-column: 1 !important;
+
+        grid-row: 1 / span 2 !important;
+
+        aspect-ratio: 9 / 16 !important;
+    }
+
+
+    .visual-video video {
+        width: 100% !important;
+        height: 100% !important;
+
+        display: block !important;
+
+        object-fit: cover !important;
+    }
+
+
+    /* -----------------------------------------
+       CALI3DLOGO — TOP RIGHT
+    ----------------------------------------- */
+
+    .visual-photo-1 {
+        grid-column: 3 !important;
+
+        grid-row: 1 !important;
+    }
+
+
+    /* -----------------------------------------
+       CALILOGONEW — CENTER
+    ----------------------------------------- */
+
+    .visual-photo-2 {
+        grid-column: 2 / span 2 !important;
+
+        grid-row: 2 / span 2 !important;
+    }
+
+
+    /* -----------------------------------------
+       CALIWORKEX1 — LEFT
+    ----------------------------------------- */
+
+    .visual-photo-3 {
+        grid-column: 1 !important;
+
+        grid-row: 4 !important;
+    }
+
+
+    /* -----------------------------------------
+       CALIWORKEX2 — RIGHT
+    ----------------------------------------- */
+
+    .visual-photo-4 {
+        grid-column: 3 !important;
+
+        grid-row: 4 / span 2 !important;
+    }
+
+
+    /* -----------------------------------------
+       CALIWORKEX3 — CENTER
+    ----------------------------------------- */
+
+    .visual-photo-5 {
+        grid-column: 2 !important;
+
+        grid-row: 5 / span 2 !important;
+    }
+
+
+    /* -----------------------------------------
+       CALIWORKEX7 — LOWER LEFT
+    ----------------------------------------- */
+
+    .visual-photo-7 {
+        grid-column: 1 !important;
+
+        grid-row: 6 / span 2 !important;
+    }
+
+
+    /* -----------------------------------------
+       ALL IMAGES
+    ----------------------------------------- */
+
+    .visual-photo img {
+        width: 100% !important;
+        height: 100% !important;
+
+        display: block !important;
+
+        object-fit: cover !important;
+    }
+
+}
