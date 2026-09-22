@@ -1401,3 +1401,343 @@ main {
         font-size: 22px !important;
     }
 }
+
+/* =========================================================
+   BOOKING INQUIRY FORM
+========================================================= */
+
+.booking-section {
+    width: 100%;
+
+    min-height: auto !important;
+
+    padding: 160px 16% 180px !important;
+
+    display: block !important;
+}
+
+
+/* =========================================================
+   BOOKING HEADING
+========================================================= */
+
+.booking-heading {
+    margin-bottom: 90px;
+}
+
+.booking-label {
+    display: block;
+
+    margin-bottom: 45px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    color: var(--muted);
+}
+
+.booking-heading h2 {
+    margin: 0;
+
+    font-family: 'DejaVu Sans Condensed', Arial, sans-serif;
+
+    font-size: clamp(48px, 6vw, 82px);
+
+    line-height: 0.88;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.booking-form {
+    width: 100%;
+
+    max-width: 900px;
+}
+
+
+/* =========================================================
+   STANDARD FIELD
+========================================================= */
+
+.booking-field {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(241, 241, 237, 0.3);
+
+    min-height: 82px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 28px;
+}
+
+.booking-field label {
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(241, 241, 237, 0.55);
+
+    margin-bottom: 8px;
+}
+
+
+/* INPUT */
+
+.booking-field input,
+.booking-field textarea {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+
+    padding: 0;
+}
+
+.booking-field input::placeholder {
+    color: rgba(241, 241, 237, 0.3);
+}
+
+
+/* =========================================================
+   MAIN IDEA
+========================================================= */
+
+.booking-message {
+    min-height: 320px;
+
+    justify-content: flex-start;
+
+    padding-top: 28px;
+}
+
+.booking-message textarea {
+    height: 240px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.booking-location {
+    min-height: 85px;
+
+    margin: 40px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.booking-location-label {
+    margin-right: 15px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(241, 241, 237, 0.55);
+}
+
+.location-option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+.location-option input {
+    appearance: none;
+
+    width: 32px;
+    height: 32px;
+
+    border: 2px solid rgba(241, 241, 237, 0.55);
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.location-option input:checked::after {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    background: var(--text);
+
+    top: 7px;
+    left: 7px;
+
+    border-radius: 2px;
+}
+
+.location-option span {
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.booking-field input[type="date"] {
+    color-scheme: dark;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.booking-submit {
+    margin-top: 55px;
+
+    border: none;
+
+    border-bottom: 1px solid var(--text);
+
+    background: transparent;
+
+    color: var(--text);
+
+    padding: 0 0 10px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.12em;
+
+    cursor: pointer;
+}
+
+.booking-submit span {
+    margin-left: 28px;
+
+    font-size: 18px;
+}
+
+.booking-submit:hover {
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .booking-section {
+        padding: 110px 12% 130px !important;
+    }
+
+    .booking-heading {
+        margin-bottom: 65px;
+    }
+
+    .booking-label {
+        margin-bottom: 30px;
+    }
+
+    .booking-heading h2 {
+        font-size: clamp(42px, 11vw, 65px);
+    }
+
+    .booking-field {
+        min-height: 75px;
+
+        padding: 0 18px;
+    }
+
+    .booking-message {
+        min-height: 260px;
+
+        padding-top: 22px;
+    }
+
+    .booking-message textarea {
+        height: 190px;
+    }
+
+    .booking-location {
+        flex-wrap: wrap;
+
+        gap: 14px;
+
+        margin: 30px 0;
+    }
+
+    .booking-location-label {
+        width: 100%;
+
+        margin-right: 0;
+    }
+
+    .booking-submit {
+        margin-top: 40px;
+    }
+}
+
+/* =========================================================
+   BOOKING FORM STATUS
+========================================================= */
+
+.booking-status {
+    margin-top: 25px;
+
+    font-size: 11px;
+
+    letter-spacing: 0.08em;
+
+    line-height: 1.4;
+}
+
+.booking-status-loading {
+    opacity: 0.5;
+}
+
+.booking-status-success {
+    opacity: 1;
+}
+
+.booking-status-error {
+    opacity: 0.8;
+}

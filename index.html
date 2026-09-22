@@ -229,25 +229,197 @@
          BOOKING
     ====================================================== -->
 
-    <section
-        id="booking"
-        class="booking-section">
+   <section id="booking" class="booking-section">
 
-        <p class="eyebrow">
-            BOOKING
-        </p>
+    <div class="booking-heading">
 
-        <a
-            href="#"
-            class="booking-button">
+        <span class="booking-label">BOOKING INQUIRIES</span>
 
-            BOOK A SESSION
+        <h2>
+            LET'S TALK<br>
+            ABOUT YOUR TATTOO.
+        </h2>
+
+    </div>
+
+
+    <form id="booking-form" class="booking-form">
+
+        <!-- NAME -->
+
+        <div class="booking-field">
+            <label for="name">NAME*</label>
+
+            <input
+                type="text"
+                id="name"
+                name="fi-sender-fullName"
+                required
+            >
+        </div>
+
+
+        <!-- BIRTHDAY -->
+
+        <div class="booking-field">
+            <label for="birthday">BIRTHDAY*</label>
+
+            <input
+                type="date"
+                id="birthday"
+                name="fi-date-birthday"
+                required
+            >
+        </div>
+
+
+        <!-- EMAIL -->
+
+        <div class="booking-field">
+            <label for="email">EMAIL*</label>
+
+            <input
+                type="email"
+                id="email"
+                name="fi-sender-email"
+                required
+            >
+        </div>
+
+
+        <!-- INSTAGRAM -->
+
+        <div class="booking-field">
+            <label for="instagram">INSTAGRAM HANDLE*</label>
+
+            <input
+                type="text"
+                id="instagram"
+                name="fi-text-instagram"
+                placeholder="@"
+                required
+            >
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="booking-location">
+
+            <span class="booking-location-label">
+                LOCATION:
+            </span>
+
+            <label class="location-option">
+                <input
+                    type="radio"
+                    name="fi-radio-location"
+                    value="Berlin"
+                    required
+                >
+                <span>BERLIN</span>
+            </label>
+
+            <label class="location-option">
+                <input
+                    type="radio"
+                    name="fi-radio-location"
+                    value="Other"
+                >
+                <span>OTHER</span>
+            </label>
+
+        </div>
+
+
+        <!-- MAIN IDEA -->
+
+        <div class="booking-field booking-message">
+
+            <label for="idea">MAIN IDEA*</label>
+
+            <textarea
+                id="idea"
+                name="fi-text-mainIdea"
+                required
+            ></textarea>
+
+        </div>
+
+
+        <!-- PREFERRED SIZE -->
+
+        <div class="booking-field">
+
+            <label for="size">
+                PREFERRED SIZE*
+            </label>
+
+            <input
+                type="text"
+                id="size"
+                name="fi-text-preferredSize"
+                placeholder="e.g. 10 cm"
+                required
+            >
+
+        </div>
+
+
+        <!-- PREFERRED PLACEMENT -->
+
+        <div class="booking-field">
+
+            <label for="placement">
+                PREFERRED PLACEMENT*
+            </label>
+
+            <input
+                type="text"
+                id="placement"
+                name="fi-text-preferredPlacement"
+                placeholder="e.g. forearm"
+                required
+            >
+
+        </div>
+
+
+        <!-- HEIGHT -->
+
+        <div class="booking-field">
+
+            <label for="height">
+                YOUR HEIGHT*
+            </label>
+
+            <input
+                type="text"
+                id="height"
+                name="fi-text-height"
+                placeholder="e.g. 178 cm"
+                required
+            >
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+            type="submit"
+            class="booking-submit"
+            id="booking-submit"
+        >
+            SEND INQUIRY
             <span>↗</span>
+        </button>
 
-        </a>
+        <p id="booking-status" class="booking-status"></p>
 
-    </section>
+    </form>
 
+</section>
 
     <!-- =====================================================
          FOOTER
@@ -304,6 +476,11 @@
     type="module"
     src="script.js">
 </script>
+
+
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
+
+<script type="module" src="script.js"></script>
 
 </body>
 
