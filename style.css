@@ -386,7 +386,7 @@ main {
     right: 14%;
 
     width: 417px;
-    height: 285px;
+    height: 485px;
 
     overflow: hidden;
 }
@@ -870,7 +870,7 @@ main {
 .portfolio-end {
       width: 100%;
 
-    padding: 60px 14% 120px;
+    padding: 80px 14% 180px;
 
     display: flex;
     justify-content: center;
