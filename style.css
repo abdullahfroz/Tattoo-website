@@ -2215,3 +2215,77 @@ main {
     }
 
 }
+
+/* =========================================================
+   MOBILE — HEADER + HERO INTRO
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* -----------------------------------------
+       SMALLER CALI TATTOO ART
+    ----------------------------------------- */
+
+    .brand {
+        font-size: 28px !important;
+        line-height: 0.82 !important;
+        letter-spacing: -0.055em !important;
+
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .site-header.scrolled .brand {
+        font-size: 28px !important;
+        transform: none !important;
+    }
+
+
+    /* -----------------------------------------
+       ART IS THE VOICE — CENTER OF SCREEN
+    ----------------------------------------- */
+
+    .hero {
+        position: relative !important;
+        min-height: 100svh !important;
+    }
+
+    .visual-intro {
+        position: absolute !important;
+
+        top: 50% !important;
+        left: 50% !important;
+
+        width: auto !important;
+
+        margin: 0 !important;
+
+        transform: translate(-50%, -50%) !important;
+
+        z-index: 10 !important;
+
+        text-align: center !important;
+    }
+
+    .visual-intro h2 {
+        margin: 0 !important;
+
+        font-size: 34px !important;
+        line-height: 0.9 !important;
+
+        letter-spacing: -0.05em !important;
+
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    .visual-intro h2 span {
+        display: block !important;
+        margin-left: 0 !important;
+    }
+
+    .intro-top,
+    .intro-bottom {
+        margin-left: 0 !important;
+    }
+}
