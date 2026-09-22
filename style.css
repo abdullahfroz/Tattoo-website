@@ -2289,3 +2289,120 @@ main {
         margin-left: 0 !important;
     }
 }
+
+/* =========================================================
+   MOBILE ONLY — CALI BRAND + ART IS THE VOICE
+========================================================= */
+
+@media only screen and (max-width: 700px) {
+
+    /* -----------------------------
+       CALI TATTOO ART
+    ----------------------------- */
+
+    .site-header .brand,
+    .site-header.scrolled .brand {
+        font-size: 26px !important;
+        line-height: 0.82 !important;
+        letter-spacing: -0.055em !important;
+        transform: none !important;
+        transition: none !important;
+        white-space: nowrap !important;
+    }
+
+    .site-header {
+        padding: 18px 12% !important;
+    }
+
+
+    /* -----------------------------
+       HERO
+    ----------------------------- */
+
+    .hero {
+        position: relative !important;
+        width: 100% !important;
+
+        height: 100svh !important;
+        min-height: 100svh !important;
+
+        padding: 90px 12% 0 !important;
+
+        display: block !important;
+    }
+
+
+    /* -----------------------------
+       HERO IMAGE
+    ----------------------------- */
+
+    .hero-image {
+        width: 100% !important;
+        margin: 0 !important;
+
+        position: absolute !important;
+
+        top: 120px !important;
+        left: 12% !important;
+
+        z-index: 1 !important;
+    }
+
+    .hero-image img {
+        width: 100% !important;
+        height: auto !important;
+
+        display: block !important;
+    }
+
+
+    /* -----------------------------
+       ART IS THE VOICE
+    ----------------------------- */
+
+    .visual-intro {
+        position: absolute !important;
+
+        top: 50% !important;
+        left: 50% !important;
+
+        width: max-content !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        transform: translate(-50%, -50%) !important;
+
+        z-index: 20 !important;
+
+        text-align: center !important;
+    }
+
+    .visual-intro h2 {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-family: 'DejaVu Sans Condensed', Arial, sans-serif !important;
+
+        font-size: 30px !important;
+        line-height: 0.9 !important;
+
+        font-weight: 700 !important;
+        letter-spacing: -0.05em !important;
+
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
+
+    .visual-intro h2 span {
+        display: block !important;
+
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+
+    .intro-top,
+    .intro-bottom {
+        margin-left: 0 !important;
+    }
+}
