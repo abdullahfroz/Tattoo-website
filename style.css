@@ -1123,41 +1123,41 @@ main {
 /* HEADER */
 
 .site-header {
-    padding-left: 14% !important;
-    padding-right: 14% !important;
+    padding-left: 16% !important;
+    padding-right: 16% !important;
 }
 
 
 /* HERO IMAGE */
 
 .hero-image {
-    margin-left: 14% !important;
+    margin-left: 16% !important;
 }
 
 
 /* LEFT-SIDE WORK IMAGES */
 
 .visual-photo-1 {
-    right: 14% !important;
+    right: 16% !important;
 }
 
 .visual-photo-2 {
-    left: 14% !important;
+    left: 16% !important;
 }
 
 .visual-photo-3 {
-    right: 14% !important;
+    right: 16% !important;
 }
 
 .visual-photo-4 {
-    right: 14% !important;
+    right: 16% !important;
 }
 
 
 /* RIGHT-SIDE / LEFT-SIDE CONSISTENCY */
 
 .visual-video {
-    right: 14% !important;
+    right: 16% !important;
     left: auto !important;
 }
 
@@ -1165,16 +1165,16 @@ main {
 /* PORTFOLIO FULL STOP */
 
 .portfolio-end {
-    padding-left: 14% !important;
-    padding-right: 14% !important;
+    padding-left: 16% !important;
+    padding-right: 16% !important;
 }
 
 
 /* TATTOO EXPERIENCE */
 
 .experience-section {
-    padding-left: 14% !important;
-    padding-right: 14% !important;
+    padding-left: 16% !important;
+    padding-right: 16% !important;
 }
 
 .experience-copy {
@@ -1185,16 +1185,16 @@ main {
 /* BOOKING */
 
 .booking-section {
-    padding-left: 14% !important;
-    padding-right: 14% !important;
+    padding-left: 16% !important;
+    padding-right: 16% !important;
 }
 
 
 /* FOOTER */
 
 .site-footer {
-    padding-left: 14% !important;
-    padding-right: 14% !important;
+    padding-left: 16% !important;
+    padding-right: 16% !important;
 }
 
 
