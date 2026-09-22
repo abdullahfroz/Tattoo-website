@@ -3092,10 +3092,9 @@ main {
     ----------------------------------------- */
 
     .visual-photo-3 {
-        grid-column: 1 !important;
-
-        grid-row: 4 !important;
-    }
+    grid-column: 1 / span 2 !important;
+    grid-row: 4 / span 2 !important;
+}
 
 
     /* -----------------------------------------
