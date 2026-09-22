@@ -483,7 +483,6 @@ if (menuButton && menuPanel) {
     });
 
 }
-
 /* =========================================================
    FORMinit — BOOKING FORM
 ========================================================= */
@@ -492,9 +491,9 @@ const bookingForm = document.getElementById("booking-form");
 const bookingStatus = document.getElementById("booking-status");
 const bookingSubmit = document.getElementById("booking-submit");
 
-if (bookingForm && window.Forminit) {
+if (bookingForm) {
 
-    const forminit = new window.Forminit();
+    const forminit = new Forminit();
 
     const FORM_ID = "ldbqnds3lvr";
 
@@ -503,57 +502,65 @@ if (bookingForm && window.Forminit) {
         event.preventDefault();
 
         bookingStatus.textContent = "SENDING...";
-        bookingStatus.className = "booking-status booking-status-loading";
+        bookingStatus.className =
+            "booking-status booking-status-loading";
 
         bookingSubmit.disabled = true;
         bookingSubmit.style.opacity = "0.5";
 
-        const formData = new FormData(bookingForm);
+        try {
 
-        const { data, error } =
-            await forminit.submit(FORM_ID, formData);
+            const formData = new FormData(bookingForm);
 
-        bookingSubmit.disabled = false;
-        bookingSubmit.style.opacity = "";
+            const { data, error } =
+                await forminit.submit(FORM_ID, formData);
 
-        if (error) {
+            bookingSubmit.disabled = false;
+            bookingSubmit.style.opacity = "";
 
-            console.error(
-                "Forminit submission failed:",
-                error
+            if (error) {
+
+                console.error("Forminit error:", error);
+
+                bookingStatus.textContent =
+                    "ERROR: " + error.message;
+
+                bookingStatus.className =
+                    "booking-status booking-status-error";
+
+                return;
+            }
+
+            console.log(
+                "Forminit submission successful:",
+                data
             );
 
             bookingStatus.textContent =
-                "Something went wrong. Please try again.";
+                "THANK YOU — YOUR ENQUIRY HAS BEEN SENT.";
+
+            bookingStatus.className =
+                "booking-status booking-status-success";
+
+            bookingForm.reset();
+
+        } catch (error) {
+
+            console.error(
+                "Unexpected Forminit error:",
+                error
+            );
+
+            bookingSubmit.disabled = false;
+            bookingSubmit.style.opacity = "";
+
+            bookingStatus.textContent =
+                "ERROR: " + error.message;
 
             bookingStatus.className =
                 "booking-status booking-status-error";
-
-            return;
         }
 
-
-        /* SUCCESS */
-
-        console.log(
-            "Form submitted:",
-            data
-        );
-
-        bookingStatus.textContent =
-            "THANK YOU — YOUR ENQUIRY HAS BEEN SENT.";
-
-        bookingStatus.className =
-            "booking-status booking-status-success";
-
-        bookingForm.reset();
-
     });
-
-} else {
-
-    console.error(
-        "Booking form or Forminit SDK not found."
-    );
 
 }
