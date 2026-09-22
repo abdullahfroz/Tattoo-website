@@ -3373,3 +3373,31 @@ main {
         aspect-ratio: 9 / 16;
     }
 }
+
+/* =========================================================
+   MOBILE — EXPERIENCE VIDEO
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .experience-video {
+        width: 62% !important;
+        max-width: 240px !important;
+
+        margin: 0 auto !important;
+
+        aspect-ratio: 9 / 16 !important;
+
+        overflow: hidden !important;
+    }
+
+    .experience-video video {
+        width: 100% !important;
+        height: 100% !important;
+
+        display: block !important;
+
+        object-fit: cover !important;
+    }
+
+}
