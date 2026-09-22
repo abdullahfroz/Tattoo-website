@@ -1123,41 +1123,41 @@ main {
 /* HEADER */
 
 .site-header {
-    padding-left: 18% !important;
-    padding-right: 18% !important;
+    padding-left: 14% !important;
+    padding-right: 14% !important;
 }
 
 
 /* HERO IMAGE */
 
 .hero-image {
-    margin-left: 18% !important;
+    margin-left: 14% !important;
 }
 
 
 /* LEFT-SIDE WORK IMAGES */
 
 .visual-photo-1 {
-    right: 18% !important;
+    right: 14% !important;
 }
 
 .visual-photo-2 {
-    left: 18% !important;
+    left: 14% !important;
 }
 
 .visual-photo-3 {
-    right: 18% !important;
+    right: 14% !important;
 }
 
 .visual-photo-4 {
-    right: 18% !important;
+    right: 14% !important;
 }
 
 
 /* RIGHT-SIDE / LEFT-SIDE CONSISTENCY */
 
 .visual-video {
-    right: 18% !important;
+    right: 14% !important;
     left: auto !important;
 }
 
@@ -1165,16 +1165,16 @@ main {
 /* PORTFOLIO FULL STOP */
 
 .portfolio-end {
-    padding-left: 18% !important;
-    padding-right: 18% !important;
+    padding-left: 14% !important;
+    padding-right: 14% !important;
 }
 
 
 /* TATTOO EXPERIENCE */
 
 .experience-section {
-    padding-left: 18% !important;
-    padding-right: 18% !important;
+    padding-left: 14% !important;
+    padding-right: 14% !important;
 }
 
 .experience-copy {
@@ -1185,16 +1185,16 @@ main {
 /* BOOKING */
 
 .booking-section {
-    padding-left: 18% !important;
-    padding-right: 18% !important;
+    padding-left: 14% !important;
+    padding-right: 14% !important;
 }
 
 
 /* FOOTER */
 
 .site-footer {
-    padding-left: 18% !important;
-    padding-right: 18% !important;
+    padding-left: 14% !important;
+    padding-right: 14% !important;
 }
 
 
@@ -1205,55 +1205,55 @@ main {
 @media (max-width: 700px) {
 
     .site-header {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
+        padding-left: 14% !important;
+        padding-right: 14% !important;
     }
 
     .hero-image {
-        margin-left: 12% !important;
+        margin-left: 14% !important;
     }
 
     .visual-video {
-        right: 12% !important;
+        right: 14% !important;
     }
 
     .visual-photo-1 {
-        right: 12% !important;
+        right: 14% !important;
     }
 
     .visual-photo-2 {
-        left: 12% !important;
+        left: 14% !important;
     }
 
     .visual-photo-3 {
-        right: 12% !important;
+        right: 14% !important;
     }
 
     .portfolio-end {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
+        padding-left: 14% !important;
+        padding-right: 14% !important;
     }
 
     .experience-section {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
+        padding-left: 14% !important;
+        padding-right: 14% !important;
     }
 
     .booking-section {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
+        padding-left: 14% !important;
+        padding-right: 14% !important;
     }
 
     .site-footer {
-        padding-left: 12% !important;
-        padding-right: 12% !important;
+        padding-left: 14% !important;
+        padding-right: 14% !important;
     }
 }
 /* ALIGN CALIWORKEX3 WITH 16% PAGE MARGIN */
 
 .visual-photo-5 {
     left: auto !important;
-    right: 18% !important;
+    right: 14% !important;
 }
 
 /* =========================================================
