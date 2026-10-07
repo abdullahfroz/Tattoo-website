@@ -11,27 +11,546 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+
+        /* =====================================================
+           WORK PAGE — OVERRIDES
+        ===================================================== */
+
+        body {
+            background: #080808 !important;
+            color: #f2f2f2 !important;
+            overflow-x: hidden;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .site-header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+
+            width: 100% !important;
+
+            padding: 24px 16% !important;
+
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: flex-start !important;
+
+            background: transparent !important;
+
+            z-index: 9999 !important;
+
+            mix-blend-mode: normal !important;
+        }
+
+
+        /* BRAND */
+
+        .site-header .brand {
+            position: relative !important;
+
+            display: inline-flex !important;
+            align-items: flex-start !important;
+
+            width: auto !important;
+            height: auto !important;
+
+            font-family: 'DejaVu Sans Condensed',
+                         Arial,
+                         sans-serif !important;
+
+            font-size: 48px !important;
+
+            line-height: .82 !important;
+
+            letter-spacing: -.06em !important;
+
+            font-weight: 700 !important;
+
+            color: #ffffff !important;
+
+            text-decoration: none !important;
+
+            transform: none !important;
+
+            transition: none !important;
+
+            white-space: nowrap !important;
+        }
+
+        .site-header .brand-name {
+            display: inline-block !important;
+        }
+
+        .site-header .brand-tm {
+            position: static !important;
+
+            display: inline-block !important;
+
+            margin-left: 4px !important;
+
+            font-family: Arial,
+                         Helvetica,
+                         sans-serif !important;
+
+            font-size: 9px !important;
+
+            font-weight: 700 !important;
+
+            line-height: 1 !important;
+
+            letter-spacing: 0 !important;
+
+            transform: translateY(.08em) !important;
+        }
+
+
+        /* =====================================================
+           HAMBURGER
+        ===================================================== */
+
+        .site-header .menu-toggle {
+            position: relative !important;
+
+            top: auto !important;
+            right: auto !important;
+
+            width: 40px !important;
+            height: 28px !important;
+
+            padding: 0 !important;
+            margin: 2px 0 0 !important;
+
+            border: 0 !important;
+
+            background: transparent !important;
+
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+
+            cursor: pointer !important;
+
+            z-index: 10002 !important;
+        }
+
+        .site-header .menu-toggle span {
+            display: block !important;
+
+            width: 100% !important;
+            height: 2px !important;
+
+            background: #ffffff !important;
+
+            transform-origin: center !important;
+
+            transition:
+                transform .3s ease,
+                opacity .2s ease !important;
+        }
+
+
+        /* X */
+
+        .site-header .menu-toggle.menu-active span:nth-child(1) {
+            transform: translateY(13px) rotate(45deg) !important;
+        }
+
+        .site-header .menu-toggle.menu-active span:nth-child(2) {
+            opacity: 0 !important;
+        }
+
+        .site-header .menu-toggle.menu-active span:nth-child(3) {
+            transform: translateY(-13px) rotate(-45deg) !important;
+        }
+
+
+        /* =====================================================
+           MENU PANEL
+        ===================================================== */
+
+        .site-header .menu-panel {
+            position: fixed !important;
+
+            top: 78px !important;
+            right: 16% !important;
+
+            width: auto !important;
+            height: auto !important;
+
+            padding: 0 !important;
+            margin: 0 !important;
+
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-end !important;
+
+            gap: 17px !important;
+
+            background: transparent !important;
+
+            opacity: 0 !important;
+            visibility: hidden !important;
+
+            transform: translateY(-8px) !important;
+
+            transition:
+                opacity .25s ease,
+                transform .25s ease,
+                visibility .25s ease !important;
+
+            z-index: 10001 !important;
+        }
+
+        .site-header .menu-panel.menu-visible {
+            opacity: 1 !important;
+            visibility: visible !important;
+
+            transform: translateY(0) !important;
+        }
+
+        .site-header .menu-panel a {
+            display: block !important;
+
+            padding: 0 !important;
+            margin: 0 !important;
+
+            font-family: 'DejaVu Sans Condensed',
+                         Arial,
+                         sans-serif !important;
+
+            font-size: 11px !important;
+
+            line-height: 1 !important;
+
+            letter-spacing: .08em !important;
+
+            color: #ffffff !important;
+
+            text-decoration: none !important;
+
+            white-space: nowrap !important;
+
+            transition: opacity .2s ease !important;
+        }
+
+        .site-header .menu-panel a:hover {
+            opacity: .5 !important;
+        }
+
+
+        /* =====================================================
+           WORK PAGE
+        ===================================================== */
+
+        .work-page {
+            width: 100% !important;
+
+            padding: 0 !important;
+
+            margin: 0 !important;
+        }
+
+
+        /* =====================================================
+           INTRO SECTION
+        ===================================================== */
+
+        .work-page-header {
+            width: 68% !important;
+
+            margin: 0 auto !important;
+
+            padding: 155px 0 100px !important;
+
+            position: relative !important;
+        }
+
+
+        /* MY WORK */
+
+        .work-page-header > span {
+            display: block !important;
+
+            width: 100% !important;
+
+            margin: 0 0 95px !important;
+
+            text-align: center !important;
+
+            font-family: 'DejaVu Sans Condensed',
+                         Arial,
+                         sans-serif !important;
+
+            font-size: 44px !important;
+
+            line-height: .9 !important;
+
+            font-weight: 700 !important;
+
+            letter-spacing: -.045em !important;
+
+            color: #f5f5f5 !important;
+        }
+
+
+        /* ARTIST STATEMENT */
+
+        .work-page-header h1 {
+            width: 100% !important;
+
+            max-width: 850px !important;
+
+            margin: 0 0 48px !important;
+
+            font-family: 'DejaVu Sans Condensed',
+                         Arial,
+                         sans-serif !important;
+
+            font-size: clamp(38px, 4vw, 58px) !important;
+
+            line-height: .92 !important;
+
+            letter-spacing: -.05em !important;
+
+            font-weight: 700 !important;
+
+            color: #f2f2f2 !important;
+        }
+
+
+        .work-page-header p {
+            width: 100% !important;
+
+            max-width: 780px !important;
+
+            margin: 0 0 28px !important;
+
+            font-family: 'DejaVu Sans Condensed',
+                         Arial,
+                         sans-serif !important;
+
+            font-size: clamp(17px, 1.45vw, 21px) !important;
+
+            line-height: 1.42 !important;
+
+            letter-spacing: -.01em !important;
+
+            font-weight: 400 !important;
+
+            color: #d0d0d0 !important;
+        }
+
+        .work-page-header p:last-child {
+            margin-bottom: 0 !important;
+        }
+
+
+        /* =====================================================
+           GALLERY
+        ===================================================== */
+
+        .work-gallery {
+            width: 68% !important;
+
+            margin: 0 auto !important;
+
+            padding: 0 0 140px !important;
+
+            display: grid !important;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr)) !important;
+
+            gap: 24px !important;
+        }
+
+
+        .work-gallery-image {
+            position: relative !important;
+
+            width: 100% !important;
+
+            height: auto !important;
+
+            aspect-ratio: 4 / 5 !important;
+
+            margin: 0 !important;
+
+            padding: 0 !important;
+
+            overflow: hidden !important;
+
+            background: #111111 !important;
+        }
+
+
+        .work-gallery-image img {
+            display: block !important;
+
+            width: 100% !important;
+            height: 100% !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            object-fit: cover !important;
+
+            filter: grayscale(100%) !important;
+
+            transition: transform .6s ease !important;
+        }
+
+
+        .work-gallery-image:hover img {
+            transform: scale(1.025);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .site-header {
+                padding: 18px 12% !important;
+            }
+
+
+            .site-header .brand {
+                font-size: 30px !important;
+
+                transform: none !important;
+            }
+
+
+            .site-header .brand-tm {
+                font-size: 7px !important;
+            }
+
+
+            .site-header .menu-toggle {
+                width: 30px !important;
+                height: 23px !important;
+            }
+
+
+            .site-header .menu-toggle.menu-active
+            span:nth-child(1) {
+                transform: translateY(10.5px) rotate(45deg) !important;
+            }
+
+
+            .site-header .menu-toggle.menu-active
+            span:nth-child(3) {
+                transform: translateY(-10.5px) rotate(-45deg) !important;
+            }
+
+
+            .site-header .menu-panel {
+                top: 65px !important;
+
+                right: 12% !important;
+
+                gap: 15px !important;
+            }
+
+
+            .site-header .menu-panel a {
+                font-size: 9px !important;
+            }
+
+
+            .work-page-header {
+                width: 76% !important;
+
+                padding: 115px 0 75px !important;
+            }
+
+
+            .work-page-header > span {
+                font-size: 38px !important;
+
+                margin-bottom: 60px !important;
+            }
+
+
+            .work-page-header h1 {
+                font-size: 31px !important;
+
+                line-height: .94 !important;
+
+                margin-bottom: 38px !important;
+            }
+
+
+            .work-page-header p {
+                font-size: 16px !important;
+
+                line-height: 1.45 !important;
+
+                margin-bottom: 24px !important;
+            }
+
+
+            .work-gallery {
+                width: 76% !important;
+
+                grid-template-columns: 1fr !important;
+
+                gap: 20px !important;
+
+                padding-bottom: 90px !important;
+            }
+
+
+            .work-gallery-image {
+                aspect-ratio: 4 / 5 !important;
+            }
+
+        }
+
+    </style>
+
 </head>
 
+
 <body>
+
 
 <header class="site-header">
 
     <a href="index.html" class="brand">
-        <span class="brand-name">CALI TATTOO ART</span>
-        <span class="brand-tm">™</span>
+
+        <span class="brand-name">
+            CALI TATTOO ART
+        </span>
+
+        <span class="brand-tm">
+            ™
+        </span>
+
     </a>
+
 
     <button
         class="menu-toggle"
         aria-label="Open menu"
-        aria-expanded="false">
+        aria-expanded="false"
+    >
 
         <span></span>
         <span></span>
         <span></span>
 
     </button>
+
 
     <div class="menu-panel">
 
@@ -54,57 +573,70 @@
 
 <main class="work-page">
 
-  <section class="work-page-header">
 
-    <span> MY WORK</span>
+<section class="work-page-header">
 
-   
 
-   <h1>
-            AS AN ARTIST, I DON'T SEPARATE LIFE &amp; WORK
-        </h1>
+    <span>
+        MY WORK
+    </span>
 
-        <p>
-            My creative work doesn't begin when I open my laptop or step into the studio.
-        </p>
 
-        <p>
-            My perception is constantly shaped by the places I go, the conversations I have,
-            the things I watch, and the way I spend my time. All of these experiences find
-            their way into my work. It is where all these impressions eventually come
-            together and take shape.
-        </p>
+    <h1>
+        AS AN ARTIST, I DON'T SEPARATE LIFE &amp; WORK
+    </h1>
 
-        <p>
-            Inspiration rarely comes when I'm actively looking for it.
-        </p>
 
-        <p>
-            Sometimes it's a detail across the street, a sentence I overhear, a scene in a
-            film, or an encounter with someone that lasts only a few minutes.
-        </p>
+    <p>
+        My creative work doesn't begin when I open my laptop or step into the studio.
+    </p>
 
-        <p>
-            For me, it's about moving through the world with enough awareness and openness
-            to notice and hold on to these moments.
-        </p>
 
-        <p>
-            Social media has made the line between my personal life and my creative work
-            even smaller. It's difficult to ever truly switch off or log out. What I share,
-            what I show, the places I visit, the people I spend time with, and the references
-            I put out into the world consciously or unconsciously become part of my visual
-            language and influence how my work is perceived.
-        </p>
+    <p>
+        My perception is constantly shaped by the places I go, the conversations I have,
+        the things I watch, and the way I spend my time. All of these experiences find
+        their way into my work. It is where all these impressions eventually come together
+        and take shape.
+    </p>
 
-        <p>
-            For me, life and art don't exist separately. They are part of the same process.
-        </p>
+
+    <p>
+        Inspiration rarely comes when I'm actively looking for it.
+    </p>
+
+
+    <p>
+        Sometimes it's a detail across the street, a sentence I overhear, a scene in a film,
+        or an encounter with someone that lasts only a few minutes.
+    </p>
+
+
+    <p>
+        For me, it's about moving through the world with enough awareness and openness
+        to notice and hold on to these moments.
+    </p>
+
+
+    <p>
+        Social media has made the line between my personal life and my creative work
+        even smaller. It's difficult to ever truly switch off or log out. What I share,
+        what I show, the places I visit, the people I spend time with, and the references
+        I put out into the world consciously or unconsciously become part of my visual
+        language and influence how my work is perceived.
+    </p>
+
+
+    <p>
+        For me, life and art don't exist separately. They are part of the same process.
+    </p>
+
 
 </section>
 
 
-  <section class="work-gallery">
+
+<section class="work-gallery">
+
 
     <div class="work-gallery-image">
         <img src="images/Work1.jpeg" alt="Cali tattoo work">
@@ -226,12 +758,81 @@
         <img src="images/Work30.jpeg" alt="Cali tattoo work">
     </div>
 
+
 </section>
+
 
 </main>
 
 
-<script type="module" src="script.js"></script>
+<script>
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const menuPanel =
+        document.querySelector(".menu-panel");
+
+
+    menuToggle.addEventListener("click", function () {
+
+        const isOpen =
+            menuToggle.classList.toggle("menu-active");
+
+
+        menuPanel.classList.toggle(
+            "menu-visible",
+            isOpen
+        );
+
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close menu" : "Open menu"
+        );
+
+    });
+
+
+    menuPanel
+        .querySelectorAll("a")
+        .forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    menuToggle.classList.remove(
+                        "menu-active"
+                    );
+
+                    menuPanel.classList.remove(
+                        "menu-visible"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        "Open menu"
+                    );
+
+                }
+            );
+
+        });
+
+</script>
+
 
 </body>
 
