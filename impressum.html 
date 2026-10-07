@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — CALI TATTOO ART</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="legal-page">
+
+  <a class="legal-back" href="index.html">← ZURÜCK ZUR WEBSITE</a>
+
+  <h1>IMPRESSUM</h1>
+
+  <div class="legal-meta">
+
+    <h2>Angaben gemäß § 5 DDG</h2>
+
+    <p>
+      <strong>Pascal Sigalas</strong><br>
+      CALI TATTOO ART™<br>
+      Neue-Kantstr. 6<br>
+      14057 Berlin<br>
+      Deutschland
+    </p>
+
+    <h2>Kontakt</h2>
+
+    <p>
+      E-Mail:
+      <a href="mailto:Pascalsigalas1989@gmail.com">
+        Pascalsigalas1989@gmail.com
+      </a>
+    </p>
+
+  </div>
+
+  <h2>Verantwortlich für den Inhalt</h2>
+
+  <p>
+    Pascal Sigalas<br>
+    Neue-Kantstr. 6<br>
+    14057 Berlin<br>
+    Deutschland
+  </p>
+
+  <h2>Haftung für Inhalte</h2>
+
+  <p>
+    Als Diensteanbieter bin ich gemäß den allgemeinen gesetzlichen Vorschriften
+    für eigene Inhalte auf dieser Website verantwortlich. Eine Verpflichtung zur
+    Überwachung übermittelter oder gespeicherter fremder Informationen besteht
+    grundsätzlich nur nach Maßgabe der gesetzlichen Vorschriften.
+  </p>
+
+  <h2>Haftung für Links</h2>
+
+  <p>
+    Diese Website kann Links zu externen Websites Dritter enthalten. Auf deren
+    Inhalte habe ich keinen Einfluss. Für die Inhalte der verlinkten Seiten ist
+    stets der jeweilige Anbieter oder Betreiber verantwortlich.
+  </p>
+
+</main>
+
+</body>
+</html>
