@@ -424,6 +424,32 @@
 
         </div>
 
+        <div class="booking-field">
+    <label for="preferred-date-time">PREFERRED DATE & TIME *</label>
+    <input
+        type="datetime-local"
+        id="preferred-date-time"
+        name="fi-date-preferredDateTime"
+        required
+    >
+</div>
+
+<div class="booking-field booking-file-field">
+    <label for="tattoo-references">REFERENCE IMAGES — OPTIONAL</label>
+
+    <input
+        type="file"
+        id="tattoo-references"
+        name="fi-file-tattooReferences[]"
+        accept="image/jpeg,image/png,image/webp,image/gif"
+        multiple
+    >
+
+    <span class="booking-file-help">
+        Upload any reference or inspiration images. You can select multiple images.
+    </span>
+</div>
+
 
         <!-- SUBMIT -->
 
