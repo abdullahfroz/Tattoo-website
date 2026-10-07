@@ -564,3 +564,40 @@ if (bookingForm) {
     });
 
 }
+
+const menuToggle = document.querySelector(".menu-toggle");
+const menuPanel = document.querySelector(".menu-panel");
+const menuLinks = document.querySelectorAll(".menu-panel a");
+
+if (menuToggle && menuPanel) {
+
+    menuToggle.addEventListener("click", () => {
+
+        const isOpen = menuToggle.classList.toggle("menu-active");
+
+        menuPanel.classList.toggle("menu-visible", isOpen);
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    });
+
+    menuLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            menuToggle.classList.remove("menu-active");
+            menuPanel.classList.remove("menu-visible");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        });
+
+    });
+
+}
