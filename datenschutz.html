@@ -1,244 +1,488 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="de">
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz — CALI TATTOO ART</title>
 
-    <title>CALI — Privacy Policy</title>
+    <style>
+        :root {
+            --bg: #080808;
+            --text: #f2f2f2;
+            --muted: #999999;
+            --soft: #d2d2d2;
+            --line: rgba(242, 242, 242, 0.16);
+        }
 
-    <link rel="stylesheet" href="style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "DejaVu Sans Condensed", Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .legal-page {
+            width: min(980px, 100%);
+            margin: 0 auto;
+            padding: 42px 7vw 110px;
+        }
+
+        .legal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            padding-bottom: 34px;
+            border-bottom: 1px solid var(--line);
+
+            margin-bottom: 85px;
+        }
+
+        .legal-brand {
+            font-size: clamp(24px, 3vw, 36px);
+            line-height: 0.84;
+            letter-spacing: -0.055em;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .legal-brand span {
+            font-size: 0.22em;
+            vertical-align: top;
+            margin-left: 3px;
+            letter-spacing: 0;
+        }
+
+        .legal-back {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+            padding-top: 4px;
+        }
+
+        .legal-header {
+            margin-bottom: 80px;
+        }
+
+        .legal-kicker {
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .legal-title {
+            font-size: clamp(58px, 9vw, 120px);
+            line-height: 0.78;
+            letter-spacing: -0.07em;
+            font-weight: 700;
+        }
+
+        .legal-content {
+            max-width: 790px;
+        }
+
+        .legal-section {
+            border-top: 1px solid var(--line);
+            padding-top: 24px;
+            margin-top: 54px;
+        }
+
+        .legal-section:first-child {
+            margin-top: 0;
+        }
+
+        .legal-section h2 {
+            font-size: clamp(18px, 2vw, 25px);
+            line-height: 1;
+            letter-spacing: -0.025em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .legal-section p {
+            color: var(--soft);
+            font-size: 15px;
+            line-height: 1.72;
+            max-width: 720px;
+        }
+
+        .legal-section p + p {
+            margin-top: 18px;
+        }
+
+        .legal-contact strong {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .legal-contact a {
+            color: #fff;
+            text-underline-offset: 4px;
+        }
+
+        .legal-section a {
+            color: #fff;
+            text-underline-offset: 4px;
+        }
+
+        .legal-footer {
+            border-top: 1px solid var(--line);
+            margin-top: 88px;
+            padding-top: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            color: #666;
+
+            font-size: 9px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 700px) {
+
+            .legal-page {
+                padding: 24px 12% 75px;
+            }
+
+            .legal-top {
+                padding-bottom: 25px;
+                margin-bottom: 58px;
+            }
+
+            .legal-brand {
+                font-size: 27px;
+            }
+
+            .legal-back {
+                font-size: 8px;
+                max-width: 105px;
+                text-align: right;
+            }
+
+            .legal-header {
+                margin-bottom: 60px;
+            }
+
+            .legal-kicker {
+                font-size: 8px;
+                margin-bottom: 15px;
+            }
+
+            .legal-title {
+                font-size: 56px;
+            }
+
+            .legal-section {
+                margin-top: 42px;
+                padding-top: 19px;
+            }
+
+            .legal-section h2 {
+                font-size: 17px;
+                margin-bottom: 17px;
+            }
+
+            .legal-section p {
+                font-size: 14px;
+                line-height: 1.64;
+            }
+
+            .legal-footer {
+                margin-top: 65px;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="site-header">
+    <main class="legal-page">
 
-    <a href="index.html" class="brand">
-        <span class="brand-name">CALI TATTOO ART</span>
-        <span class="brand-tm">™</span>
-    </a>
+        <!-- TOP -->
+        <header class="legal-top">
 
-    <button
-        class="menu-toggle"
-        aria-label="Open menu"
-        aria-expanded="false">
+            <a class="legal-brand" href="index.html">
+                CALI TATTOO ART<span>™</span>
+            </a>
 
-        <span></span>
-        <span></span>
-        <span></span>
+            <a class="legal-back" href="index.html">
+                ← Back to website
+            </a>
 
-    </button>
+        </header>
 
-    <div class="menu-panel">
 
-        <a href="index.html#experience">
-            TATTOO EXPERIENCE
-        </a>
+        <!-- TITLE -->
+        <div class="legal-header">
 
-        <a href="index.html#booking">
-            BOOK NOW
-        </a>
+            <div class="legal-kicker">
+                Privacy information
+            </div>
 
-        <a href="work.html">
-            MY WORK
-        </a>
+            <h1 class="legal-title">
+                DATENSCHUTZ
+            </h1>
 
-    </div>
+        </div>
 
-</header>
 
+        <div class="legal-content">
 
-<main class="legal-page">
+            <!-- RESPONSIBLE -->
+            <section class="legal-section">
 
-    <section class="legal-header">
+                <h2>
+                    1. Verantwortlicher
+                </h2>
 
-        <span>LEGAL</span>
+                <div class="legal-contact">
 
-        <h1>DATENSCHUTZ</h1>
+                    <p>
+                        <strong>Pascal Sigalas</strong><br>
+                        CALI TATTOO ART™<br>
+                        Neue-Kantstr. 6<br>
+                        14057 Berlin<br>
+                        Deutschland
+                    </p>
 
-    </section>
+                    <p>
+                        E-Mail:
+                        <a href="mailto:Pascalsigalas1989@gmail.com">
+                            Pascalsigalas1989@gmail.com
+                        </a>
+                    </p>
 
+                </div>
 
-    <section class="legal-content">
+            </section>
 
-        <h2>1. Verantwortlicher</h2>
 
-        <p>
-            Verantwortlicher für die Verarbeitung
-            personenbezogener Daten auf dieser Website ist:
-        </p>
+            <!-- GENERAL -->
+            <section class="legal-section">
 
-        <p>
-            <strong>Pascal Sigalas</strong><br>
-            Neue-Kantstr.6<br>
-            14057, Berlin<br>
-            Germany
-        </p>
+                <h2>
+                    2. Allgemeine Hinweise
+                </h2>
 
-        <p>
-            E-Mail:
-            <a href="mailto:[EMAIL]">Pascalsigalas1989@gmail.com</a>
-        </p>
+                <p>
+                    Ich verarbeite personenbezogene Daten nur im Rahmen der geltenden
+                    Datenschutzvorschriften. Diese Datenschutzerklärung informiert
+                    darüber, welche Daten beim Besuch dieser Website und bei einer
+                    Buchungsanfrage verarbeitet werden, zu welchen Zwecken dies geschieht
+                    und welche Rechte betroffene Personen haben.
+                </p>
 
+            </section>
 
-        <h2>2. Besuch der Website</h2>
 
-        <p>
-            Beim Aufruf dieser Website können technische
-            Informationen verarbeitet werden, die für die
-            Bereitstellung und Sicherheit der Website erforderlich
-            sind. Dazu können insbesondere IP-Adresse,
-            Datum und Uhrzeit des Zugriffs, Browsertyp,
-            Betriebssystem und angeforderte Inhalte gehören.
-        </p>
+            <!-- GITHUB -->
+            <section class="legal-section">
 
-        <p>
-            Die Website wird über GitHub Pages bereitgestellt.
-            GitHub weist darauf hin, dass bei einem Besuch einer
-            GitHub-Pages-Website die IP-Adresse des Besuchers aus
-            Sicherheitsgründen protokolliert und gespeichert wird.
-        </p>
+                <h2>
+                    3. Hosting durch GitHub Pages
+                </h2>
 
+                <p>
+                    Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf
+                    einer GitHub-Pages-Website kann GitHub technische Daten,
+                    einschließlich der IP-Adresse, zu Sicherheits- und Betriebszwecken
+                    verarbeiten.
+                </p>
 
-        <h2>3. Booking- und Kontaktformular</h2>
+                <p>
+                    Weitere Informationen finden Sie in der
+                    <a
+                        href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Datenschutzerklärung von GitHub
+                    </a>.
+                </p>
+
+            </section>
+
+
+            <!-- BOOKING FORM -->
+            <section class="legal-section">
+
+                <h2>
+                    4. Buchungsformular
+                </h2>
+
+                <p>
+                    Wenn Sie das Buchungsformular nutzen, können unter anderem folgende
+                    Angaben verarbeitet werden: Name, Geburtsdatum, E-Mail-Adresse,
+                    Instagram-Handle, gewünschter Standort, Tattoo-Idee, gewünschte
+                    Größe, gewünschte Platzierung und Körpergröße.
+                </p>
+
+                <p>
+                    Die Verarbeitung erfolgt zur Bearbeitung Ihrer Anfrage und zur
+                    Kontaktaufnahme im Zusammenhang mit der geplanten Tattoo-Anfrage.
+                </p>
+
+            </section>
 
-        <p>
-            Wenn Sie das Booking-Formular verwenden, verarbeiten
-            wir die von Ihnen eingegebenen Daten, um Ihre Anfrage
-            zu bearbeiten, mit Ihnen Kontakt aufzunehmen und eine
-            mögliche Tattoo-Buchung zu besprechen.
-        </p>
 
-        <p>
-            Je nach den konkret angegebenen Daten können
-            insbesondere folgende Informationen verarbeitet werden:
-        </p>
-
-        <p>
-            Name, Geburtsdatum, E-Mail-Adresse, Instagram-Handle,
-            gewünschter Standort, Tätowierungsidee, gewünschte
-            Größe, gewünschte Körperstelle und Körpergröße.
-        </p>
+            <!-- FORMINIT -->
+            <section class="legal-section">
 
+                <h2>
+                    5. Forminit
+                </h2>
+
+                <p>
+                    Für die technische Verarbeitung des Buchungsformulars wird Forminit
+                    eingesetzt. Forminit verarbeitet Formulareinsendungen als
+                    technischer Dienstleister.
+                </p>
+
+                <p>
+                    Weitere Informationen finden Sie in der
+                    <a
+                        href="https://forminit.com/privacy-policy/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Forminit Privacy Policy
+                    </a>
+                    und den
+                    <a
+                        href="https://forminit.com/security/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Forminit Security Informationen
+                    </a>.
+                </p>
 
-        <h2>4. Rechtsgrundlage</h2>
+            </section>
 
-        <p>
-            Die Verarbeitung erfolgt, soweit dies zur Bearbeitung
-            einer Anfrage und zur Durchführung vorvertraglicher
-            Maßnahmen erforderlich ist, auf Grundlage von
-            Art. 6 Abs. 1 lit. b DSGVO.
-        </p>
 
-        <p>
-            Soweit eine Einwilligung erforderlich ist, erfolgt die
-            Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. a
-            DSGVO. Eine erteilte Einwilligung kann jederzeit mit
-            Wirkung für die Zukunft widerrufen werden.
-        </p>
+            <!-- PURPOSE -->
+            <section class="legal-section">
 
+                <h2>
+                    6. Zwecke und Rechtsgrundlage
+                </h2>
 
-        <h2>5. Forminit</h2>
+                <p>
+                    Die mit dem Buchungsformular übermittelten Daten werden zur
+                    Bearbeitung und Beantwortung Ihrer Anfrage sowie zur Vorbereitung
+                    einer möglichen Terminvereinbarung verarbeitet.
+                </p>
 
-        <p>
-            Für die Übermittlung und Verarbeitung der über das
-            Booking-Formular übermittelten Daten verwenden wir
-            Forminit, einen Dienst der UXPLUS LTD.
-        </p>
+                <p>
+                    Soweit die Verarbeitung zur Anbahnung oder Durchführung einer
+                    angefragten Leistung erforderlich ist, erfolgt sie grundsätzlich
+                    auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO. Für sonstige
+                    Kontaktanfragen kann Art. 6 Abs. 1 lit. f DSGVO als Rechtsgrundlage
+                    in Betracht kommen.
+                </p>
 
-        <p>
-            Forminit verarbeitet die über das Formular übermittelten
-            Daten in unserem Auftrag. Forminit gibt an, dass
-            Formulardaten verschlüsselt übertragen und gespeichert
-            werden und auf AWS-Infrastruktur in Irland innerhalb
-            der Europäischen Union gespeichert werden.
-        </p>
+            </section>
 
-        <p>
-            Forminit stellt für professionelle Nutzer eine
-            Auftragsverarbeitungsvereinbarung (DPA) zur Verfügung.
-        </p>
 
+            <!-- STORAGE -->
+            <section class="legal-section">
 
-        <h2>6. Speicherdauer</h2>
+                <h2>
+                    7. Speicherdauer
+                </h2>
 
-        <p>
-            Personenbezogene Daten aus Anfragen werden nur so lange
-            gespeichert, wie dies für die Bearbeitung der Anfrage,
-            die weitere Kommunikation und gegebenenfalls die
-            Vorbereitung eines Termins erforderlich ist.
-        </p>
+                <p>
+                    Personenbezogene Daten werden nur so lange gespeichert, wie dies für
+                    die Bearbeitung der Anfrage, die weitere Kommunikation oder aufgrund
+                    gesetzlicher Aufbewahrungspflichten erforderlich ist. Danach werden
+                    die Daten gelöscht, sofern keine gesetzlichen Pflichten oder
+                    berechtigten Gründe einer Löschung entgegenstehen.
+                </p>
 
-        <p>
-            Soweit gesetzliche Aufbewahrungspflichten bestehen,
-            erfolgt die Speicherung für die jeweils gesetzlich
-            vorgeschriebene Dauer.
-        </p>
+            </section>
 
 
-        <h2>7. Ihre Rechte</h2>
+            <!-- RIGHTS -->
+            <section class="legal-section">
 
-        <p>
-            Sie haben im Rahmen der gesetzlichen Voraussetzungen
-            das Recht auf Auskunft, Berichtigung, Löschung,
-            Einschränkung der Verarbeitung, Datenübertragbarkeit
-            und Widerspruch gegen bestimmte Verarbeitungen.
-        </p>
+                <h2>
+                    8. Ihre Rechte
+                </h2>
 
-        <p>
-            Sie haben außerdem das Recht, sich bei einer
-            Datenschutzaufsichtsbehörde zu beschweren.
-        </p>
+                <p>
+                    Sie haben nach Maßgabe der gesetzlichen Voraussetzungen insbesondere
+                    das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der
+                    Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen bestimmte
+                    Verarbeitungen. Außerdem besteht ein Beschwerderecht bei einer
+                    Datenschutzaufsichtsbehörde.
+                </p>
 
+            </section>
 
-        <h2>8. Externe Inhalte und Dienste</h2>
 
-        <p>
-            Diese Website kann externe Ressourcen laden, darunter
-            Google Fonts sowie JavaScript-Ressourcen von
-            Drittanbietern. Beim Laden solcher Ressourcen kann Ihr
-            Browser eine Verbindung zu den jeweiligen Servern
-            herstellen und dabei technische Daten wie Ihre
-            IP-Adresse übertragen.
-        </p>
+            <!-- CONTACT -->
+            <section class="legal-section">
 
+                <h2>
+                    9. Kontakt
+                </h2>
 
-        <h2>9. Änderungen dieser Datenschutzerklärung</h2>
+                <p>
+                    Für Fragen zum Datenschutz können Sie sich jederzeit an
+                    <a href="mailto:Pascalsigalas1989@gmail.com">
+                        Pascalsigalas1989@gmail.com
+                    </a>
+                    wenden.
+                </p>
 
-        <p>
-            Wir behalten uns vor, diese Datenschutzerklärung
-            anzupassen, wenn sich die Website, die verwendeten
-            Dienste oder die gesetzlichen Anforderungen ändern.
-        </p>
+            </section>
 
-        <p>
-            Stand: October 2026
-        </p>
+        </div>
 
-    </section>
 
-</main>
+        <!-- FOOTER -->
+        <footer class="legal-footer">
 
+            <span>
+                CALI TATTOO ART™
+            </span>
 
-<footer class="legal-footer">
+            <span>
+                Berlin · Germany
+            </span>
 
-    <a href="index.html">BACK TO CALI</a>
+            <span>
+                © 2026 CALI
+            </span>
 
-    <a href="impressum.html">IMPRESSUM</a>
+        </footer>
 
-</footer>
-
-
-<script src="https://forminit.com/sdk/v1/forminit.js"></script>
-
-<script type="module" src="script.js"></script>
+    </main>
 
 </body>
-
 </html>

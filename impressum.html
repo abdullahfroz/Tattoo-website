@@ -1,70 +1,390 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum — CALI TATTOO ART</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Impressum — CALI TATTOO ART</title>
+
+    <style>
+        :root {
+            --bg: #080808;
+            --text: #f2f2f2;
+            --muted: #999999;
+            --soft: #d2d2d2;
+            --line: rgba(242, 242, 242, 0.16);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: "DejaVu Sans Condensed", Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .legal-page {
+            width: min(980px, 100%);
+            margin: 0 auto;
+            padding: 42px 7vw 110px;
+        }
+
+        /* TOP BAR */
+        .legal-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            padding-bottom: 34px;
+            border-bottom: 1px solid var(--line);
+
+            margin-bottom: 85px;
+        }
+
+        .legal-brand {
+            font-size: clamp(24px, 3vw, 36px);
+            line-height: 0.84;
+            letter-spacing: -0.055em;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .legal-brand span {
+            font-size: 0.22em;
+            vertical-align: top;
+            margin-left: 3px;
+            letter-spacing: 0;
+        }
+
+        .legal-back {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-decoration: none;
+
+            padding-top: 4px;
+
+            transition: color 0.2s ease;
+        }
+
+        .legal-back:hover {
+            color: var(--text);
+        }
+
+        /* PAGE TITLE */
+        .legal-header {
+            margin-bottom: 80px;
+        }
+
+        .legal-kicker {
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted);
+
+            margin-bottom: 18px;
+        }
+
+        .legal-title {
+            font-size: clamp(58px, 9vw, 120px);
+            line-height: 0.78;
+            letter-spacing: -0.07em;
+            font-weight: 700;
+        }
+
+        /* CONTENT */
+        .legal-content {
+            max-width: 790px;
+        }
+
+        .legal-section {
+            border-top: 1px solid var(--line);
+
+            padding-top: 24px;
+
+            margin-top: 54px;
+        }
+
+        .legal-section:first-child {
+            margin-top: 0;
+        }
+
+        .legal-section h2 {
+            font-size: clamp(18px, 2vw, 25px);
+            line-height: 1;
+            letter-spacing: -0.025em;
+            font-weight: 700;
+
+            margin-bottom: 24px;
+
+            text-transform: uppercase;
+        }
+
+        .legal-section p {
+            color: var(--soft);
+
+            font-size: 15px;
+            line-height: 1.72;
+            font-weight: 400;
+
+            max-width: 720px;
+        }
+
+        .legal-section p + p {
+            margin-top: 18px;
+        }
+
+        .legal-contact strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .legal-contact a {
+            color: #ffffff;
+            text-underline-offset: 4px;
+        }
+
+        /* FOOTER */
+        .legal-footer {
+            border-top: 1px solid var(--line);
+
+            margin-top: 88px;
+            padding-top: 20px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            color: #666666;
+
+            font-size: 9px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            .legal-page {
+                padding: 24px 12% 75px;
+            }
+
+            .legal-top {
+                padding-bottom: 25px;
+                margin-bottom: 58px;
+            }
+
+            .legal-brand {
+                font-size: 27px;
+            }
+
+            .legal-back {
+                font-size: 8px;
+                max-width: 105px;
+                text-align: right;
+            }
+
+            .legal-header {
+                margin-bottom: 60px;
+            }
+
+            .legal-kicker {
+                font-size: 8px;
+                margin-bottom: 15px;
+            }
+
+            .legal-title {
+                font-size: 56px;
+            }
+
+            .legal-section {
+                margin-top: 42px;
+                padding-top: 19px;
+            }
+
+            .legal-section h2 {
+                font-size: 17px;
+                margin-bottom: 17px;
+            }
+
+            .legal-section p {
+                font-size: 14px;
+                line-height: 1.64;
+            }
+
+            .legal-footer {
+                margin-top: 65px;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<main class="legal-page">
+    <main class="legal-page">
 
-  <a class="legal-back" href="index.html">← ZURÜCK ZUR WEBSITE</a>
+        <!-- TOP -->
+        <header class="legal-top">
 
-  <h1>IMPRESSUM</h1>
+            <a class="legal-brand" href="index.html">
+                CALI TATTOO ART<span>™</span>
+            </a>
 
-  <div class="legal-meta">
+            <a class="legal-back" href="index.html">
+                ← Back to website
+            </a>
 
-    <h2>Angaben gemäß § 5 DDG</h2>
+        </header>
 
-    <p>
-      <strong>Pascal Sigalas</strong><br>
-      CALI TATTOO ART™<br>
-      Neue-Kantstr. 6<br>
-      14057 Berlin<br>
-      Deutschland
-    </p>
 
-    <h2>Kontakt</h2>
+        <!-- TITLE -->
+        <div class="legal-header">
 
-    <p>
-      E-Mail:
-      <a href="mailto:Pascalsigalas1989@gmail.com">
-        Pascalsigalas1989@gmail.com
-      </a>
-    </p>
+            <div class="legal-kicker">
+                Legal information
+            </div>
 
-  </div>
+            <h1 class="legal-title">
+                IMPRESSUM
+            </h1>
 
-  <h2>Verantwortlich für den Inhalt</h2>
+        </div>
 
-  <p>
-    Pascal Sigalas<br>
-    Neue-Kantstr. 6<br>
-    14057 Berlin<br>
-    Deutschland
-  </p>
 
-  <h2>Haftung für Inhalte</h2>
+        <!-- CONTENT -->
+        <div class="legal-content">
 
-  <p>
-    Als Diensteanbieter bin ich gemäß den allgemeinen gesetzlichen Vorschriften
-    für eigene Inhalte auf dieser Website verantwortlich. Eine Verpflichtung zur
-    Überwachung übermittelter oder gespeicherter fremder Informationen besteht
-    grundsätzlich nur nach Maßgabe der gesetzlichen Vorschriften.
-  </p>
+            <!-- BUSINESS DETAILS -->
+            <section class="legal-section">
 
-  <h2>Haftung für Links</h2>
+                <h2>
+                    Angaben gemäß § 5 DDG
+                </h2>
 
-  <p>
-    Diese Website kann Links zu externen Websites Dritter enthalten. Auf deren
-    Inhalte habe ich keinen Einfluss. Für die Inhalte der verlinkten Seiten ist
-    stets der jeweilige Anbieter oder Betreiber verantwortlich.
-  </p>
+                <div class="legal-contact">
 
-</main>
+                    <p>
+                        <strong>Pascal Sigalas</strong><br>
+                        CALI TATTOO ART™<br>
+                        Neue-Kantstr. 6<br>
+                        14057 Berlin<br>
+                        Deutschland
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+            <section class="legal-section">
+
+                <h2>
+                    Kontakt
+                </h2>
+
+                <div class="legal-contact">
+
+                    <p>
+                        E-Mail:
+                        <a href="mailto:Pascalsigalas1989@gmail.com">
+                            Pascalsigalas1989@gmail.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESPONSIBILITY -->
+            <section class="legal-section">
+
+                <h2>
+                    Verantwortlich für den Inhalt
+                </h2>
+
+                <p>
+                    Pascal Sigalas<br>
+                    Neue-Kantstr. 6<br>
+                    14057 Berlin<br>
+                    Deutschland
+                </p>
+
+            </section>
+
+
+            <!-- LIABILITY -->
+            <section class="legal-section">
+
+                <h2>
+                    Haftung für Inhalte
+                </h2>
+
+                <p>
+                    Als Diensteanbieter bin ich gemäß den allgemeinen gesetzlichen
+                    Vorschriften für eigene Inhalte auf dieser Website verantwortlich.
+                    Eine Verpflichtung zur Überwachung übermittelter oder gespeicherter
+                    fremder Informationen besteht grundsätzlich nur nach Maßgabe der
+                    gesetzlichen Vorschriften.
+                </p>
+
+            </section>
+
+
+            <!-- LINKS -->
+            <section class="legal-section">
+
+                <h2>
+                    Haftung für Links
+                </h2>
+
+                <p>
+                    Diese Website kann Links zu externen Websites Dritter enthalten.
+                    Auf deren Inhalte habe ich keinen Einfluss. Für die Inhalte der
+                    verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber
+                    verantwortlich.
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="legal-footer">
+
+            <span>
+                CALI TATTOO ART™
+            </span>
+
+            <span>
+                Berlin · Germany
+            </span>
+
+            <span>
+                © 2026 CALI
+            </span>
+
+        </footer>
+
+    </main>
 
 </body>
 </html>
