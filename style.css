@@ -3790,3 +3790,13 @@ main {
         margin-bottom: 24px;
     }
 }
+
+.footer-bottom a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-bottom a:hover {
+    opacity: 0.5;
+}
