@@ -3836,12 +3836,27 @@ main {
     stroke-linejoin: miter;
     vector-effect: non-scaling-stroke;
 
-    /* Hidden until the animation starts */
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
 
-    transition: stroke-dashoffset 1.6s
+    /* Slower, more elegant drawing */
+    transition: stroke-dashoffset 2.5s
         cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.visual-intro .signature-line.is-drawn .signature-line__path {
+    stroke-dashoffset: 0;
+}
+
+/* Small solid dots at both ends */
+.visual-intro .signature-line__dot {
+    fill: currentColor;
+    opacity: 0;
+    transition: opacity 2.5s ease;
+}
+
+.visual-intro .signature-line.is-drawn .signature-line__dot {
+    opacity: 1;
 }
 
 /* Both lines draw when JavaScript adds this class */
@@ -3899,7 +3914,13 @@ main {
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
     .visual-intro .signature-line__path {
+       .visual-intro .signature-line__path {
         transition: none;
         stroke-dashoffset: 0;
+    }
+
+    .visual-intro .signature-line__dot {
+        transition: none;
+        opacity: 1;
     }
 }
