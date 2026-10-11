@@ -3801,84 +3801,133 @@ main {
     opacity: 0.5;
 }
 
+}
+
+
+}
 /* =========================================
-   TWO SIMULTANEOUS FINE LINES
+   SIDE-BY-SIDE FINE-LINE DESIGN
    ========================================= */
 
+.visual-intro.visual-intro--sides {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 1.8vw, 24px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Keep the heading centered between the lines */
+.visual-intro--sides h2 {
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Left and right lines */
 .visual-intro .signature-line {
-      color: #FFFFFF;
     display: block;
-    width: clamp(190px, 32vw, 390px);
+    flex: 1 1 0;
+    width: auto;
+    max-width: 190px;
+    min-width: 0;
     height: 10px;
+    margin: 0;
     overflow: visible;
-    margin-left: auto;
-    margin-right: auto;
-    color: inherit;
+    color: #FFFFFF;
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.35));
 }
 
-/* Space between the top line and heading */
-.visual-intro .signature-line--top {
-    margin-top: 0;
-    margin-bottom: clamp(14px, 2vw, 24px);
-}
-
-/* Space between the heading and bottom line */
-.visual-intro .signature-line--bottom {
-    margin-top: clamp(14px, 2vw, 24px);
-    margin-bottom: 0;
-}
-/* =========================================
-   FINE-LINE DRAWING ANIMATION
-   Start dot → line → end dot
-   ========================================= */
-
-/* The line starts hidden */
+/* Bright, straight, bold line */
 .visual-intro .signature-line__path {
     fill: none;
-    stroke: currentColor;
-    stroke-width: 1px;
+    stroke: #FFFFFF;
+    stroke-width: 1.8px;
     stroke-linecap: butt;
     stroke-linejoin: miter;
     vector-effect: non-scaling-stroke;
 
+    /* Hidden before the animation */
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
 
-    /* Wait briefly, then draw slowly */
-    transition:
-        stroke-dashoffset 3.2s
+    /* Slow drawing animation */
+    transition: stroke-dashoffset 3.2s
         cubic-bezier(0.65, 0, 0.35, 1) 0.5s;
 }
 
-/* The line draws when activated */
+/* Draw the line */
 .visual-intro .signature-line.is-drawn .signature-line__path {
     stroke-dashoffset: 0;
 }
 
-
-/* Both dots start invisible */
+/* Dots start invisible */
 .visual-intro .signature-line__dot {
-    fill: currentColor;
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+    stroke-width: 1.2px;
+    vector-effect: non-scaling-stroke;
     opacity: 0;
     transition: opacity 0.25s ease;
 }
 
-
-/* STEP 1: Starting dot appears immediately */
+/* STEP 1: Outer dots appear first */
 .visual-intro .signature-line.is-drawn .signature-line__dot--start {
     opacity: 1;
     transition-delay: 0s;
 }
 
-
-/* STEP 3: Ending dot appears after the line finishes */
+/* STEP 3: Inner dots appear after the line finishes */
 .visual-intro .signature-line.is-drawn .signature-line__dot--end {
     opacity: 1;
     transition-delay: 3.7s;
 }
 
 
-/* Accessibility: show everything without animation */
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+    .visual-intro.visual-intro--sides {
+        gap: 10px;
+    }
+
+    .visual-intro .signature-line {
+        max-width: 120px;
+    }
+
+    .visual-intro .signature-line__path {
+        stroke-width: 1.5px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+    .visual-intro.visual-intro--sides {
+        gap: 6px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .visual-intro .signature-line {
+        max-width: 60px;
+    }
+
+    .visual-intro .signature-line__path {
+        stroke-width: 1.4px;
+    }
+}
+
+
+/* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
     .visual-intro .signature-line__path {
         transition: none;
@@ -3889,55 +3938,4 @@ main {
         transition: none;
         opacity: 1;
     }
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-    .visual-intro .signature-line__path {
-        stroke-width: 0.9px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-    .visual-intro .signature-line__path {
-        stroke-width: 0.85px;
-    }
-}
-
-/* Desktop */
-.visual-intro .signature-line__path {
-    stroke-width: 1.5px;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-    .visual-intro .signature-line__path {
-        stroke-width: 1.5px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-    .visual-intro .signature-line__path {
-        stroke-width: 1.4px;
-    }
-}
-
-/* Stronger, brighter white lines */
-.visual-intro .signature-line__path {
-    stroke: #FFFFFF;
-    stroke-width: 1.8px;
-}
-
-/* Pure white dots */
-.visual-intro .signature-line__dot {
-    fill: #FFFFFF;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-}
-
-/* Subtle brightness for extra definition */
-.visual-intro .signature-line {
-    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.35));
 }
