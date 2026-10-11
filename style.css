@@ -3903,3 +3903,22 @@ main {
         stroke-width: 0.85px;
     }
 }
+
+/* Desktop */
+.visual-intro .signature-line__path {
+    stroke-width: 1.5px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .visual-intro .signature-line__path {
+        stroke-width: 1.3px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .visual-intro .signature-line__path {
+        stroke-width: 1.2px;
+    }
+}
