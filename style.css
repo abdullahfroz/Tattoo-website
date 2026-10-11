@@ -3826,8 +3826,12 @@ main {
     margin-top: clamp(14px, 2vw, 24px);
     margin-bottom: 0;
 }
+/* =========================================
+   FINE-LINE DRAWING ANIMATION
+   Start dot → line → end dot
+   ========================================= */
 
-/* Straight, fine stroke with no rounded ends or dots */
+/* The line starts hidden */
 .visual-intro .signature-line__path {
     fill: none;
     stroke: currentColor;
@@ -3839,82 +3843,43 @@ main {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
 
-    /* Slower, more elegant drawing */
-    transition: stroke-dashoffset 2.5s
-        cubic-bezier(0.65, 0, 0.35, 1);
+    /* Wait briefly, then draw slowly */
+    transition:
+        stroke-dashoffset 3.2s
+        cubic-bezier(0.65, 0, 0.35, 1) 0.5s;
 }
 
+/* The line draws when activated */
 .visual-intro .signature-line.is-drawn .signature-line__path {
     stroke-dashoffset: 0;
 }
 
-/* Small solid dots at both ends */
+
+/* Both dots start invisible */
 .visual-intro .signature-line__dot {
     fill: currentColor;
     opacity: 0;
-    transition: opacity 2.5s ease;
+    transition: opacity 0.25s ease;
 }
 
-.visual-intro .signature-line.is-drawn .signature-line__dot {
+
+/* STEP 1: Starting dot appears immediately */
+.visual-intro .signature-line.is-drawn .signature-line__dot--start {
     opacity: 1;
-}
-
-/* Both lines draw when JavaScript adds this class */
-.visual-intro .signature-line.is-drawn .signature-line__path {
-    stroke-dashoffset: 0;
+    transition-delay: 0s;
 }
 
 
-/* =========================================
-   TABLET
-   ========================================= */
-
-@media (max-width: 768px) {
-    .visual-intro .signature-line {
-        width: min(72vw, 285px);
-    }
-
-    .visual-intro .signature-line__path {
-        stroke-width: 0.65px;
-    }
-
-    .visual-intro .signature-line--top {
-        margin-bottom: 13px;
-    }
-
-    .visual-intro .signature-line--bottom {
-        margin-top: 13px;
-    }
+/* STEP 3: Ending dot appears after the line finishes */
+.visual-intro .signature-line.is-drawn .signature-line__dot--end {
+    opacity: 1;
+    transition-delay: 3.7s;
 }
 
 
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 480px) {
-    .visual-intro .signature-line {
-        width: min(68vw, 240px);
-    }
-
-    .visual-intro .signature-line__path {
-        stroke-width: 0.6px;
-    }
-
-    .visual-intro .signature-line--top {
-        margin-bottom: 10px;
-    }
-
-    .visual-intro .signature-line--bottom {
-        margin-top: 10px;
-    }
-}
-
-
-/* Respect reduced-motion preferences */
+/* Accessibility: show everything without animation */
 @media (prefers-reduced-motion: reduce) {
     .visual-intro .signature-line__path {
-       .visual-intro .signature-line__path {
         transition: none;
         stroke-dashoffset: 0;
     }
