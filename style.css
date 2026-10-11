@@ -3901,49 +3901,56 @@ main {
         opacity: 1;
     }
 }
-
 /* =========================================
-   LINES DIRECTLY BESIDE THE HEADING
+   SIDE LINES — PRESERVE ORIGINAL POSITION
    ========================================= */
 
-.visual-intro.visual-intro--sides {
-    display: grid !important;
-    grid-template-columns:
-        clamp(40px, 6vw, 85px)
-        max-content
-        clamp(40px, 6vw, 85px);
-    align-items: center;
-    justify-content: center;
-    column-gap: clamp(10px, 1.5vw, 20px);
-    width: 100%;
+.visual-intro-inner {
+    --side-line-width: clamp(36px, 5vw, 70px);
+    --side-line-gap: clamp(6px, 1vw, 12px);
+
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
     max-width: 100%;
-    box-sizing: border-box;
 }
 
-/* Keep the heading centered */
-.visual-intro.visual-intro--sides > h2 {
-    position: static !important;
-    margin: 0 !important;
-    min-width: 0;
-    text-align: center;
+/* Keep the heading's existing typography and alignment */
+.visual-intro-inner > h2 {
+    position: relative;
+    z-index: 1;
 }
 
-/* Short lines immediately beside the text */
-.visual-intro.visual-intro--sides > .signature-line {
-    position: static !important;
+/* Lines are positioned relative to the heading.
+   They do not affect the heading's layout or position. */
+.visual-intro-inner > .signature-line {
+    position: absolute;
+    top: 50%;
     display: block;
-    width: 100%;
+    width: var(--side-line-width);
     max-width: none;
     min-width: 0;
     height: 10px;
-    margin: 0 !important;
+    margin: 0;
+    padding: 0;
     overflow: visible;
+    transform: translateY(-50%);
     color: #FFFFFF;
     filter: none;
 }
 
-/* White line and existing slow drawing animation */
-.visual-intro.visual-intro--sides .signature-line__path {
+/* Left line ends just before the text */
+.visual-intro-inner > .signature-line--left {
+    right: calc(0px - var(--side-line-width) - var(--side-line-gap));
+}
+
+/* Right line begins just after the text */
+.visual-intro-inner > .signature-line--right {
+    left: calc(100% + var(--side-line-gap));
+}
+
+/* Bright, straight lines */
+.visual-intro-inner .signature-line__path {
     fill: none;
     stroke: #FFFFFF;
     stroke-width: 1.8px;
@@ -3952,67 +3959,63 @@ main {
     vector-effect: non-scaling-stroke;
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
+
     transition: stroke-dashoffset 3.2s
         cubic-bezier(0.65, 0, 0.35, 1) 0.5s;
 }
 
-.visual-intro.visual-intro--sides
-.signature-line.is-drawn .signature-line__path {
+.visual-intro-inner .signature-line.is-drawn .signature-line__path {
     stroke-dashoffset: 0;
 }
 
-/* Dots appear only after the lines finish */
-.visual-intro.visual-intro--sides .signature-line__dot {
+/* Dots appear after the lines finish */
+.visual-intro-inner .signature-line__dot {
     fill: #FFFFFF;
     stroke: #FFFFFF;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    transition-delay: 3.8s;
+    transition: opacity 0.3s ease 3.8s;
 }
 
-.visual-intro.visual-intro--sides
-.signature-line.is-drawn .signature-line__dot {
+.visual-intro-inner .signature-line.is-drawn .signature-line__dot {
     opacity: 1;
-    transition-delay: 3.8s;
 }
 
 
 /* TABLET */
 @media (max-width: 768px) {
-    .visual-intro.visual-intro--sides {
-        grid-template-columns: 35px max-content 35px;
-        column-gap: 9px;
+    .visual-intro-inner {
+        --side-line-width: 35px;
+        --side-line-gap: 8px;
     }
 
-    .visual-intro.visual-intro--sides .signature-line__path {
+    .visual-intro-inner .signature-line__path {
         stroke-width: 1.5px;
     }
 }
 
 
-/* MOBILE */
+/* MOBILE — LINES STAY LEFT AND RIGHT */
 @media (max-width: 480px) {
-    .visual-intro.visual-intro--sides {
-        grid-template-columns: 24px max-content 24px;
-        column-gap: 7px;
+    .visual-intro-inner {
+        --side-line-width: 20px;
+        --side-line-gap: 5px;
     }
 
-    .visual-intro.visual-intro--sides .signature-line__path {
+    .visual-intro-inner .signature-line__path {
         stroke-width: 1.4px;
     }
 }
 
 
-/* REDUCED MOTION */
+/* ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
-    .visual-intro.visual-intro--sides .signature-line__path {
+    .visual-intro-inner .signature-line__path {
         transition: none;
         stroke-dashoffset: 0;
     }
 
-    .visual-intro.visual-intro--sides .signature-line__dot {
+    .visual-intro-inner .signature-line__dot {
         transition: none;
-        transition-delay: 0s;
         opacity: 1;
     }
 }
