@@ -3835,7 +3835,7 @@ main {
 .visual-intro .signature-line__path {
     fill: none;
     stroke: currentColor;
-    stroke-width: 0.75px;
+    stroke-width: 1px;
     stroke-linecap: butt;
     stroke-linejoin: miter;
     vector-effect: non-scaling-stroke;
@@ -3887,5 +3887,19 @@ main {
     .visual-intro .signature-line__dot {
         transition: none;
         opacity: 1;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .visual-intro .signature-line__path {
+        stroke-width: 0.9px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .visual-intro .signature-line__path {
+        stroke-width: 0.85px;
     }
 }
