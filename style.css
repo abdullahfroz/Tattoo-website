@@ -3806,6 +3806,7 @@ main {
    ========================================= */
 
 .visual-intro .signature-line {
+      color: #FFFFFF;
     display: block;
     width: clamp(190px, 32vw, 390px);
     height: 10px;
@@ -3912,13 +3913,31 @@ main {
 /* Tablet */
 @media (max-width: 768px) {
     .visual-intro .signature-line__path {
-        stroke-width: 1.3px;
+        stroke-width: 1.5px;
     }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
     .visual-intro .signature-line__path {
-        stroke-width: 1.2px;
+        stroke-width: 1.4px;
     }
+}
+
+/* Stronger, brighter white lines */
+.visual-intro .signature-line__path {
+    stroke: #FFFFFF;
+    stroke-width: 1.8px;
+}
+
+/* Pure white dots */
+.visual-intro .signature-line__dot {
+    fill: #FFFFFF;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* Subtle brightness for extra definition */
+.visual-intro .signature-line {
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.35));
 }
