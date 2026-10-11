@@ -3940,9 +3940,10 @@ main {
 }
 
 /* Left line ends just before the text */
+
 .visual-intro-inner > .signature-line--left {
-    right: calc(0px - var(--side-line-width) - var(--side-line-gap));
-}
+    right: calc(100% + var(--side-line-gap));
+    left: auto;}
 
 /* Right line begins just after the text */
 .visual-intro-inner > .signature-line--right {
@@ -4017,5 +4018,16 @@ main {
     .visual-intro-inner .signature-line__dot {
         transition: none;
         opacity: 1;
+    }
+}
+/* MOBILE — BOTH LINES TWICE AS LONG */
+@media (max-width: 480px) {
+    .visual-intro-inner {
+        --side-line-width: 40px;
+        --side-line-gap: 5px;
+    }
+
+    .visual-intro-inner .signature-line__path {
+        stroke-width: 1.4px;
     }
 }
