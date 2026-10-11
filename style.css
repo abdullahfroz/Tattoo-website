@@ -4031,3 +4031,120 @@ main {
         stroke-width: 1.4px;
     }
 }
+
+/* =========================================
+   FINAL LINE POSITIONING — DESKTOP + MOBILE
+   ========================================= */
+
+.visual-intro-inner {
+    --side-line-width: 100px;
+    --side-line-gap: 12px;
+
+    position: relative;
+    overflow: visible;
+}
+
+/* Keep the heading in its current position */
+.visual-intro-inner > h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+/* Both lines stay horizontal beside the text */
+.visual-intro-inner > .signature-line {
+    position: absolute !important;
+    display: block !important;
+    width: var(--side-line-width) !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: 10px !important;
+    top: 50%;
+    margin: 0 !important;
+    padding: 0;
+    overflow: visible;
+    transform: translateY(-50%);
+    color: #FFFFFF;
+    filter: none;
+    pointer-events: none;
+}
+
+/* LEFT line — immediately before the heading */
+.visual-intro-inner > .signature-line--left {
+    right: calc(100% + var(--side-line-gap)) !important;
+    left: auto !important;
+}
+
+/* RIGHT line — immediately after the heading */
+.visual-intro-inner > .signature-line--right {
+    left: calc(100% + var(--side-line-gap)) !important;
+    right: auto !important;
+}
+
+/* Line styling and slow drawing animation */
+.visual-intro-inner .signature-line__path {
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 1.8px;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+
+    transition: stroke-dashoffset 3.2s
+        cubic-bezier(0.65, 0, 0.35, 1) 0.5s;
+}
+
+.visual-intro-inner .signature-line.is-drawn .signature-line__path {
+    stroke-dashoffset: 0;
+}
+
+/* Dots appear after the lines finish */
+.visual-intro-inner .signature-line__dot {
+    fill: #FFFFFF;
+    stroke: #FFFFFF;
+    opacity: 0;
+    transition: opacity 0.3s ease 3.8s;
+}
+
+.visual-intro-inner .signature-line.is-drawn .signature-line__dot {
+    opacity: 1;
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+    .visual-intro-inner {
+        --side-line-width: 50px;
+        --side-line-gap: 8px;
+    }
+
+    .visual-intro-inner .signature-line__path {
+        stroke-width: 1.5px;
+    }
+}
+
+/* MOBILE — longer lines on BOTH sides */
+@media (max-width: 480px) {
+    .visual-intro-inner {
+        --side-line-width: 40px;
+        --side-line-gap: 5px;
+    }
+
+    .visual-intro-inner .signature-line__path {
+        stroke-width: 1.4px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .visual-intro-inner .signature-line__path {
+        transition: none;
+        stroke-dashoffset: 0;
+    }
+
+    .visual-intro-inner .signature-line__dot {
+        transition: none;
+        opacity: 1;
+    }
+}
