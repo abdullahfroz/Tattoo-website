@@ -565,3 +565,50 @@ if (bookingForm) {
 
 }
 
+/* =========================================
+   ANIMATE SIGNATURE LINE ON SCROLL
+   ========================================= */
+
+(() => {
+    const signatureLineElement = document.querySelector(".signature-line");
+
+    // Do nothing if the line is not on this page
+    if (!signatureLineElement) {
+        return;
+    }
+
+    // Reveal the completed line
+    const drawSignatureLine = () => {
+        signatureLineElement.classList.add("is-drawn");
+    };
+
+    // Respect the visitor's reduced-motion preference
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+        drawSignatureLine();
+        return;
+    }
+
+    // Start drawing when the line enters the viewport
+    const signatureLineObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    drawSignatureLine();
+
+                    // Animate only once per page load
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.35
+        }
+    );
+
+    signatureLineObserver.observe(signatureLineElement);
+})();
+

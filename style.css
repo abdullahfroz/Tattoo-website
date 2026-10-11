@@ -3800,3 +3800,83 @@ main {
 .footer-bottom a:hover {
     opacity: 0.5;
 }
+
+/* =========================================
+   ANIMATED SIGNATURE LINE
+   ========================================= */
+
+.signature-line {
+    display: block;
+    width: clamp(190px, 32vw, 390px);
+    height: auto;
+    margin: 0 auto clamp(12px, 1.8vw, 22px);
+    overflow: visible;
+    color: inherit;
+}
+
+.signature-line__path {
+    fill: none;
+    stroke: currentColor;
+
+    /* Fine, delicate line */
+    stroke-width: 0.75px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+
+    /* Hidden drawing state */
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+
+    /* Smooth drawing animation */
+    transition: stroke-dashoffset 1.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* The line draws when JavaScript adds this class */
+.signature-line.is-drawn .signature-line__path {
+    stroke-dashoffset: 0;
+}
+
+
+/* =========================================
+   TABLET VERSION
+   ========================================= */
+
+@media (max-width: 768px) {
+    .signature-line {
+        width: min(72vw, 285px);
+        margin-bottom: 13px;
+    }
+
+    .signature-line__path {
+        stroke-width: 0.65px;
+    }
+}
+
+
+/* =========================================
+   MOBILE VERSION
+   ========================================= */
+
+@media (max-width: 480px) {
+    .signature-line {
+        width: min(68vw, 240px);
+        margin-bottom: 10px;
+    }
+
+    .signature-line__path {
+        stroke-width: 0.6px;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY: REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .signature-line__path {
+        transition: none;
+        stroke-dashoffset: 0;
+    }
+}
