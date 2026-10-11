@@ -4023,7 +4023,7 @@ main {
 /* MOBILE — BOTH LINES TWICE AS LONG */
 @media (max-width: 480px) {
     .visual-intro-inner {
-        --side-line-width: 40px;
+        --side-line-width: 80px;
         --side-line-gap: 5px;
     }
 
@@ -4127,7 +4127,7 @@ main {
 /* MOBILE — longer lines on BOTH sides */
 @media (max-width: 480px) {
     .visual-intro-inner {
-        --side-line-width: 40px;
+        --side-line-width: 80px;
         --side-line-gap: 5px;
     }
 
