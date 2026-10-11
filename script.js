@@ -566,49 +566,55 @@ if (bookingForm) {
 }
 
 /* =========================================
-   ANIMATE SIGNATURE LINE ON SCROLL
+   DRAW BOTH FINE LINES SIMULTANEOUSLY
    ========================================= */
 
 (() => {
-    const signatureLineElement = document.querySelector(".signature-line");
+    const signatureIntro = document.querySelector(".visual-intro");
 
-    // Do nothing if the line is not on this page
-    if (!signatureLineElement) {
+    if (!signatureIntro) {
         return;
     }
 
-    // Reveal the completed line
-    const drawSignatureLine = () => {
-        signatureLineElement.classList.add("is-drawn");
+    const signatureLines = signatureIntro.querySelectorAll(
+        ".signature-line"
+    );
+
+    if (signatureLines.length === 0) {
+        return;
+    }
+
+    const drawBothLines = () => {
+        signatureLines.forEach((line) => {
+            line.classList.add("is-drawn");
+        });
     };
 
-    // Respect the visitor's reduced-motion preference
     const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
     ).matches;
 
-    if (reduceMotion || !("IntersectionObserver" in window)) {
-        drawSignatureLine();
+    if (
+        reduceMotion ||
+        !("IntersectionObserver" in window)
+    ) {
+        drawBothLines();
         return;
     }
 
-    // Start drawing when the line enters the viewport
-    const signatureLineObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    drawSignatureLine();
+    const observer = new IntersectionObserver(
+        (entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+                // Start both animations in the same frame
+                drawBothLines();
 
-                    // Animate only once per page load
-                    observer.unobserve(entry.target);
-                }
-            });
+                observer.disconnect();
+            }
         },
         {
-            threshold: 0.35
+            threshold: 0.2
         }
     );
 
-    signatureLineObserver.observe(signatureLineElement);
+    observer.observe(signatureIntro);
 })();
-
