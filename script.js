@@ -531,6 +531,17 @@ if (bookingForm) {
                 return;
             }
 
+            // Track a lead only after Forminit succeeds
+// and the visitor has granted marketing consent.
+if (
+    typeof window.fbq === "function" &&
+    window.Cookiebot &&
+    window.Cookiebot.consent &&
+    window.Cookiebot.consent.marketing === true
+) {
+    window.fbq("track", "Lead");
+}
+
             console.log(
                 "Forminit submission successful:",
                 data
