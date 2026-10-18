@@ -3970,17 +3970,17 @@ main {
 }
 
 /* Dots appear after the lines finish */
-.visual-intro-inner .signature-line__dot {
-    fill: #FFFFFF;
+ fill: #FFFFFF;
     stroke: #FFFFFF;
     opacity: 0;
-    transition: opacity 0.3s ease 3.8s;
+    transition: opacity 0.15s ease;
+    transition-delay: 3.7s;
 }
 
 .visual-intro-inner .signature-line.is-drawn .signature-line__dot {
     opacity: 1;
+    transition-delay: 3.7s;
 }
-
 
 /* TABLET */
 @media (max-width: 768px) {
@@ -3990,7 +3990,7 @@ main {
     }
 
     .visual-intro-inner .signature-line__path {
-        stroke-width: 1.5px;
+        stroke-width: 1.1px;
     }
 }
 
@@ -4003,7 +4003,7 @@ main {
     }
 
     .visual-intro-inner .signature-line__path {
-        stroke-width: 1.4px;
+        stroke-width: 0.9px;
     }
 }
 
@@ -4028,7 +4028,7 @@ main {
     }
 
     .visual-intro-inner .signature-line__path {
-        stroke-width: 1.4px;
+        stroke-width: 0.9px;
     }
 }
 
@@ -4102,16 +4102,17 @@ main {
 
 /* Dots appear after the lines finish */
 .visual-intro-inner .signature-line__dot {
-    fill: #FFFFFF;
+   fill: #FFFFFF;
     stroke: #FFFFFF;
     opacity: 0;
-    transition: opacity 0.3s ease 3.8s;
+    transition: opacity 0.15s ease;
+    transition-delay: 3.7s;
 }
 
 .visual-intro-inner .signature-line.is-drawn .signature-line__dot {
     opacity: 1;
+    transition-delay: 3.7s;
 }
-
 /* TABLET */
 @media (max-width: 768px) {
     .visual-intro-inner {
@@ -4120,7 +4121,7 @@ main {
     }
 
     .visual-intro-inner .signature-line__path {
-        stroke-width: 1.5px;
+        stroke-width: 1.1px;
     }
 }
 
@@ -4132,7 +4133,7 @@ main {
     }
 
     .visual-intro-inner .signature-line__path {
-        stroke-width: 1.4px;
+        stroke-width: 1.1px;
     }
 }
 
