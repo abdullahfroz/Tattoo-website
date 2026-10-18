@@ -3974,7 +3974,7 @@ main {
     stroke: #FFFFFF;
     opacity: 0;
     transition: opacity 0.15s ease;
-    transition-delay: 3.7s;
+    transition-delay: 1.7s;
 }
 
 .visual-intro-inner .signature-line.is-drawn .signature-line__dot {
@@ -4106,7 +4106,7 @@ main {
     stroke: #FFFFFF;
     opacity: 0;
     transition: opacity 0.15s ease;
-    transition-delay: 3.7s;
+    transition-delay: 1.7s;
 }
 
 .visual-intro-inner .signature-line.is-drawn .signature-line__dot {
