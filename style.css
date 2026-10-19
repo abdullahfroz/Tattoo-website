@@ -4232,3 +4232,91 @@ main {
         opacity: 1;
     }
 }
+
+/* =========================================
+   VERTICAL FINE-LINE DIVIDER
+   ========================================= */
+
+.experience-divider {
+    position: relative;
+    width: 10px;
+    height: 150px;
+    margin: 40px auto 55px;
+}
+
+/* The line draws downward */
+.experience-divider__line {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 50%;
+    width: 1px;
+    background: #FFFFFF;
+
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+
+    transition: transform 2.2s
+        cubic-bezier(0.65, 0, 0.35, 1) 0.18s;
+}
+
+/* Small dots at both ends */
+.experience-divider__dot {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #FFFFFF;
+
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.12s linear;
+}
+
+/* Starting dot */
+.experience-divider__dot--start {
+    top: 1px;
+}
+
+/* Ending dot */
+.experience-divider__dot--end {
+    bottom: 1px;
+}
+
+/* Start the animation */
+.experience-divider.is-drawn .experience-divider__dot--start {
+    opacity: 1;
+}
+
+/* Draw the line after the first dot appears */
+.experience-divider.is-drawn .experience-divider__line {
+    transform: translateX(-50%) scaleY(1);
+}
+
+/* Show the final dot after the line finishes */
+.experience-divider.is-drawn .experience-divider__dot--end {
+    opacity: 1;
+    transition-delay: 2.45s;
+}
+
+/* Mobile sizing */
+@media (max-width: 480px) {
+    .experience-divider {
+        height: 110px;
+        margin: 30px auto 40px;
+    }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    .experience-divider__line {
+        transition: none;
+        transform: translateX(-50%) scaleY(1);
+    }
+
+    .experience-divider__dot {
+        transition: none;
+        opacity: 1;
+    }
+}

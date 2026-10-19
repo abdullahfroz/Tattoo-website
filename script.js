@@ -629,3 +629,43 @@ if (
 
     observer.observe(signatureIntro);
 })();
+
+/* =========================================
+   TATTOO EXPERIENCE VERTICAL LINE
+   ========================================= */
+
+(() => {
+    const divider = document.querySelector(".experience-divider");
+
+    if (!divider) {
+        return;
+    }
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (
+        reducedMotion ||
+        !("IntersectionObserver" in window)
+    ) {
+        divider.classList.add("is-drawn");
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    divider.classList.add("is-drawn");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.4
+        }
+    );
+
+    observer.observe(divider);
+})();
