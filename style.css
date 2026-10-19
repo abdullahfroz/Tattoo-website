@@ -4198,7 +4198,7 @@ main {
 .visual-intro-inner .signature-line.is-drawn
 .signature-line__dot--end {
     opacity: 1;
-    transition-delay: 3.35s;
+    transition-delay: 1.35s;
     transition-duration: 0.08s;
 }
 
@@ -4240,7 +4240,7 @@ main {
 .experience-divider {
     position: relative;
     width: 10px;
-    height: 300px;
+    height: 450px;
     margin: 40px auto 55px;
 }
 
@@ -4303,7 +4303,7 @@ main {
 /* Mobile sizing */
 @media (max-width: 480px) {
     .experience-divider {
-        height: 220px;
+        height: 300px;
         margin: 30px auto 40px;
     }
 }
