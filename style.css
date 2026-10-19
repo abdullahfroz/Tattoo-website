@@ -4198,7 +4198,7 @@ main {
 .visual-intro-inner .signature-line.is-drawn
 .signature-line__dot--end {
     opacity: 1;
-    transition-delay: 2.35s;
+    transition-delay: 2.15s;
     transition-duration: 0.08s;
 }
 
