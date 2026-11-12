@@ -76,38 +76,51 @@ fbq('track', 'PageView');
             alt="Cali tattoo artist">
     </div>
 
-    <div class="visual-intro">
-        <div class="visual-intro-inner">
+    
+<div class="visual-intro-inner">
 
-            <h2>
-                <span class="intro-top">ART IS THE</span>
-                <span class="intro-bottom">VOICE</span>
-            </h2>
+    <!-- LEFT LINE -->
+    <svg
+        class="signature-line signature-line--left"
+        viewBox="0 0 200 10"
+        aria-hidden="true"
+    >
+        <path
+            class="signature-line__path"
+            d="M 5 5 L 195 5"
+            pathLength="1"
+        />
+        <circle
+            class="signature-line__dot"
+            cx="5" cy="5" r="2"
+        />
+    </svg>
 
-            <svg
-                class="signature-line"
-                viewBox="0 0 1000 10"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-            >
-                <path
-                    class="signature-line__path"
-                    d="M 5 5 H 995"
-                    pathLength="1"
-                />
+    <!-- ORIGINAL HEADING — UNCHANGED -->
+    <h2>
+        <span class="intro-top">ART IS THE</span>
+        <span class="intro-bottom">VOICE</span>
+    </h2>
 
-                <circle
-                    class="signature-line__dot signature-line__dot--start"
-                    cx="5" cy="5" r="2"
-                />
+    <!-- RIGHT LINE -->
+    <svg
+        class="signature-line signature-line--right"
+        viewBox="0 0 200 10"
+        aria-hidden="true"
+    >
+        <path
+            class="signature-line__path"
+            d="M 5 5 L 195 5"
+            pathLength="1"
+        />
+        <circle
+            class="signature-line__dot"
+            cx="195" cy="5" r="2"
+        />
+    </svg>
 
-                <circle
-                    class="signature-line__dot signature-line__dot--end"
-                    cx="995" cy="5" r="2"
-                />
-            </svg>
+</div>
 
-        </div>
     </div>
 
 </section>
