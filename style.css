@@ -4315,3 +4315,66 @@ main {
         opacity: 1;
     }
 }
+
+
+/* =========================================
+   LEFT-TO-RIGHT SIGNATURE LINE ANIMATION
+   ========================================= */
+
+/* Both lines begin hidden */
+.visual-intro-inner .signature-line__path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 3.2s
+        cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Left line draws first */
+.visual-intro-inner .signature-line--left .signature-line__path {
+    transition-delay: 0.2s;
+}
+
+/* Right line starts after the left line */
+.visual-intro-inner .signature-line--right .signature-line__path {
+    transition-delay: 3.4s;
+}
+
+/* Start drawing */
+.visual-intro-inner .signature-line.is-drawn .signature-line__path {
+    stroke-dashoffset: 0;
+}
+
+/* Left outer dot appears first */
+.visual-intro-inner .signature-line__dot--start {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.visual-intro-inner .signature-line--left.is-drawn .signature-line__dot--start {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+/* Right outer dot appears last */
+.visual-intro-inner .signature-line__dot--end {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.visual-intro-inner .signature-line--right.is-drawn .signature-line__dot--end {
+    opacity: 1;
+    transition-delay: 6.7s;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .visual-intro-inner .signature-line__path {
+        transition: none;
+        stroke-dashoffset: 0;
+    }
+
+    .visual-intro-inner .signature-line__dot {
+        transition: none;
+        opacity: 1;
+    }
+}
