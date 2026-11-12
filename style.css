@@ -4345,24 +4345,45 @@ main {
         position: relative !important;
     }
 }
-/* CALI INTRO — POSITION BESIDE PORTRAIT */
+/* =========================================
+   FINAL DESKTOP HEADING POSITION OVERRIDE
+   Images remain untouched
+   ========================================= */
 
-@media (min-width: 701px) {
-    .visual-intro {
+@media screen and (min-width: 701px) {
+
+    .hero > .visual-intro {
         position: absolute !important;
-        top: 50% !important;
-        left: calc(50% - 180px) !important;
+
+        /* Position heading to the right of the portrait */
+        left: 42% !important;
         right: auto !important;
+
+        /* Align vertically with the portrait */
+        top: 230px !important;
+
         width: 320px !important;
+        height: auto !important;
+
         margin: 0 !important;
         padding: 0 !important;
-        transform: translateY(-50%) !important;
-        z-index: 2 !important;
+
+        transform: none !important;
+
+        display: block !important;
+        z-index: 20 !important;
     }
 
-    .visual-intro-inner {
-        display: inline-block !important;
+    .hero > .visual-intro > .visual-intro-inner {
         position: relative !important;
+        display: inline-block !important;
         width: auto !important;
+        max-width: none !important;
+    }
+
+    .hero > .visual-intro h2 {
+        position: relative !important;
+        margin: 0 !important;
+        text-align: center !important;
     }
 }
