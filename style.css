@@ -4320,3 +4320,28 @@ main {
         opacity: 1;
     }
 }
+
+/* DESKTOP — RESTORE ORIGINAL INTRO POSITION */
+@media (min-width: 701px) {
+    .hero {
+        position: relative !important;
+    }
+
+    .visual-intro {
+        position: absolute !important;
+        top: 230px !important;
+        left: 55% !important;
+        right: auto !important;
+        width: 320px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+        z-index: 2 !important;
+    }
+
+    .visual-intro-inner {
+        display: inline-block !important;
+        width: auto !important;
+        position: relative !important;
+    }
+}
