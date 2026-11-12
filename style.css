@@ -4345,75 +4345,24 @@ main {
         position: relative !important;
     }
 }
-/* =========================================
-   CALI INTRO — RESTORE TEXT + SIDE LINES
-   Desktop only. Does not move any images.
-   ========================================= */
+/* CALI INTRO — POSITION BESIDE PORTRAIT */
 
 @media (min-width: 701px) {
-
     .visual-intro {
         position: absolute !important;
-        top: 230px !important;
-        left: 37% !important;
+        top: 50% !important;
+        left: calc(50% - 180px) !important;
         right: auto !important;
         width: 320px !important;
         margin: 0 !important;
         padding: 0 !important;
-        transform: none !important;
+        transform: translateY(-50%) !important;
         z-index: 2 !important;
     }
 
     .visual-intro-inner {
-        position: relative !important;
         display: inline-block !important;
-        width: auto !important;
-        overflow: visible !important;
-    }
-
-    .visual-intro-inner h2 {
         position: relative !important;
-        z-index: 2 !important;
-        margin: 0 !important;
+        width: auto !important;
     }
-
-    /* Left line: draws first, from outer dot inward */
-    .visual-intro-inner::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: calc(100% + 12px);
-        width: 100px;
-        height: 1px;
-        background:
-            radial-gradient(circle at left center, #fff 0 2px, transparent 2.5px),
-            linear-gradient(#fff, #fff);
-        transform: translateY(-50%) scaleX(0);
-        transform-origin: left center;
-        animation: cali-left-line 1.5s ease forwards 0.3s;
-    }
-
-    /* Right line: draws after the left line */
-    .visual-intro-inner::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: calc(100% + 12px);
-        width: 100px;
-        height: 1px;
-        background:
-            radial-gradient(circle at right center, #fff 0 2px, transparent 2.5px),
-            linear-gradient(#fff, #fff);
-        transform: translateY(-50%) scaleX(0);
-        transform-origin: left center;
-        animation: cali-right-line 1.5s ease forwards 1.8s;
-    }
-}
-
-@keyframes cali-left-line {
-    to { transform: translateY(-50%) scaleX(1); }
-}
-
-@keyframes cali-right-line {
-    to { transform: translateY(-50%) scaleX(1); }
 }
