@@ -4378,3 +4378,59 @@ main {
         opacity: 1;
     }
 }
+
+
+/* =========================================
+   SIGNATURE LINE — FASTER LEFT-TO-RIGHT
+   ========================================= */
+
+/* Faster line drawing */
+.visual-intro-inner .signature-line__path {
+    transition: stroke-dashoffset 1.3s
+        cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* LEFT LINE — first */
+.visual-intro-inner .signature-line--left .signature-line__path {
+    transition-delay: 0.15s;
+}
+
+/* RIGHT LINE — starts after left line */
+.visual-intro-inner .signature-line--right .signature-line__path {
+    transition-delay: 1.5s;
+}
+
+/* LEFT OUTER DOT — appears first */
+.visual-intro-inner .signature-line--left .signature-line__dot--start {
+    opacity: 0;
+    transition: opacity 0.12s ease;
+}
+
+.visual-intro-inner .signature-line--left.is-drawn .signature-line__dot--start {
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+/* RIGHT OUTER DOT — appears last */
+.visual-intro-inner .signature-line--right .signature-line__dot--end {
+    opacity: 0;
+    transition: opacity 0.12s ease;
+}
+
+.visual-intro-inner .signature-line--right.is-drawn .signature-line__dot--end {
+    opacity: 1;
+    transition-delay: 2.s;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .visual-intro-inner .signature-line__path {
+        transition: none;
+        stroke-dashoffset: 0;
+    }
+
+    .visual-intro-inner .signature-line__dot {
+        transition: none;
+        opacity: 1;
+    }
+}
