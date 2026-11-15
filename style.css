@@ -4419,7 +4419,7 @@ main {
 
 .visual-intro-inner .signature-line--right.is-drawn .signature-line__dot--end {
     opacity: 1;
-    transition-delay: 2.s;
+    transition-delay: 1.s;
 }
 
 /* Respect reduced motion */
